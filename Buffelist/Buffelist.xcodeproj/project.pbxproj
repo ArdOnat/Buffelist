@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C033A7B251F283200256C71 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C033A7A251F283200256C71 /* PopupViewController.swift */; };
+		4C033A89251F285400256C71 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C033A88251F285400256C71 /* PopupView.swift */; };
+		4C033A8E251F286400256C71 /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C033A8D251F286400256C71 /* PopupView.xib */; };
+		4C033A93251F5B1C00256C71 /* LoginLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C033A92251F5B1C00256C71 /* LoginLocalDataManager.swift */; };
+		4C033A98251F6BCD00256C71 /* AlertContentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C033A97251F6BCD00256C71 /* AlertContentConfig.swift */; };
 		4C06D098251BBD110037BE85 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06D097251BBD110037BE85 /* HomeViewController.swift */; };
 		4C06D0A0251BBD1C0037BE85 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06D09F251BBD1C0037BE85 /* HomeView.swift */; };
 		4C06D0A5251BBD250037BE85 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C06D0A4251BBD250037BE85 /* HomeView.xib */; };
@@ -25,6 +30,15 @@
 		4C08F142251A644D0058485E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F141251A644D0058485E /* LoginViewController.swift */; };
 		4C08F14A251A645B0058485E /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C08F149251A645B0058485E /* LoginView.xib */; };
 		4C08F14F251A646D0058485E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F14E251A646D0058485E /* LoginView.swift */; };
+		4C81475D251D0238006CE13D /* LoginModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81475C251D0238006CE13D /* LoginModuleInterface.swift */; };
+		4C814762251D0387006CE13D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814761251D0387006CE13D /* LoginPresenter.swift */; };
+		4C814767251D0402006CE13D /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814766251D0402006CE13D /* LoginInteractor.swift */; };
+		4C81476C251D052A006CE13D /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81476B251D052A006CE13D /* LoginWireFrame.swift */; };
+		4C814772251D05CB006CE13D /* LoginModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814771251D05CB006CE13D /* LoginModuleBuilder.swift */; };
+		4C814784251D0914006CE13D /* LoginAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814783251D0914006CE13D /* LoginAPIDataManager.swift */; };
+		4C81478C251D0BBF006CE13D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81478B251D0BBF006CE13D /* LoginService.swift */; };
+		4C814795251D0CB0006CE13D /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814794251D0CB0006CE13D /* LoginResponse.swift */; };
+		4C8147A1251D0F63006CE13D /* GetResetLinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8147A0251D0F63006CE13D /* GetResetLinkResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C033A7A251F283200256C71 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		4C033A88251F285400256C71 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		4C033A8D251F286400256C71 /* PopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
+		4C033A92251F5B1C00256C71 /* LoginLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalDataManager.swift; sourceTree = "<group>"; };
+		4C033A97251F6BCD00256C71 /* AlertContentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContentConfig.swift; sourceTree = "<group>"; };
 		4C06D097251BBD110037BE85 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4C06D09F251BBD1C0037BE85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4C06D0A4251BBD250037BE85 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
@@ -69,6 +88,15 @@
 		4C08F141251A644D0058485E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4C08F149251A645B0058485E /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		4C08F14E251A646D0058485E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4C81475C251D0238006CE13D /* LoginModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleInterface.swift; sourceTree = "<group>"; };
+		4C814761251D0387006CE13D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		4C814766251D0402006CE13D /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		4C81476B251D052A006CE13D /* LoginWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
+		4C814771251D05CB006CE13D /* LoginModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleBuilder.swift; sourceTree = "<group>"; };
+		4C814783251D0914006CE13D /* LoginAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIDataManager.swift; sourceTree = "<group>"; };
+		4C81478B251D0BBF006CE13D /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		4C814794251D0CB0006CE13D /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		4C8147A0251D0F63006CE13D /* GetResetLinkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetResetLinkResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +124,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C033A79251F280D00256C71 /* Popup Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C033A7A251F283200256C71 /* PopupViewController.swift */,
+				4C033A88251F285400256C71 /* PopupView.swift */,
+				4C033A8D251F286400256C71 /* PopupView.xib */,
+			);
+			path = "Popup Views";
+			sourceTree = "<group>";
+		};
 		4C06D08F251BBC7E0037BE85 /* Home Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,17 +201,10 @@
 		4C06D096251BBCBE0037BE85 /* Data Manager */ = {
 			isa = PBXGroup;
 			children = (
-				4C06D0C5251BC9A90037BE85 /* Local */,
+				4C814757251D0063006CE13D /* Local */,
 				4C06D0C6251BC9AE0037BE85 /* API */,
 			);
 			path = "Data Manager";
-			sourceTree = "<group>";
-		};
-		4C06D0C5251BC9A90037BE85 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		4C06D0C6251BC9AE0037BE85 /* API */ = {
@@ -191,6 +222,7 @@
 				4C08F107251A60610058485E /* BuffelistTests */,
 				4C08F112251A60610058485E /* BuffelistUITests */,
 				4C08F0EF251A60600058485E /* Products */,
+				8A427690E4755E08BE80B8A0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,11 +241,10 @@
 			children = (
 				4C08F124251A609F0058485E /* App */,
 				4C08F128251A611F0058485E /* Supporting Files */,
-				4C08F129251A612B0058485E /* Resources */,
+				4C814789251D0A7F006CE13D /* Resources */,
+				4C814788251D0A76006CE13D /* Common */,
 				4C08F12C251A613E0058485E /* Modules */,
-				4C08F12B251A61380058485E /* Services */,
-				4C08F12A251A61300058485E /* Common */,
-				4C08F0FA251A60610058485E /* Assets.xcassets */,
+				4C81478A251D0A8B006CE13D /* Services */,
 			);
 			path = Buffelist;
 			sourceTree = "<group>";
@@ -254,27 +285,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4C08F129251A612B0058485E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		4C08F12A251A61300058485E /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		4C08F12B251A61380058485E /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		4C08F12C251A613E0058485E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,13 +297,14 @@
 		4C08F139251A63490058485E /* Login Module */ = {
 			isa = PBXGroup;
 			children = (
-				4C08F13B251A63C20058485E /* Module Builder */,
-				4C08F13C251A63C90058485E /* Interface */,
+				4C814750251D0000006CE13D /* Module Builder */,
+				4C814751251D0009006CE13D /* Interface */,
 				4C08F13A251A63BB0058485E /* View */,
-				4C08F13D251A63D20058485E /* Presenter */,
-				4C08F13E251A63DF0058485E /* Interactor */,
-				4C08F13F251A63E70058485E /* Wire Frame */,
-				4C08F140251A63ED0058485E /* Data Manager */,
+				4C814752251D001F006CE13D /* Presenter */,
+				4C814753251D002A006CE13D /* Interactor */,
+				4C814754251D003C006CE13D /* Wire Frame */,
+				4C814755251D0051006CE13D /* Data Manager */,
+				4C81479C251D0E70006CE13D /* Service */,
 			);
 			path = "Login Module";
 			sourceTree = "<group>";
@@ -308,46 +319,125 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4C08F13B251A63C20058485E /* Module Builder */ = {
+		4C814750251D0000006CE13D /* Module Builder */ = {
 			isa = PBXGroup;
 			children = (
+				4C814771251D05CB006CE13D /* LoginModuleBuilder.swift */,
 			);
 			path = "Module Builder";
 			sourceTree = "<group>";
 		};
-		4C08F13C251A63C90058485E /* Interface */ = {
+		4C814751251D0009006CE13D /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				4C81475C251D0238006CE13D /* LoginModuleInterface.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
 		};
-		4C08F13D251A63D20058485E /* Presenter */ = {
+		4C814752251D001F006CE13D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				4C814761251D0387006CE13D /* LoginPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		4C08F13E251A63DF0058485E /* Interactor */ = {
+		4C814753251D002A006CE13D /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				4C814766251D0402006CE13D /* LoginInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		4C08F13F251A63E70058485E /* Wire Frame */ = {
+		4C814754251D003C006CE13D /* Wire Frame */ = {
 			isa = PBXGroup;
 			children = (
+				4C81476B251D052A006CE13D /* LoginWireFrame.swift */,
 			);
 			path = "Wire Frame";
 			sourceTree = "<group>";
 		};
-		4C08F140251A63ED0058485E /* Data Manager */ = {
+		4C814755251D0051006CE13D /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4C814756251D0059006CE13D /* Local */,
+				4C814758251D0068006CE13D /* API */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		4C814756251D0059006CE13D /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				4C033A92251F5B1C00256C71 /* LoginLocalDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4C814757251D0063006CE13D /* Local */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "Data Manager";
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4C814758251D0068006CE13D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4C814783251D0914006CE13D /* LoginAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4C814788251D0A76006CE13D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4C033A97251F6BCD00256C71 /* AlertContentConfig.swift */,
+				4C033A79251F280D00256C71 /* Popup Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4C814789251D0A7F006CE13D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C08F0FA251A60610058485E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4C81478A251D0A8B006CE13D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4C814793251D0CA0006CE13D /* Responses */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4C814793251D0CA0006CE13D /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				4C814794251D0CB0006CE13D /* LoginResponse.swift */,
+				4C8147A0251D0F63006CE13D /* GetResetLinkResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		4C81479C251D0E70006CE13D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4C81478B251D0BBF006CE13D /* LoginService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8A427690E4755E08BE80B8A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,6 +545,7 @@
 			files = (
 				4C08F0FE251A60610058485E /* LaunchScreen.storyboard in Resources */,
 				4C06D0A5251BBD250037BE85 /* HomeView.xib in Resources */,
+				4C033A8E251F286400256C71 /* PopupView.xib in Resources */,
 				4C08F0FB251A60610058485E /* Assets.xcassets in Resources */,
 				4C08F14A251A645B0058485E /* LoginView.xib in Resources */,
 			);
@@ -481,18 +572,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C814784251D0914006CE13D /* LoginAPIDataManager.swift in Sources */,
 				4C06D0BC251BC8740037BE85 /* HomeModuleBuilder.swift in Sources */,
 				4C06D0C1251BC8A60037BE85 /* HomeInteractor.swift in Sources */,
+				4C814762251D0387006CE13D /* LoginPresenter.swift in Sources */,
+				4C033A98251F6BCD00256C71 /* AlertContentConfig.swift in Sources */,
 				4C06D098251BBD110037BE85 /* HomeViewController.swift in Sources */,
+				4C81475D251D0238006CE13D /* LoginModuleInterface.swift in Sources */,
 				4C08F142251A644D0058485E /* LoginViewController.swift in Sources */,
 				4C08F0F2251A60600058485E /* AppDelegate.swift in Sources */,
 				4C06D0A0251BBD1C0037BE85 /* HomeView.swift in Sources */,
+				4C814767251D0402006CE13D /* LoginInteractor.swift in Sources */,
 				4C08F14F251A646D0058485E /* LoginView.swift in Sources */,
+				4C033A7B251F283200256C71 /* PopupViewController.swift in Sources */,
+				4C81476C251D052A006CE13D /* LoginWireFrame.swift in Sources */,
+				4C814795251D0CB0006CE13D /* LoginResponse.swift in Sources */,
+				4C814772251D05CB006CE13D /* LoginModuleBuilder.swift in Sources */,
+				4C81478C251D0BBF006CE13D /* LoginService.swift in Sources */,
 				4C08F0F4251A60600058485E /* SceneDelegate.swift in Sources */,
 				4C06D0AD251BC2150037BE85 /* HomeModuleInterface.swift in Sources */,
 				4C06D0B7251BC7A00037BE85 /* HomeWireFrame.swift in Sources */,
 				4C06D0B2251BC3FC0037BE85 /* HomePresenter.swift in Sources */,
+				4C8147A1251D0F63006CE13D /* GetResetLinkResponse.swift in Sources */,
 				4C06D0C8251BC9C10037BE85 /* HomeAPIDataManager.swift in Sources */,
+				4C033A89251F285400256C71 /* PopupView.swift in Sources */,
+				4C033A93251F5B1C00256C71 /* LoginLocalDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,9 +17,6 @@ class LoginView: UIView {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
-    
-    // delegate
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,18 +30,6 @@ class LoginView: UIView {
     
     private func configure() {
         //TODO: set localization
-    }
-    
-    @IBAction func forgotPasswordPressed(_ sender: Any) {
-        
-    }
-    
-    @IBAction func loginButtonPressed(_ sender: Any) {
-        
-    }
-    
-    @IBAction func registerButtonPressed(_ sender: Any) {
-        
     }
     
 }

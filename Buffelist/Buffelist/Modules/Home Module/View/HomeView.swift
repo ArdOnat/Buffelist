@@ -14,8 +14,6 @@ class HomeView: UIView {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
-    var delegate: HomeViewUserActionHandler?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()

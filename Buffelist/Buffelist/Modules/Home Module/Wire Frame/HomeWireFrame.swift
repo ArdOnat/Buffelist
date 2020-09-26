@@ -24,25 +24,15 @@ extension HomeWireframe: HomeWireframeProtocol {
     }
     
     func navigateToLogin(view: HomePresenterToViewProtocol) {
+        let loginViewController = LoginModuleBuilder.createModule()
         
+        if let viewController = view as? HomeViewController {
+            viewController.navigationController?.pushViewController(loginViewController.viewControllers.first!, animated: true)
+        }
     }
     
     func navigateToRegister(view: HomePresenterToViewProtocol) {
         
     }
-    
-  /*
-
-    func pushToItemDetail(view: HomePresenterToViewProtocol) {
-        let itemDetailModuleBuilder = ItemDetailModuleBuilder()
-        
-        let quoteDetailViewController = itemDetailModuleBuilder.createModule(item: item)
-            
-        let viewController = view as! SearchScreenViewController
-        
-        viewController.navigationController?
-            .pushViewController(quoteDetailViewController.viewControllers.first!, animated: true)
-    }
- */
     
 }
