@@ -41,5 +41,4 @@ extension LoginPresenter: LoginInteractorToPresenterProtocol {
         //view?.onLoginFailure()
     }
     
-    
 }

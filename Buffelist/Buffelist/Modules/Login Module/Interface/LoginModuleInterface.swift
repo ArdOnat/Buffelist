@@ -47,7 +47,7 @@ protocol LoginPresenterToInteractorProtocol: class {
     var presenter: LoginInteractorToPresenterProtocol?  { get set }
     func sendLoginRequest(userInfo: String, password: String)
     func sendGetResetLinkRequest(userInfo: String)
-    func onLoginSuccess(result: LoginResult, token: String)
+    func onLoginSuccess(result: LoginResult, token: String, password: String)
     func onRequestFailure(error: Error)
 }
 
@@ -56,6 +56,12 @@ protocol LoginAPIDataManagerProtocol: class {
     var interactor: LoginPresenterToInteractorProtocol? { get set }
     func sendLoginRequest(userInfo: String, password: String)
     func sendGetResetLinkRequest(userInfo: String)
+}
+
+//MARK: LocalDataManager -
+protocol LoginLocalDataManagerProtocol: class {
+    var interactor: LoginPresenterToInteractorProtocol? { get set }
+    func createUser(result: LoginResult, password: String, token: String, completion: (()->())?)
 }
 
 //MARK: Service -

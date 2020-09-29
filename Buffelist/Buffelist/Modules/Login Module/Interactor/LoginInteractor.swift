@@ -9,9 +9,11 @@ class LoginInteractor {
 
     weak var presenter: LoginInteractorToPresenterProtocol?
     var APIDataManager: LoginAPIDataManagerProtocol?
-    
+    var LocalDataManager: LoginLocalDataManagerProtocol?
+
     init() {
         self.APIDataManager = LoginAPIDataManager(interactor: self)
+        self.LocalDataManager = LoginLocalDataManager(interactor: self)
     }
     
 }
@@ -26,9 +28,10 @@ extension LoginInteractor: LoginPresenterToInteractorProtocol {
         APIDataManager?.sendGetResetLinkRequest(userInfo: userInfo)
     }
     
-    func onLoginSuccess(result: LoginResult, token: String) {
-        // add user to Realm
-        self.presenter?.onLoginSuccess()
+    func onLoginSuccess(result: LoginResult, token: String, password: String) {
+        self.LocalDataManager?.createUser(result: result, password: password, token: token) {
+            self.presenter?.onLoginSuccess()
+        }
     }
     
     func onRequestFailure(error: Error) {

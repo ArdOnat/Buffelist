@@ -19,7 +19,7 @@ class LoginAPIDataManager: LoginAPIDataManagerProtocol {
         LoginService.login(userInfo: userInfo, password: password) { result, token in
             switch result {
             case .success(let result):
-                self.interactor?.onLoginSuccess(result: result, token: token)
+                self.interactor?.onLoginSuccess(result: result, token: token, password: password)
             case .failure(let error):
                 self.interactor?.onRequestFailure(error: error)
             }

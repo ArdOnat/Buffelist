@@ -10,7 +10,7 @@ import UIKit
 class LoginView: UIView {
     
     @IBOutlet weak var buffeListImageView: UIImageView!
-    @IBOutlet weak var loginToAccountLabel: UIStackView!
+    @IBOutlet weak var loginToYourAccountLabel: UILabel!
     @IBOutlet weak var usernameOrEmailLabel: UILabel!
     @IBOutlet weak var usernameEmailTextField: UITextField!
     @IBOutlet weak var passwordLabel: UILabel!

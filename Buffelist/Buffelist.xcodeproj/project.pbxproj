@@ -30,6 +30,15 @@
 		4C08F142251A644D0058485E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F141251A644D0058485E /* LoginViewController.swift */; };
 		4C08F14A251A645B0058485E /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C08F149251A645B0058485E /* LoginView.xib */; };
 		4C08F14F251A646D0058485E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F14E251A646D0058485E /* LoginView.swift */; };
+		4C4908832520A0FE00EFBAC7 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4908822520A0FE00EFBAC7 /* RegisterView.swift */; };
+		4C4908882520A10900EFBAC7 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4908872520A10900EFBAC7 /* RegisterView.xib */; };
+		4C49088D2520A11F00EFBAC7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49088C2520A11F00EFBAC7 /* RegisterViewController.swift */; };
+		4C4908952520A6D700EFBAC7 /* RegisterModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4908942520A6D700EFBAC7 /* RegisterModuleInterface.swift */; };
+		4C687A0125224F130018C799 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A0025224F130018C799 /* RealmService.swift */; };
+		4C687A0825224F700018C799 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A0725224F700018C799 /* UserProvider.swift */; };
+		4C687A0E252258A80018C799 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A0D252258A80018C799 /* UserModel.swift */; };
+		4C687A22252398C00018C799 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A21252398C00018C799 /* UserItem.swift */; };
+		4C687A2A25239E910018C799 /* RealmObjectAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A2925239E910018C799 /* RealmObjectAdapter.swift */; };
 		4C81475D251D0238006CE13D /* LoginModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81475C251D0238006CE13D /* LoginModuleInterface.swift */; };
 		4C814762251D0387006CE13D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814761251D0387006CE13D /* LoginPresenter.swift */; };
 		4C814767251D0402006CE13D /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814766251D0402006CE13D /* LoginInteractor.swift */; };
@@ -39,6 +48,13 @@
 		4C81478C251D0BBF006CE13D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81478B251D0BBF006CE13D /* LoginService.swift */; };
 		4C814795251D0CB0006CE13D /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814794251D0CB0006CE13D /* LoginResponse.swift */; };
 		4C8147A1251D0F63006CE13D /* GetResetLinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8147A0251D0F63006CE13D /* GetResetLinkResponse.swift */; };
+		4CDB4A372520EFF800BB48C7 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A362520EFF800BB48C7 /* RegisterPresenter.swift */; };
+		4CDB4A3C2520F11F00BB48C7 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A3B2520F11F00BB48C7 /* RegisterInteractor.swift */; };
+		4CDB4A412520F51000BB48C7 /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A402520F51000BB48C7 /* RegisterWireFrame.swift */; };
+		4CDB4A482520F56600BB48C7 /* RegisterAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A472520F56600BB48C7 /* RegisterAPIDataManager.swift */; };
+		4CDB4A4D2520F74C00BB48C7 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A4C2520F74C00BB48C7 /* RegisterService.swift */; };
+		4CDB4A522520F8E400BB48C7 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A512520F8E400BB48C7 /* RegisterResponse.swift */; };
+		4CDB4A572521010900BB48C7 /* RegisterModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A562521010900BB48C7 /* RegisterModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +104,15 @@
 		4C08F141251A644D0058485E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4C08F149251A645B0058485E /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		4C08F14E251A646D0058485E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4C4908822520A0FE00EFBAC7 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		4C4908872520A10900EFBAC7 /* RegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
+		4C49088C2520A11F00EFBAC7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4C4908942520A6D700EFBAC7 /* RegisterModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModuleInterface.swift; sourceTree = "<group>"; };
+		4C687A0025224F130018C799 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		4C687A0725224F700018C799 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
+		4C687A0D252258A80018C799 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4C687A21252398C00018C799 /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
+		4C687A2925239E910018C799 /* RealmObjectAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjectAdapter.swift; sourceTree = "<group>"; };
 		4C81475C251D0238006CE13D /* LoginModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleInterface.swift; sourceTree = "<group>"; };
 		4C814761251D0387006CE13D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		4C814766251D0402006CE13D /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -97,6 +122,13 @@
 		4C81478B251D0BBF006CE13D /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4C814794251D0CB0006CE13D /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		4C8147A0251D0F63006CE13D /* GetResetLinkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetResetLinkResponse.swift; sourceTree = "<group>"; };
+		4CDB4A362520EFF800BB48C7 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		4CDB4A3B2520F11F00BB48C7 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		4CDB4A402520F51000BB48C7 /* RegisterWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireFrame.swift; sourceTree = "<group>"; };
+		4CDB4A472520F56600BB48C7 /* RegisterAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAPIDataManager.swift; sourceTree = "<group>"; };
+		4CDB4A4C2520F74C00BB48C7 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		4CDB4A512520F8E400BB48C7 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		4CDB4A562521010900BB48C7 /* RegisterModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +322,7 @@
 			children = (
 				4C06D08F251BBC7E0037BE85 /* Home Module */,
 				4C08F139251A63490058485E /* Login Module */,
+				4C4908782520A09000EFBAC7 /* Register Module */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -317,6 +350,123 @@
 				4C08F14E251A646D0058485E /* LoginView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4C4908782520A09000EFBAC7 /* Register Module */ = {
+			isa = PBXGroup;
+			children = (
+				4C4908802520A0C400EFBAC7 /* Module Builder */,
+				4C49087F2520A0C000EFBAC7 /* Interface */,
+				4C49087E2520A0BB00EFBAC7 /* View */,
+				4C49087D2520A0B700EFBAC7 /* Presenter */,
+				4C49087C2520A0B200EFBAC7 /* Interactor */,
+				4C49087B2520A0AA00EFBAC7 /* Wire Frame */,
+				4C49087A2520A0A400EFBAC7 /* Data Manager */,
+				4C4908792520A09B00EFBAC7 /* Service */,
+			);
+			path = "Register Module";
+			sourceTree = "<group>";
+		};
+		4C4908792520A09B00EFBAC7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4CDB4A4C2520F74C00BB48C7 /* RegisterService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4C49087A2520A0A400EFBAC7 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4CDB4A452520F54200BB48C7 /* Local */,
+				4CDB4A462520F54700BB48C7 /* API */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		4C49087B2520A0AA00EFBAC7 /* Wire Frame */ = {
+			isa = PBXGroup;
+			children = (
+				4CDB4A402520F51000BB48C7 /* RegisterWireFrame.swift */,
+			);
+			path = "Wire Frame";
+			sourceTree = "<group>";
+		};
+		4C49087C2520A0B200EFBAC7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4CDB4A3B2520F11F00BB48C7 /* RegisterInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4C49087D2520A0B700EFBAC7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4CDB4A362520EFF800BB48C7 /* RegisterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4C49087E2520A0BB00EFBAC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C49088C2520A11F00EFBAC7 /* RegisterViewController.swift */,
+				4C4908822520A0FE00EFBAC7 /* RegisterView.swift */,
+				4C4908872520A10900EFBAC7 /* RegisterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C49087F2520A0C000EFBAC7 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4C4908942520A6D700EFBAC7 /* RegisterModuleInterface.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		4C4908802520A0C400EFBAC7 /* Module Builder */ = {
+			isa = PBXGroup;
+			children = (
+				4CDB4A562521010900BB48C7 /* RegisterModuleBuilder.swift */,
+			);
+			path = "Module Builder";
+			sourceTree = "<group>";
+		};
+		4C687A0525224F540018C799 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				4C687A20252398B80018C799 /* Items */,
+				4C687A0C2522588A0018C799 /* Models */,
+				4C687A0625224F600018C799 /* Providers */,
+				4C687A0025224F130018C799 /* RealmService.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		4C687A0625224F600018C799 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				4C687A0725224F700018C799 /* UserProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		4C687A0C2522588A0018C799 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C687A0D252258A80018C799 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C687A20252398B80018C799 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				4C687A21252398C00018C799 /* UserItem.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 		4C814750251D0000006CE13D /* Module Builder */ = {
@@ -411,6 +561,7 @@
 		4C81478A251D0A8B006CE13D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4C687A0525224F540018C799 /* Realm */,
 				4C814793251D0CA0006CE13D /* Responses */,
 			);
 			path = Services;
@@ -421,6 +572,7 @@
 			children = (
 				4C814794251D0CB0006CE13D /* LoginResponse.swift */,
 				4C8147A0251D0F63006CE13D /* GetResetLinkResponse.swift */,
+				4CDB4A512520F8E400BB48C7 /* RegisterResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -431,6 +583,22 @@
 				4C81478B251D0BBF006CE13D /* LoginService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		4CDB4A452520F54200BB48C7 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4CDB4A462520F54700BB48C7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4CDB4A472520F56600BB48C7 /* RegisterAPIDataManager.swift */,
+				4C687A2925239E910018C799 /* RealmObjectAdapter.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		8A427690E4755E08BE80B8A0 /* Pods */ = {
@@ -544,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C08F0FE251A60610058485E /* LaunchScreen.storyboard in Resources */,
+				4C4908882520A10900EFBAC7 /* RegisterView.xib in Resources */,
 				4C06D0A5251BBD250037BE85 /* HomeView.xib in Resources */,
 				4C033A8E251F286400256C71 /* PopupView.xib in Resources */,
 				4C08F0FB251A60610058485E /* Assets.xcassets in Resources */,
@@ -572,31 +741,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CDB4A572521010900BB48C7 /* RegisterModuleBuilder.swift in Sources */,
+				4C49088D2520A11F00EFBAC7 /* RegisterViewController.swift in Sources */,
 				4C814784251D0914006CE13D /* LoginAPIDataManager.swift in Sources */,
 				4C06D0BC251BC8740037BE85 /* HomeModuleBuilder.swift in Sources */,
 				4C06D0C1251BC8A60037BE85 /* HomeInteractor.swift in Sources */,
+				4C4908952520A6D700EFBAC7 /* RegisterModuleInterface.swift in Sources */,
 				4C814762251D0387006CE13D /* LoginPresenter.swift in Sources */,
 				4C033A98251F6BCD00256C71 /* AlertContentConfig.swift in Sources */,
 				4C06D098251BBD110037BE85 /* HomeViewController.swift in Sources */,
 				4C81475D251D0238006CE13D /* LoginModuleInterface.swift in Sources */,
 				4C08F142251A644D0058485E /* LoginViewController.swift in Sources */,
 				4C08F0F2251A60600058485E /* AppDelegate.swift in Sources */,
+				4C687A2A25239E910018C799 /* RealmObjectAdapter.swift in Sources */,
+				4CDB4A482520F56600BB48C7 /* RegisterAPIDataManager.swift in Sources */,
 				4C06D0A0251BBD1C0037BE85 /* HomeView.swift in Sources */,
 				4C814767251D0402006CE13D /* LoginInteractor.swift in Sources */,
 				4C08F14F251A646D0058485E /* LoginView.swift in Sources */,
 				4C033A7B251F283200256C71 /* PopupViewController.swift in Sources */,
 				4C81476C251D052A006CE13D /* LoginWireFrame.swift in Sources */,
 				4C814795251D0CB0006CE13D /* LoginResponse.swift in Sources */,
+				4CDB4A4D2520F74C00BB48C7 /* RegisterService.swift in Sources */,
+				4CDB4A412520F51000BB48C7 /* RegisterWireFrame.swift in Sources */,
+				4C4908832520A0FE00EFBAC7 /* RegisterView.swift in Sources */,
+				4C687A0E252258A80018C799 /* UserModel.swift in Sources */,
 				4C814772251D05CB006CE13D /* LoginModuleBuilder.swift in Sources */,
 				4C81478C251D0BBF006CE13D /* LoginService.swift in Sources */,
 				4C08F0F4251A60600058485E /* SceneDelegate.swift in Sources */,
+				4CDB4A3C2520F11F00BB48C7 /* RegisterInteractor.swift in Sources */,
 				4C06D0AD251BC2150037BE85 /* HomeModuleInterface.swift in Sources */,
+				4C687A0825224F700018C799 /* UserProvider.swift in Sources */,
 				4C06D0B7251BC7A00037BE85 /* HomeWireFrame.swift in Sources */,
+				4CDB4A372520EFF800BB48C7 /* RegisterPresenter.swift in Sources */,
 				4C06D0B2251BC3FC0037BE85 /* HomePresenter.swift in Sources */,
+				4C687A22252398C00018C799 /* UserItem.swift in Sources */,
 				4C8147A1251D0F63006CE13D /* GetResetLinkResponse.swift in Sources */,
+				4C687A0125224F130018C799 /* RealmService.swift in Sources */,
 				4C06D0C8251BC9C10037BE85 /* HomeAPIDataManager.swift in Sources */,
 				4C033A89251F285400256C71 /* PopupView.swift in Sources */,
 				4C033A93251F5B1C00256C71 /* LoginLocalDataManager.swift in Sources */,
+				4CDB4A522520F8E400BB48C7 /* RegisterResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

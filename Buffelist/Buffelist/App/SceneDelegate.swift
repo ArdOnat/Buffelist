@@ -18,14 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let homeModuleBuilder = HomeModuleBuilder()
-        
-        let homeModule = homeModuleBuilder.createModule()
-        
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-        window?.rootViewController = homeModule
-        window?.makeKeyAndVisible()
+        if UserProvider.users().count == 0 {
+            
+            let homeModuleBuilder = HomeModuleBuilder()
+            
+            let homeModule = homeModuleBuilder.createModule()
+            
+            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+            window?.windowScene = windowScene
+            window?.rootViewController = homeModule
+            window?.makeKeyAndVisible()
+        }
+        else {
+          //TODO:  set trends as opening page
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

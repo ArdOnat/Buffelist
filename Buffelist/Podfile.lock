@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (5.2.2)
+  - DynamicBlurView (4.1.0)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
+  - Realm (5.4.5):
+    - Realm/Headers (= 5.4.5)
+  - Realm/Headers (5.4.5)
+  - RealmSwift (5.4.5):
+    - Realm (= 5.4.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - PopupDialog
+  - RealmSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - DynamicBlurView
+    - PopupDialog
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  Realm: 155c60aec98b1044a05d676017be6900a9ee93b6
+  RealmSwift: fa80dc70fa91f762c2bc3d09328da92214b36bbb
+
+PODFILE CHECKSUM: 62b14da02f0ff9783d17510ee6b08f1d61d058e7
+
+COCOAPODS: 1.9.3

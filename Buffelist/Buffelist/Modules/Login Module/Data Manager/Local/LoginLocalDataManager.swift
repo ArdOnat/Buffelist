@@ -7,12 +7,20 @@
 
 import Foundation
 
-class LoginLocalDataManager {
+class LoginLocalDataManager: LoginLocalDataManagerProtocol {
     
     weak var interactor: LoginPresenterToInteractorProtocol?
     
     init(interactor: LoginPresenterToInteractorProtocol) {
         self.interactor = interactor
+    }
+    
+    func createUser(result: LoginResult, password: String, token: String, completion: (()->())? = nil) {
+        UserProvider.create(with: UserItem(id: result.id, username: result.username, password: password, firstName: result.firstName, lastName: result.lastName, email: result.email, profilePhotoURL: result.profilePhotoURL, biography: result.biography, token: token))
+        
+        //UserProvider.create(with: UserItem(id: result.id, name: result.firstName, surname: "a", phone: "a", password: "a", photoURL: "a", token: "a")) {
+          //  completion!()
+        //}
     }
     
 }

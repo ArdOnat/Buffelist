@@ -125,7 +125,7 @@
                 <outlet property="buffeListImageView" destination="XKE-U8-dGX" id="lrS-zT-Gff"/>
                 <outlet property="forgotPasswordButton" destination="Bp8-fk-M9x" id="gLA-6Y-ITb"/>
                 <outlet property="loginButton" destination="bfm-T4-z2A" id="h1e-RA-Eh6"/>
-                <outlet property="loginToAccountLabel" destination="cFD-F2-6Zl" id="59A-wv-oAe"/>
+                <outlet property="loginToYourAccountLabel" destination="4aS-mY-Qeb" id="HnE-zw-Oj4"/>
                 <outlet property="passwordLabel" destination="z35-cO-CYl" id="41c-FT-5vB"/>
                 <outlet property="passwordTextField" destination="nYG-C0-44Y" id="bvW-tM-8Cu"/>
                 <outlet property="usernameEmailTextField" destination="V3s-EE-CkE" id="xoF-rm-XUM"/>

@@ -32,7 +32,11 @@ extension HomeWireframe: HomeWireframeProtocol {
     }
     
     func navigateToRegister(view: HomePresenterToViewProtocol) {
+        let registerViewController = RegisterModuleBuilder.createModule()
         
+        if let viewController = view as? HomeViewController {
+            viewController.navigationController?.pushViewController(registerViewController.viewControllers.first!, animated: true)
+        }
     }
     
 }
