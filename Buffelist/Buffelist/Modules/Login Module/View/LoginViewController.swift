@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
     
     private func configureKeyboardHandler() {
         keyboardHandler = KeyboardHandler(with: subLoginView.scrollView, responders: [subLoginView.scrollView.subviews.first!])
-        }
+    }
 }
 
 extension LoginViewController: LoginViewUserActionHandler {
