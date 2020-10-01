@@ -10,9 +10,9 @@ import UIKit
 class HomeView: UIView {
     
     @IBOutlet weak var homePageImageView: UIImageView!
-    @IBOutlet weak var platformButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var platformButton: BuffelistButton!
+    @IBOutlet weak var loginButton: BuffelistButton!
+    @IBOutlet weak var registerButton: BuffelistButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

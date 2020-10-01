@@ -6,17 +6,17 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class LoginView: UIView {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buffeListImageView: UIImageView!
     @IBOutlet weak var loginToYourAccountLabel: UILabel!
-    @IBOutlet weak var usernameOrEmailLabel: UILabel!
-    @IBOutlet weak var usernameEmailTextField: UITextField!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var forgotPasswordButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var usernameTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var forgotPasswordButton: BuffelistButton!
+    @IBOutlet weak var loginButton: BuffelistButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +29,7 @@ class LoginView: UIView {
     }
     
     private func configure() {
-        //TODO: set localization
+        //TODO: set localization ? found nil iboutlet
     }
     
 }

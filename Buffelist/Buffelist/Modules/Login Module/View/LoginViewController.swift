@@ -14,21 +14,35 @@ class LoginViewController: UIViewController {
     
     var subLoginView: LoginView!
     var popup: PopupDialog?
+    private var keyboardHandler: KeyboardHandler!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
         setupUIFunctionality()
+        configureKeyboardHandler()
+    }
+    
+    private func setupUI() {
+        subLoginView = view  as? LoginView
+        
+        subLoginView.usernameTextField.placeholder = "Email or Username"
+        subLoginView.passwordTextField.placeholder = "Password"
+        
+        subLoginView.forgotPasswordButton.style = .redBackgroundWhiteText
+        subLoginView.loginButton.style = .redBackgroundWhiteText
     }
     
     private func setupUIFunctionality() {
-        subLoginView = view  as? LoginView
-        
         subLoginView.forgotPasswordButton.addTarget(self, action: #selector(self.forgotPasswordButtonPressed), for: .touchUpInside)
         
         subLoginView.loginButton.addTarget(self, action: #selector(self.loginButtonPressed), for: .touchUpInside)
     }
-
+    
+    private func configureKeyboardHandler() {
+        keyboardHandler = KeyboardHandler(with: subLoginView.scrollView, responders: [subLoginView.scrollView.subviews.first!])
+        }
 }
 
 extension LoginViewController: LoginViewUserActionHandler {
@@ -49,7 +63,7 @@ extension LoginViewController: LoginViewUserActionHandler {
     }
     
     @objc func loginButtonPressed() {
-        presenter?.login(userInfo: subLoginView.usernameEmailTextField.text!, password: subLoginView.passwordTextField.text!)
+        presenter?.login(userInfo: subLoginView.usernameTextField.text!, password: subLoginView.passwordTextField.text!)
     }
     
 }

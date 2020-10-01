@@ -16,11 +16,24 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
         setupUIFunctionality()
     }
     
-    private func setupUIFunctionality() {
+    private func setupUI() {
+        navigationController?.navigationBar.isHidden = true
+        
         subHomeView = view  as? HomeView
+        
+        subHomeView.platformButton.style = .redBackgroundWhiteText
+        
+        subHomeView.loginButton.style = .redBackgroundWhiteText
+        
+        subHomeView.registerButton.style = .redBackgroundWhiteText
+        
+    }
+    
+    private func setupUIFunctionality() {
         
         subHomeView.platformButton.addTarget(self, action: #selector(self.platformButtonPressed), for: .touchUpInside)
         

@@ -30,6 +30,9 @@
 		4C08F142251A644D0058485E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F141251A644D0058485E /* LoginViewController.swift */; };
 		4C08F14A251A645B0058485E /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C08F149251A645B0058485E /* LoginView.xib */; };
 		4C08F14F251A646D0058485E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F14E251A646D0058485E /* LoginView.swift */; };
+		4C44AFFE25263E23005C7DCF /* BuffelistButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C44AFFD25263E23005C7DCF /* BuffelistButton.swift */; };
+		4C44B00425263EE1005C7DCF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C44B00325263EE1005C7DCF /* UIViewExtension.swift */; };
+		4C44B00C25264342005C7DCF /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C44B00B25264342005C7DCF /* KeyboardHandler.swift */; };
 		4C4908832520A0FE00EFBAC7 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4908822520A0FE00EFBAC7 /* RegisterView.swift */; };
 		4C4908882520A10900EFBAC7 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4908872520A10900EFBAC7 /* RegisterView.xib */; };
 		4C49088D2520A11F00EFBAC7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49088C2520A11F00EFBAC7 /* RegisterViewController.swift */; };
@@ -104,6 +107,9 @@
 		4C08F141251A644D0058485E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4C08F149251A645B0058485E /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		4C08F14E251A646D0058485E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4C44AFFD25263E23005C7DCF /* BuffelistButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffelistButton.swift; sourceTree = "<group>"; };
+		4C44B00325263EE1005C7DCF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		4C44B00B25264342005C7DCF /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		4C4908822520A0FE00EFBAC7 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		4C4908872520A10900EFBAC7 /* RegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
 		4C49088C2520A11F00EFBAC7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -352,6 +358,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4C44B00225263ECD005C7DCF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C44B00325263EE1005C7DCF /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4C4908782520A09000EFBAC7 /* Register Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,7 +559,10 @@
 			isa = PBXGroup;
 			children = (
 				4C033A97251F6BCD00256C71 /* AlertContentConfig.swift */,
+				4C44B00225263ECD005C7DCF /* Extensions */,
 				4C033A79251F280D00256C71 /* Popup Views */,
+				4C44AFFD25263E23005C7DCF /* BuffelistButton.swift */,
+				4C44B00B25264342005C7DCF /* KeyboardHandler.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -747,7 +764,9 @@
 				4C06D0BC251BC8740037BE85 /* HomeModuleBuilder.swift in Sources */,
 				4C06D0C1251BC8A60037BE85 /* HomeInteractor.swift in Sources */,
 				4C4908952520A6D700EFBAC7 /* RegisterModuleInterface.swift in Sources */,
+				4C44AFFE25263E23005C7DCF /* BuffelistButton.swift in Sources */,
 				4C814762251D0387006CE13D /* LoginPresenter.swift in Sources */,
+				4C44B00C25264342005C7DCF /* KeyboardHandler.swift in Sources */,
 				4C033A98251F6BCD00256C71 /* AlertContentConfig.swift in Sources */,
 				4C06D098251BBD110037BE85 /* HomeViewController.swift in Sources */,
 				4C81475D251D0238006CE13D /* LoginModuleInterface.swift in Sources */,
@@ -758,6 +777,7 @@
 				4C06D0A0251BBD1C0037BE85 /* HomeView.swift in Sources */,
 				4C814767251D0402006CE13D /* LoginInteractor.swift in Sources */,
 				4C08F14F251A646D0058485E /* LoginView.swift in Sources */,
+				4C44B00425263EE1005C7DCF /* UIViewExtension.swift in Sources */,
 				4C033A7B251F283200256C71 /* PopupViewController.swift in Sources */,
 				4C81476C251D052A006CE13D /* LoginWireFrame.swift in Sources */,
 				4C814795251D0CB0006CE13D /* LoginResponse.swift in Sources */,

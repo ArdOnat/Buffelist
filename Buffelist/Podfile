@@ -8,6 +8,7 @@ target 'Buffelist' do
   pod 'Alamofire' 
   pod 'PopupDialog'
   pod 'RealmSwift'
+  pod 'SkyFloatingLabelTextField'
 
   target 'BuffelistTests' do
     inherit! :search_paths
