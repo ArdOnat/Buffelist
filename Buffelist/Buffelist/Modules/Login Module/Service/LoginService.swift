@@ -8,11 +8,6 @@
 import Foundation
 import Alamofire
 
-enum Services {
-    case login
-    case sendLoginRequest
-}
-
 class LoginService: LoginServiceProtocol {
     
     static let endPoint = "https://api.buffelist.com"
@@ -29,7 +24,6 @@ class LoginService: LoginServiceProtocol {
         }
         
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseDecodable(of: LoginResult.self) { response in
-            print(response)
             completion(response.result, response.response?.headers.dictionary["Authorization"] ?? "" )
         }
     }
@@ -45,7 +39,7 @@ class LoginService: LoginServiceProtocol {
             return
         }
         
-        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).response() { response in
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().response() { response in
             completion(response.result)
         }
     }

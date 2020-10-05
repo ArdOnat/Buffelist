@@ -33,8 +33,6 @@ class RegisterService: RegisterServiceProtocol {
                 multiFormData.append(Data(value.utf8), withName: key)
             }
         }, to: url).validate().response { response in
-            print(response.response)
-            print(response.result)
             completion(response.result)
         }
     }

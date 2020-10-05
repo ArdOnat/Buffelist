@@ -20,29 +20,27 @@ extension LoginWireframe: LoginWireframeProtocol {
     // MARK: - Navigation
     
     func navigateToPeople(view: LoginPresenterToViewProtocol) {
-       
-        /*
         let tabBarController = UITabBarController()
-        let peopleModuleBuilder = PeopleModuleBuilder()
-        let myListModuleBuilder = MyListModuleBuilder()
-        let profileModuleBuilder = ProfileModuleBuilder()
+        let topicListModuleBuilder = TopicListModuleBuilder()
         
-        let vc1 = peopleModuleBuilder.createModule()
-        let vc2 = myListModuleBuilder.createModule()
-        let vc3 = profileModuleBuilder.createModule()
+        let vc1 = topicListModuleBuilder.createModule(username: "trends")
+        let vc2 = topicListModuleBuilder.createModule(username: UserProvider.user().username)
+        let vc3 = topicListModuleBuilder.createModule(username: "trends")
+        
+        tabBarController.tabBar.tintColor = .black
 
-        vc1.tabBarItem = UITabBarItem(title: ConstantStrings.firstTabTitle, image: UIImage(named: ConstantStrings.taxi), tag: 1)
-        vc2.tabBarItem = UITabBarItem(title: ConstantStrings.map, image: UIImage(named: ConstantStrings.map), tag: 2)
+        vc1.tabBarItem = UITabBarItem(title: "Trend Contents", image: nil, tag: 1)
+        vc2.tabBarItem = UITabBarItem(title: "My List", image: nil, tag: 2)
+        vc3.tabBarItem = UITabBarItem(title: "People", image: nil, tag: 3)
 
-        tabBarController.viewControllers = [vc1, vc2]
+        tabBarController.viewControllers = [vc1, vc2, vc3]
         tabBarController.setViewControllers(tabBarController.viewControllers, animated: true)
          
-         viewController.navigationController?
-             .pushViewController(tabBarController, animated: true)
-         
-         */
-        
-        
+        if let viewController = view as? LoginViewController {
+            viewController.navigationController?
+                .pushViewController(tabBarController, animated: true)
+        }
+    
     }
     
 }

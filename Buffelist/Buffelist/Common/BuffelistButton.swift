@@ -8,11 +8,12 @@
 import UIKit
 
 enum BuffelistButtonStyle {
-    case turquoiseBackgroundWhiteText
     case redTitleBorderless
     case grayTextGrayBorder
     case redBackgroundWhiteText
     case clearWhiteTextYellowBorder
+    case greenBackgroundWhiteText
+    case blueBackgroundWhiteText
 }
 
 class BuffelistButton: UIButton {
@@ -28,15 +29,8 @@ class BuffelistButton: UIButton {
         titleLabel?.font = UIFont(name: "Avenir-Black", size: 16.0)
     }
     
-    private func commonInit(style: BuffelistButtonStyle? = .turquoiseBackgroundWhiteText) {
+    private func commonInit(style: BuffelistButtonStyle? = .redBackgroundWhiteText) {
         switch style {
-        case .turquoiseBackgroundWhiteText:
-            cornerRadius = 19
-            
-            titleLabel?.font = UIFont(name: "Muli-Bold", size: 18.4)
-            setTitleColor(UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1.0), for: .normal)
-            
-            backgroundColor = UIColor(red: 79/255, green: 170/255, blue: 160/255, alpha: 1.0)
         case .redTitleBorderless:
             borderWidth = 0
             
@@ -45,9 +39,6 @@ class BuffelistButton: UIButton {
             
             backgroundColor = .clear
         case .grayTextGrayBorder:
-            cornerRadius = 19
-            
-            
             borderWidth = 1.2
             borderColor = UIColor(red: 134/255, green: 134/255, blue: 134/255, alpha: 1.0)
             
@@ -60,6 +51,22 @@ class BuffelistButton: UIButton {
             setTitleColor(UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1.0), for: .normal)
             
             backgroundColor = UIColor(red: 197/255, green: 23/255, blue: 34/255, alpha: 1.0)
+        case .greenBackgroundWhiteText:
+            borderWidth = 0
+            
+            cornerRadius = 5
+            
+            setTitleColor(UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1.0), for: .normal)
+            
+            backgroundColor = UIColor(red: 23/255, green: 197/255, blue: 34/255, alpha: 1.0)
+        case .blueBackgroundWhiteText:
+            borderWidth = 0
+            
+            cornerRadius = 5
+            
+            setTitleColor(UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1.0), for: .normal)
+            
+            backgroundColor = UIColor(red: 23/255, green: 34/255, blue: 197/255, alpha: 1.0)
         case .clearWhiteTextYellowBorder:
             break
         case .none:
