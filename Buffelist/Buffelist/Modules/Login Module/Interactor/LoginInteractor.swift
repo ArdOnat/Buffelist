@@ -29,13 +29,17 @@ extension LoginInteractor: LoginPresenterToInteractorProtocol {
     }
     
     func onLoginSuccess(result: LoginResult, token: String, password: String) {
-        self.LocalDataManager?.createUser(result: result, password: password, token: token) {
-            self.presenter?.onLoginSuccess()
-        }
+        self.presenter?.onLoginSuccess(result: result, token: token, password: password)
     }
     
     func onRequestFailure(error: Error) {
         self.presenter?.onRequestFailure(error: error)
+    }
+    
+    func createUser(result: LoginResult, token: String, password: String) {
+        self.LocalDataManager?.createUser(result: result, password: password, token: token) {
+            self.presenter?.onUserCreated()
+        }
     }
     
 }

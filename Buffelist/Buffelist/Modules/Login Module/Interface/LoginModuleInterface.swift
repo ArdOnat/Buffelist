@@ -38,8 +38,10 @@ protocol LoginViewToPresenterProtocol: class {
 
 protocol LoginInteractorToPresenterProtocol: class {
     var interactor: LoginPresenterToInteractorProtocol? { get set }
-    func onLoginSuccess()
+    func onLoginSuccess(result: LoginResult, token: String, password: String)
     func onRequestFailure(error: Error)
+    
+    func onUserCreated()
 }
 
 //MARK: Interactor -
@@ -49,6 +51,9 @@ protocol LoginPresenterToInteractorProtocol: class {
     func sendGetResetLinkRequest(userInfo: String)
     func onLoginSuccess(result: LoginResult, token: String, password: String)
     func onRequestFailure(error: Error)
+    
+    func createUser(result: LoginResult, token: String, password: String)
+    
 }
 
 //MARK: APIDataManager -

@@ -33,14 +33,19 @@ extension LoginPresenter: LoginViewToPresenterProtocol {
 
 extension LoginPresenter: LoginInteractorToPresenterProtocol {
     
-    func onLoginSuccess() {
-        if let view = view {
-            router?.navigateToPeople(view: view)
-        }
+    func onLoginSuccess(result: LoginResult, token: String, password: String) {
+        
+        interactor?.createUser(result: result, token: token, password:password)
     }
     
     func onRequestFailure(error: Error) {
         //view?.onLoginFailure()
+    }
+    
+    func onUserCreated() {
+        if let view = view {
+            router?.navigateToPeople(view: view)
+        }
     }
     
 }
