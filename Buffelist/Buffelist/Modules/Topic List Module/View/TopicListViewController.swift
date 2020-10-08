@@ -20,6 +20,7 @@ class TopicListViewController: UIViewController {
     
     var contentList = [ContentModel]()
     var username:String = ""
+    var isFollowing = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +74,8 @@ class TopicListViewController: UIViewController {
         subTopicListView.segmentedControl?.addTarget(self, action: #selector(self.segmentedControlChanged(_:)), for: .valueChanged)
         
         subTopicListView.addItemToListButton.addTarget(self, action: #selector(self.addItemToListButtonPressed), for: .touchUpInside)
+        
+        subTopicListView.followButton.addTarget(self, action: #selector(self.followButtonPressed), for: .touchUpInside)
     }
     
     private func setupDelegation() {
@@ -81,6 +84,17 @@ class TopicListViewController: UIViewController {
         
         subTopicListView.tableView.delegate = self
         subTopicListView.tableView.dataSource = self
+    }
+    
+    private func updateFollowButton() {
+        if isFollowing {
+            subTopicListView.followButton.style = .redBackgroundWhiteTextNoRadius
+            subTopicListView.followButton.updateTitleAndImage(title: "Unfollow")
+        }
+        else {
+            subTopicListView.followButton.style = .greenBackgroundWhiteText
+            subTopicListView.followButton.updateTitleAndImage(title: "Follow")
+        }
     }
     
 }
@@ -101,7 +115,6 @@ extension TopicListViewController: TopicListViewUserActionHandler {
     }
     
     @objc func addItemToListButtonPressed() {
-        
         let popupVC = PopupViewController()
         popupVC.alertContent = AlertContentConfig( alertInformationText: "Enter Content URL", alertUpButtonTitle: "Check Content Availability", alertDownButtonTitle: "", popupType: PopupType.textFieldOneButton)
         
@@ -118,7 +131,12 @@ extension TopicListViewController: TopicListViewUserActionHandler {
     }
     
     @objc func followButtonPressed() {
-        
+        if isFollowing {
+            unfollowUser(username: username)
+        }
+        else {
+            followUser(username: username)
+        }
     }
     
 }
@@ -128,18 +146,23 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
     // MARK: - Get Content List Service
     
     func getContentList(username: String) {
+        self.activityIndicator.startAnimating()
         presenter?.getContentList(username: username)
     }
     
     func onGetContentListSuccess(contentList: [ContentModel]) {
         self.contentList = contentList
         DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
             self.subTopicListView.collectionView.reloadData()
             self.subTopicListView.tableView.reloadData()
         }
     }
     
     func onGetContentListFailure(error: String) {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+        }
         print(error)
     }
     
@@ -155,7 +178,6 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
         popupVC.didTapUpButton = { text in
             self.createContent(info: result)
             self.popup?.dismiss()
-            self.activityIndicator.startAnimating()
         }
         
         popupVC.didTapDownButton = {
@@ -175,6 +197,7 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
     // MARK: - Create Content Service
     
     func createContent(info: GetInfoFromUrlResult) {
+        self.activityIndicator.startAnimating()
         presenter?.createContent(info: info)
     }
     
@@ -196,17 +219,49 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
     func onGetFollowersOfUserSuccess(result: [SearchUserResult], isFollowing: Bool) {
         activityIndicator.stopAnimating()
         
-        if isFollowing {
-            subTopicListView.followButton.style = .redBackgroundWhiteTextNoRadius
-            subTopicListView.followButton.updateTitleAndImage(title: "Unfollow")
-        }
-        else {
-            subTopicListView.followButton.style = .greenBackgroundWhiteText
-            subTopicListView.followButton.updateTitleAndImage(title: "Follow")
-        }
+        self.isFollowing = isFollowing
+        updateFollowButton()
     }
     
     func onGetFollowersOfUserFailure(error: String) {
+        activityIndicator.stopAnimating()
+        print(error)
+    }
+    
+    // MARK: - Follow User Service
+    
+    func followUser(username: String) {
+        presenter?.followUser(username: username)
+    }
+    
+    func onFollowUserSuccess() {
+        activityIndicator.stopAnimating()
+        
+        isFollowing = true
+        
+        updateFollowButton()
+    }
+    
+    func onFollowUserFailure(error: String) {
+        activityIndicator.stopAnimating()
+        print(error)
+    }
+    
+    // MARK: - Unfollow User Service
+    
+    func unfollowUser(username: String) {
+        presenter?.unfollowUser(username: username)
+    }
+    
+    func onUnfollowUserSuccess() {
+        activityIndicator.stopAnimating()
+        
+        isFollowing = false
+        
+        updateFollowButton()
+    }
+    
+    func onUnfollowUserFailure(error: String) {
         activityIndicator.stopAnimating()
         print(error)
     }

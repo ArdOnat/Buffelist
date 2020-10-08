@@ -40,10 +40,20 @@ protocol TopicListPresenterToViewProtocol: class {
     func getFollowersOfUser(username:String)
     func onGetFollowersOfUserSuccess(result: [SearchUserResult], isFollowing: Bool)
     func onGetFollowersOfUserFailure(error: String)
+    
+    func followUser(username: String)
+    func onFollowUserSuccess()
+    func onFollowUserFailure(error: String)
+    
+    func unfollowUser(username: String)
+    func onUnfollowUserSuccess()
+    func onUnfollowUserFailure(error: String)
 }
 
 protocol TopicListViewUserActionHandler {
     func segmentedControlChanged(_ segmentedControl: UISegmentedControl)
+    func addItemToListButtonPressed()
+    func followButtonPressed()
 }
 
 //MARK: Presenter -
@@ -57,6 +67,10 @@ protocol TopicListViewToPresenterProtocol: class {
     func createContent(info: GetInfoFromUrlResult)
     
     func getFollowersOfUser(username: String)
+    
+    func followUser(username: String)
+    
+    func unfollowUser(username: String)
 }
 
 protocol TopicListInteractorToPresenterProtocol: class {
@@ -73,6 +87,12 @@ protocol TopicListInteractorToPresenterProtocol: class {
     
     func onGetFollowersOfUserSuccess(result: [SearchUserResult])
     func onGetFollowersOfUserFailure(error: Error)
+    
+    func onFollowUserSuccess()
+    func onFollowUserFailure(error: Error)
+    
+    func onUnfollowUserSuccess()
+    func onUnfollowUserFailure(error: Error)
 }
 
 //MARK: Interactor -
@@ -94,6 +114,14 @@ protocol TopicListPresenterToInteractorProtocol: class {
     func sendGetFollowersOfUserRequest(username: String)
     func onGetFollowersOfUserSuccess(result: [SearchUserResult])
     func onGetFollowersOfUserFailure(error: Error)
+    
+    func sendFollowUserRequest(username: String)
+    func onFollowUserSuccess()
+    func onFollowUserFailure(error: Error)
+    
+    func sendUnfollowUserRequest(username: String)
+    func onUnfollowUserSuccess()
+    func onUnfollowUserFailure(error: Error)
 }
 
 //MARK: APIDataManager -
@@ -107,6 +135,10 @@ protocol TopicListAPIDataManagerProtocol: class {
     func createContentRequest(info: GetInfoFromUrlResult)
     
     func getFollowersOfUserRequest(username: String)
+    
+    func followUserRequest(username: String)
+    
+    func unfollowUserRequest(username: String)
 }
 
 //MARK: Service -
@@ -115,4 +147,6 @@ protocol TopicListServiceProtocol {
     static func getInfoFromUrl(url: String, completion: @escaping (Result<GetInfoFromUrlResult, AFError>) -> ())
     static func createContent(info: GetInfoFromUrlResult, completion: @escaping (Result<CreateContentResult, AFError>) -> ())
     static func getFollowersOfUser(username: String, completion: @escaping (Result<[SearchUserResult], AFError>) -> ())
+    static func followUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())
+    static func unfollowUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())
 }

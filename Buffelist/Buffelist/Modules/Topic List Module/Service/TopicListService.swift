@@ -108,4 +108,44 @@ class TopicListService: TopicListServiceProtocol {
         
     }
     
+    static func followUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ()) {
+        
+        let completeEndpoint = endPoint + "/api/users/follow/\(username)"
+        
+        let headers: HTTPHeaders = [
+            "Authorization": UserProvider.user().token,
+        ]
+        
+        guard let url = URL(string: completeEndpoint) else {
+            completion(.failure(.invalidURL(url: endPoint)))
+            return
+        }
+        
+        AF.request(url, method: .post, headers: headers).validate().response { response in
+            print(response.result)
+            completion(response.result)
+        }
+        
+    }
+    
+    static func unfollowUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ()) {
+        
+        let completeEndpoint = endPoint + "/api/users/unfollow/\(username)"
+        
+        let headers: HTTPHeaders = [
+            "Authorization": UserProvider.user().token,
+        ]
+        
+        guard let url = URL(string: completeEndpoint) else {
+            completion(.failure(.invalidURL(url: endPoint)))
+            return
+        }
+        
+        AF.request(url, method: .post, headers: headers).validate().response { response in
+            print(response.result)
+            completion(response.result)
+        }
+        
+    }
+    
 }
