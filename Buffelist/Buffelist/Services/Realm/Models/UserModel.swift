@@ -20,6 +20,7 @@ class UserModel: Object {
     @objc dynamic var profilePhotoURL = ""
     @objc dynamic var biography = ""
     @objc dynamic var token = ""
+    @objc dynamic var contentListId = 0
     
     func update(with user: NewUserInfo) {
         try? RealmService.write {
@@ -32,6 +33,7 @@ class UserModel: Object {
             profilePhotoURL = user.profilePhotoURL
             biography = user.biography
             token = user.token
+            contentListId = user.contentListId
         }
     }
 
@@ -71,4 +73,5 @@ struct NewUserInfo {
     var profilePhotoURL: String
     var biography: String
     var token: String
+    var contentListId: Int
 }

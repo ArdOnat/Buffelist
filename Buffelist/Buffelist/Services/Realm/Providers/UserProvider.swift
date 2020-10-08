@@ -60,3 +60,10 @@ private extension UserProvider {
     }
     
 }
+
+extension UserProvider {
+    
+    static func updateUserContentListId(contentListId: Int) {
+        user().contentListId = contentListId
+    }
+}

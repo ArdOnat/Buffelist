@@ -29,7 +29,7 @@ class TopicListService: TopicListServiceProtocol {
         }
     }
     
-    static func createContent(info: GetInfoFromUrlResult, completion: @escaping (Result<CreateContentResult, AFError>) -> ()) {
+    static func createContent(info: GetInfoFromUrlResult, contentListId: Int, completion: @escaping (Result<CreateContentResult, AFError>) -> ()) {
         
         let completeEndpoint = endPoint + "/api/content"
         
@@ -37,7 +37,7 @@ class TopicListService: TopicListServiceProtocol {
             "Authorization": UserProvider.user().token,
         ]
      
-        let parameters = ["title": info.title, "url": info.url]
+        let parameters = ["imageUrl": info.imageUrl, "title": info.title, "url": info.url, "contentListId": contentListId] as [String : Any]
         
         guard let url = URL(string: completeEndpoint) else {
             completion(.failure(.invalidURL(url: endPoint)))
@@ -49,9 +49,7 @@ class TopicListService: TopicListServiceProtocol {
         
         let jsonEncoder = JSONEncoder()
         jsonEncoder.outputFormatting = .withoutEscapingSlashes
-
-        
-        request.httpBody = try? jsonEncoder.encode(parameters)
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
         
         print(String(decoding: request.httpBody!, as:UTF8.self))
         request.httpMethod = HTTPMethod.post.rawValue

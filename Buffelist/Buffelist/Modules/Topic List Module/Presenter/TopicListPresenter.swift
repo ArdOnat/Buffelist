@@ -31,8 +31,8 @@ extension TopicListPresenter: TopicListViewToPresenterProtocol {
         interactor?.sendGetInfoFromUrlRequest(url: url)
     }
     
-    func createContent(info: GetInfoFromUrlResult) {
-        interactor?.sendCreateContentRequest(info: info)
+    func createContent(info: GetInfoFromUrlResult, contentListId: Int) {
+        interactor?.sendCreateContentRequest(info: info, contentListId: contentListId)
     }
     
     func getFollowersOfUser(username: String) {
@@ -53,8 +53,8 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     
     // MARK: - Get Content List Service
     
-    func onGetContentListSuccess(contentList: [ContentModel]) {
-        view?.onGetContentListSuccess(contentList: contentList)
+    func onGetContentListSuccess(contentList: [ContentModel], contentListId: Int) {
+        view?.onGetContentListSuccess(contentList: contentList, contentListId: contentListId)
     }
     
     func onGetContentListFailure(error: Error) {

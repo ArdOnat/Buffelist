@@ -28,7 +28,8 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
     
     func onGetContentListSuccess(result: GetContentListResult) {
         let contentList = result.contents.map { ContentModel(fromContentInformation: $0)}.reversed() as [ContentModel]
-        presenter?.onGetContentListSuccess(contentList: contentList)
+        let contentListId = result.id
+        presenter?.onGetContentListSuccess(contentList: contentList, contentListId: contentListId)
     }
     
     func onGetContentListFailure(error: Error) {
@@ -51,8 +52,8 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
     
     // MARK: - Create Content Service
     
-    func sendCreateContentRequest(info: GetInfoFromUrlResult) {
-        APIDataManager?.createContentRequest(info: info)
+    func sendCreateContentRequest(info: GetInfoFromUrlResult, contentListId: Int) {
+        APIDataManager?.createContentRequest(info: info, contentListId: contentListId)
     }
     
     func onCreateContentSuccess(result: CreateContentResult) {

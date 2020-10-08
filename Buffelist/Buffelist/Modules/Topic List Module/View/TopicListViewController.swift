@@ -19,8 +19,15 @@ class TopicListViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
     var contentList = [ContentModel]()
+    var contentListId = -1
     var username:String = ""
     var isFollowing = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getContentList(username: username)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,8 +157,9 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
         presenter?.getContentList(username: username)
     }
     
-    func onGetContentListSuccess(contentList: [ContentModel]) {
+    func onGetContentListSuccess(contentList: [ContentModel], contentListId: Int) {
         self.contentList = contentList
+        self.contentListId = contentListId
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
             self.subTopicListView.collectionView.reloadData()
@@ -198,15 +206,20 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
     
     func createContent(info: GetInfoFromUrlResult) {
         self.activityIndicator.startAnimating()
-        presenter?.createContent(info: info)
+        presenter?.createContent(info: info, contentListId: contentListId)
     }
     
     func onCreateContentSuccess(result: CreateContentResult) {
-        activityIndicator.stopAnimating()
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.getContentList(username: self.username)
+        }
     }
     
     func onCreateContentFailure(error: String) {
-        activityIndicator.stopAnimating()
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+        }
         print(error)
     }
     

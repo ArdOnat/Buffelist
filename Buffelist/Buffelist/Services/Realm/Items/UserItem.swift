@@ -17,4 +17,5 @@ public struct UserItem {
     var profilePhotoURL: String
     var biography: String
     var token: String
+    var contentListId: Int
 }

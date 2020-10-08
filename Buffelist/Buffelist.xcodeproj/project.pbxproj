@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45C5D72B36D834F7402E01B7 /* Pods_BuffelistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4056A4B9AEEECE0B53783083 /* Pods_BuffelistTests.framework */; };
 		4C033A7B251F283200256C71 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C033A7A251F283200256C71 /* PopupViewController.swift */; };
 		4C033A89251F285400256C71 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C033A88251F285400256C71 /* PopupView.swift */; };
 		4C033A8E251F286400256C71 /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C033A8D251F286400256C71 /* PopupView.xib */; };
@@ -76,6 +77,8 @@
 		4CDB4A4D2520F74C00BB48C7 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A4C2520F74C00BB48C7 /* RegisterService.swift */; };
 		4CDB4A572521010900BB48C7 /* RegisterModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A562521010900BB48C7 /* RegisterModuleBuilder.swift */; };
 		4CE508D6252F03BF00F2A7C5 /* SearchUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE508D5252F03BF00F2A7C5 /* SearchUserResponse.swift */; };
+		B610C78980F12B2985AFB6A1 /* Pods_Buffelist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83D2B27A27954CFF3908125 /* Pods_Buffelist.framework */; };
+		E357AE085B598193BB083B8C /* Pods_Buffelist_BuffelistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910FD29A215DAA9C8BC1901B /* Pods_Buffelist_BuffelistUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20C09D58CAE690595638730A /* Pods-Buffelist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buffelist.release.xcconfig"; path = "Target Support Files/Pods-Buffelist/Pods-Buffelist.release.xcconfig"; sourceTree = "<group>"; };
+		4056A4B9AEEECE0B53783083 /* Pods_BuffelistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuffelistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C033A7A251F283200256C71 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		4C033A88251F285400256C71 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		4C033A8D251F286400256C71 /* PopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
@@ -171,6 +176,13 @@
 		4CDB4A4C2520F74C00BB48C7 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		4CDB4A562521010900BB48C7 /* RegisterModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModuleBuilder.swift; sourceTree = "<group>"; };
 		4CE508D5252F03BF00F2A7C5 /* SearchUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserResponse.swift; sourceTree = "<group>"; };
+		4FE3989A635DBC1A2B10E58B /* Pods-Buffelist-BuffelistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buffelist-BuffelistUITests.debug.xcconfig"; path = "Target Support Files/Pods-Buffelist-BuffelistUITests/Pods-Buffelist-BuffelistUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		910FD29A215DAA9C8BC1901B /* Pods_Buffelist_BuffelistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buffelist_BuffelistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		984AB530B0599C2E4D83230C /* Pods-Buffelist-BuffelistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buffelist-BuffelistUITests.release.xcconfig"; path = "Target Support Files/Pods-Buffelist-BuffelistUITests/Pods-Buffelist-BuffelistUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9B4CC1706C78F184B31EF7B9 /* Pods-Buffelist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buffelist.debug.xcconfig"; path = "Target Support Files/Pods-Buffelist/Pods-Buffelist.debug.xcconfig"; sourceTree = "<group>"; };
+		A94F144AA50207E4BA9C1514 /* Pods-BuffelistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuffelistTests.release.xcconfig"; path = "Target Support Files/Pods-BuffelistTests/Pods-BuffelistTests.release.xcconfig"; sourceTree = "<group>"; };
+		BFF662F6E7CD280196CBEF92 /* Pods-BuffelistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuffelistTests.debug.xcconfig"; path = "Target Support Files/Pods-BuffelistTests/Pods-BuffelistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C83D2B27A27954CFF3908125 /* Pods_Buffelist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buffelist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B610C78980F12B2985AFB6A1 /* Pods_Buffelist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C5D72B36D834F7402E01B7 /* Pods_BuffelistTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E357AE085B598193BB083B8C /* Pods_Buffelist_BuffelistUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +312,7 @@
 				4C08F112251A60610058485E /* BuffelistUITests */,
 				4C08F0EF251A60600058485E /* Products */,
 				8A427690E4755E08BE80B8A0 /* Pods */,
+				F2062DF3069210500DBB495B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -779,8 +795,24 @@
 		8A427690E4755E08BE80B8A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				9B4CC1706C78F184B31EF7B9 /* Pods-Buffelist.debug.xcconfig */,
+				20C09D58CAE690595638730A /* Pods-Buffelist.release.xcconfig */,
+				4FE3989A635DBC1A2B10E58B /* Pods-Buffelist-BuffelistUITests.debug.xcconfig */,
+				984AB530B0599C2E4D83230C /* Pods-Buffelist-BuffelistUITests.release.xcconfig */,
+				BFF662F6E7CD280196CBEF92 /* Pods-BuffelistTests.debug.xcconfig */,
+				A94F144AA50207E4BA9C1514 /* Pods-BuffelistTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F2062DF3069210500DBB495B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C83D2B27A27954CFF3908125 /* Pods_Buffelist.framework */,
+				910FD29A215DAA9C8BC1901B /* Pods_Buffelist_BuffelistUITests.framework */,
+				4056A4B9AEEECE0B53783083 /* Pods_BuffelistTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -790,9 +822,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C08F118251A60610058485E /* Build configuration list for PBXNativeTarget "Buffelist" */;
 			buildPhases = (
+				5DED7F87ABCC8FDA23F06CDE /* [CP] Check Pods Manifest.lock */,
 				4C08F0EA251A60600058485E /* Sources */,
 				4C08F0EB251A60600058485E /* Frameworks */,
 				4C08F0EC251A60600058485E /* Resources */,
+				F8D8A762ABCC4257B5E9F1F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -807,6 +841,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C08F11B251A60610058485E /* Build configuration list for PBXNativeTarget "BuffelistTests" */;
 			buildPhases = (
+				6A1151C771AB6E37000DBC3A /* [CP] Check Pods Manifest.lock */,
 				4C08F100251A60610058485E /* Sources */,
 				4C08F101251A60610058485E /* Frameworks */,
 				4C08F102251A60610058485E /* Resources */,
@@ -825,9 +860,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C08F11E251A60610058485E /* Build configuration list for PBXNativeTarget "BuffelistUITests" */;
 			buildPhases = (
+				5A9B85C0260B92F4EBE8D452 /* [CP] Check Pods Manifest.lock */,
 				4C08F10B251A60610058485E /* Sources */,
 				4C08F10C251A60610058485E /* Frameworks */,
 				4C08F10D251A60610058485E /* Resources */,
+				5306609A2159ADF5D313DC0D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -913,6 +950,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5306609A2159ADF5D313DC0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Buffelist-BuffelistUITests/Pods-Buffelist-BuffelistUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Buffelist-BuffelistUITests/Pods-Buffelist-BuffelistUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Buffelist-BuffelistUITests/Pods-Buffelist-BuffelistUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A9B85C0260B92F4EBE8D452 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Buffelist-BuffelistUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DED7F87ABCC8FDA23F06CDE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Buffelist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A1151C771AB6E37000DBC3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BuffelistTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8D8A762ABCC4257B5E9F1F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Buffelist/Pods-Buffelist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Buffelist/Pods-Buffelist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Buffelist/Pods-Buffelist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C08F0EA251A60600058485E /* Sources */ = {
@@ -1141,6 +1281,7 @@
 		};
 		4C08F119251A60610058485E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B4CC1706C78F184B31EF7B9 /* Pods-Buffelist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1159,6 +1300,7 @@
 		};
 		4C08F11A251A60610058485E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20C09D58CAE690595638730A /* Pods-Buffelist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1177,6 +1319,7 @@
 		};
 		4C08F11C251A60610058485E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFF662F6E7CD280196CBEF92 /* Pods-BuffelistTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1198,6 +1341,7 @@
 		};
 		4C08F11D251A60610058485E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A94F144AA50207E4BA9C1514 /* Pods-BuffelistTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1219,6 +1363,7 @@
 		};
 		4C08F11F251A60610058485E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FE3989A635DBC1A2B10E58B /* Pods-Buffelist-BuffelistUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1238,6 +1383,7 @@
 		};
 		4C08F120251A60610058485E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 984AB530B0599C2E4D83230C /* Pods-Buffelist-BuffelistUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
