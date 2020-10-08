@@ -49,9 +49,12 @@ class PopupViewController: UIViewController {
         
         switch popupType {
         case .oneButton:
+            subPopupView.popupInformationLabel.isHidden = false
+            subPopupView.popupInformationTextField.isHidden = false
             subPopupView.upButton.isHidden = true
             subPopupView.downButton.isHidden = false
-        case .twoButton:
+        case .twoButton:            subPopupView.popupInformationLabel.isHidden = false
+            subPopupView.popupInformationTextField.isHidden = false
             subPopupView.upButton.isHidden = false
             subPopupView.downButton.isHidden = false
         case .textFieldOneButton:

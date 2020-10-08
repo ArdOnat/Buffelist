@@ -5,8 +5,6 @@
 //  Created by Arda Onat on 4.10.2020.
 //
 
-import Foundation
-
 struct GetContentListResult: Decodable {
     
     var contents: [ContentInfo]

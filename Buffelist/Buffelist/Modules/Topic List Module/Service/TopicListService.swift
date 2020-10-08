@@ -29,4 +29,83 @@ class TopicListService: TopicListServiceProtocol {
         }
     }
     
+    static func createContent(info: GetInfoFromUrlResult, completion: @escaping (Result<CreateContentResult, AFError>) -> ()) {
+        
+        let completeEndpoint = endPoint + "/api/content"
+        
+        let headers: HTTPHeaders = [
+            "Authorization": UserProvider.user().token,
+        ]
+     
+        let parameters = ["title": info.title, "url": info.url]
+        
+        guard let url = URL(string: completeEndpoint) else {
+            completion(.failure(.invalidURL(url: endPoint)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
+        
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.outputFormatting = .withoutEscapingSlashes
+
+        
+        request.httpBody = try? jsonEncoder.encode(parameters)
+        
+        print(String(decoding: request.httpBody!, as:UTF8.self))
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue(UserProvider.user().token, forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        AF.request(request).validate().responseDecodable(of: CreateContentResult.self) { response in
+            print(request)
+            print(response.result)
+            completion(response.result)
+        }
+    }
+    
+    static func getInfoFromUrl(url: String, completion: @escaping (Result<GetInfoFromUrlResult, AFError>) -> ()) {
+        
+        let completeEndpoint = endPoint + "/api/content/render"
+     
+        let headers: HTTPHeaders = [
+            "Authorization": UserProvider.user().token,
+        ]
+        
+        let parameters = ["url": url]
+        
+        guard let url = URL(string: completeEndpoint) else {
+            completion(.failure(.invalidURL(url: endPoint)))
+            return
+        }
+        
+        AF.request(url, method: .get, parameters: parameters, headers: headers).validate().responseDecodable(of: GetInfoFromUrlResult.self) { response in
+            print(response.result)
+            completion(response.result)
+        }
+        
+    }
+    
+    static func getFollowersOfUser(username: String, completion: @escaping (Result<[SearchUserResult], AFError>) -> ()) {
+    
+        let completeEndpoint = endPoint + "/api/users/\(username)/followers"
+        
+        let headers: HTTPHeaders = [
+            "Authorization": UserProvider.user().token,
+        ]
+        
+        guard let url = URL(string: completeEndpoint) else {
+            completion(.failure(.invalidURL(url: endPoint)))
+            return
+        }
+        
+        AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: [SearchUserResult].self) { response in
+            print(response.result)
+            completion(response.result)
+        }
+        
+    }
+    
 }

@@ -15,8 +15,10 @@ class TopicListViewController: UIViewController {
     
     var subTopicListView: TopicListView!
     var popup: PopupDialog?
-    var contentList = [ContentModel]()
+    var vSpinner : UIView?
+    let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
+    var contentList = [ContentModel]()
     var username:String = ""
     
     override func viewDidLoad() {
@@ -31,7 +33,6 @@ class TopicListViewController: UIViewController {
     private func setupUI() {
         subTopicListView = view  as? TopicListView
         
-        subTopicListView.followButton.style = .greenBackgroundWhiteText
         subTopicListView.addItemToListButton.style = .grayTextGrayBorder
         
         subTopicListView.collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "ContentCollectionViewCell")
@@ -40,10 +41,11 @@ class TopicListViewController: UIViewController {
         subTopicListView.tableView.register(UINib(nibName: "ContentTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ContentTableViewCell")
         subTopicListView.tableView.allowsSelection = false
         
+        subTopicListView.segmentedControl.selectedSegmentIndex = 0
+        
         if username == UserProvider.user().username {
             subTopicListView.usernameTitleLabel.text = String("Your Reading List").uppercased()
             
-            //subTopicListView.followButton.updateTitleAndImage(title: "Follow")
             subTopicListView.followButton.isHidden = true
             subTopicListView.followButton.isEnabled = false
             
@@ -58,13 +60,19 @@ class TopicListViewController: UIViewController {
             
             subTopicListView.addItemToListButton.isHidden = true
             subTopicListView.addItemToListButton.isEnabled = false
+            
+            getFollowersOfUser(username: username)
         }
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
     }
     
     private func setupUIFunctionality() {
         subTopicListView.segmentedControl?.addTarget(self, action: #selector(self.segmentedControlChanged(_:)), for: .valueChanged)
         
-        subTopicListView.segmentedControl.selectedSegmentIndex = 0
+        subTopicListView.addItemToListButton.addTarget(self, action: #selector(self.addItemToListButtonPressed), for: .touchUpInside)
     }
     
     private func setupDelegation() {
@@ -92,10 +100,33 @@ extension TopicListViewController: TopicListViewUserActionHandler {
         }
     }
     
+    @objc func addItemToListButtonPressed() {
+        
+        let popupVC = PopupViewController()
+        popupVC.alertContent = AlertContentConfig( alertInformationText: "Enter Content URL", alertUpButtonTitle: "Check Content Availability", alertDownButtonTitle: "", popupType: PopupType.textFieldOneButton)
+        
+        popupVC.didTapUpButton = { text in
+            if let text = text {
+                self.popup?.dismiss()
+                self.activityIndicator.startAnimating()
+                self.presenter?.getInfoFromUrl(url: text)
+            }
+        }
+        
+        popup = PopupDialog(viewController: popupVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, tapGestureDismissal: true, panGestureDismissal: false)
+        self.present(popup!, animated: true, completion: nil)
+    }
+    
+    @objc func followButtonPressed() {
+        
+    }
+    
 }
 
 extension TopicListViewController: TopicListPresenterToViewProtocol {
  
+    // MARK: - Get Content List Service
+    
     func getContentList(username: String) {
         presenter?.getContentList(username: username)
     }
@@ -109,6 +140,74 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
     }
     
     func onGetContentListFailure(error: String) {
+        print(error)
+    }
+    
+    // MARK: - Get Info From Url Service
+    
+    func onGetInfoFromUrlSuccess(result: GetInfoFromUrlResult) {
+        activityIndicator.stopAnimating()
+        
+        let popupVC = PopupViewController()
+        popupVC.alertContent = AlertContentConfig( alertInformationText: "Select Content Title", alertUpButtonTitle: "Add", alertDownButtonTitle: "Cancel", popupType: PopupType.textFieldOneButton)
+        
+        
+        popupVC.didTapUpButton = { text in
+            self.createContent(info: result)
+            self.popup?.dismiss()
+            self.activityIndicator.startAnimating()
+        }
+        
+        popupVC.didTapDownButton = {
+            self.popup?.dismiss()
+        }
+        
+        popup = PopupDialog(viewController: popupVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, tapGestureDismissal: true, panGestureDismissal: false)
+        self.present(popup!, animated: true, completion: nil)
+        
+    }
+    
+    func onGetInfoFromUrlFailure(error: String) {
+        activityIndicator.stopAnimating()
+        print(error)
+    }
+    
+    // MARK: - Create Content Service
+    
+    func createContent(info: GetInfoFromUrlResult) {
+        presenter?.createContent(info: info)
+    }
+    
+    func onCreateContentSuccess(result: CreateContentResult) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func onCreateContentFailure(error: String) {
+        activityIndicator.stopAnimating()
+        print(error)
+    }
+    
+    // MARK: - Get Followers Of User Service
+    
+    func getFollowersOfUser(username: String) {
+        presenter?.getFollowersOfUser(username: username)
+    }
+    
+    func onGetFollowersOfUserSuccess(result: [SearchUserResult], isFollowing: Bool) {
+        activityIndicator.stopAnimating()
+        
+        if isFollowing {
+            subTopicListView.followButton.style = .redBackgroundWhiteTextNoRadius
+            subTopicListView.followButton.updateTitleAndImage(title: "Unfollow")
+        }
+        else {
+            subTopicListView.followButton.style = .greenBackgroundWhiteText
+            subTopicListView.followButton.updateTitleAndImage(title: "Follow")
+        }
+    }
+    
+    func onGetFollowersOfUserFailure(error: String) {
+        activityIndicator.stopAnimating()
         print(error)
     }
     

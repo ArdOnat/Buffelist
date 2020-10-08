@@ -27,20 +27,77 @@ extension TopicListPresenter: TopicListViewToPresenterProtocol {
         interactor?.sendGetContentListRequest(username: username)
     }
     
-    func getResetLink(userInfo: String) {
-        
+    func getInfoFromUrl(url: String) {
+        interactor?.sendGetInfoFromUrlRequest(url: url)
     }
-
+    
+    func createContent(info: GetInfoFromUrlResult) {
+        interactor?.sendCreateContentRequest(info: info)
+    }
+    
+    func getFollowersOfUser(username: String) {
+        interactor?.sendGetFollowersOfUserRequest(username: username)
+    }
+    
 }
 
 extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
+    
+    // MARK: - Get Content List Service
     
     func onGetContentListSuccess(contentList: [ContentModel]) {
         view?.onGetContentListSuccess(contentList: contentList)
     }
     
-    func onGetContentListFailure(error: String) {
-        view?.onGetContentListFailure(error: error)
+    func onGetContentListFailure(error: Error) {
+        view?.onGetContentListFailure(error: error.localizedDescription)
+    }
+    
+    // MARK: - Get Info From Url Service
+    
+    func onGetInfoFromUrlSuccess(result: GetInfoFromUrlResult) {
+        view?.onGetInfoFromUrlSuccess(result: result)
+        //createContent(info: result)
+    }
+    
+    func onGetInfoFromUrlFailure(error: Error) {
+        view?.onGetInfoFromUrlFailure(error: error.localizedDescription)
+    }
+    
+    // MARK: - Create Content Service
+    
+    func onCreateContentSuccess(result: CreateContentResult) {
+        view?.onCreateContentSuccess(result: result)
+    }
+    
+    func onCreateContentFailure(error: Error) {
+        view?.onCreateContentFailure(error: error.localizedDescription)
+    }
+    
+    // MARK: - Get Followers Of User Service
+    
+    func onGetFollowersOfUserSuccess(result: [SearchUserResult]) {
+        view?.onGetFollowersOfUserSuccess(result: result, isFollowing: isFollowingUser(result: result))
+        
+    }
+    
+    func onGetFollowersOfUserFailure(error: Error) {
+        view?.onGetFollowersOfUserFailure(error: error.localizedDescription)
+    }
+    
+    func isFollowingUser(result: [SearchUserResult]) -> Bool {
+        var isFollowing = false
+        for user in result {
+            if user.username == UserProvider.user().username {
+                isFollowing = true
+                break
+            }
+            else {
+                isFollowing = false
+            }
+        }
+        
+        return isFollowing
     }
     
 }

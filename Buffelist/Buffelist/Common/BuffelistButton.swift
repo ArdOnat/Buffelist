@@ -14,6 +14,7 @@ enum BuffelistButtonStyle {
     case clearWhiteTextYellowBorder
     case greenBackgroundWhiteText
     case blueBackgroundWhiteText
+    case redBackgroundWhiteTextNoRadius
 }
 
 class BuffelistButton: UIButton {
@@ -59,6 +60,14 @@ class BuffelistButton: UIButton {
             setTitleColor(UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1.0), for: .normal)
             
             backgroundColor = UIColor(red: 23/255, green: 197/255, blue: 34/255, alpha: 1.0)
+        case .redBackgroundWhiteTextNoRadius:
+            borderWidth = 0
+            
+            cornerRadius = 5
+            
+            setTitleColor(UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1.0), for: .normal)
+            
+            backgroundColor = UIColor(red: 197/255, green: 23/255, blue: 34/255, alpha: 1.0)
         case .blueBackgroundWhiteText:
             borderWidth = 0
             

@@ -26,8 +26,37 @@ class TopicListAPIDataManager: TopicListAPIDataManagerProtocol {
         }
     }
     
-    func sendGetResetLinkRequest(userInfo: String)  {
-
+    func createContentRequest(info: GetInfoFromUrlResult) {
+        TopicListService.createContent(info: info) { result in
+            switch result {
+            case .success(let result):
+                self.interactor?.onCreateContentSuccess(result: result)
+            case .failure(let error):
+                self.interactor?.onCreateContentFailure(error: error)
+            }
+        }
     }
     
+    func getInfoFromUrlRequest(url: String) {
+        TopicListService.getInfoFromUrl(url: url) { result in
+            switch result {
+            case .success(let result):
+                self.interactor?.onGetInfoFromUrlSuccess(result: result)
+            case .failure(let error):
+                self.interactor?.onGetInfoFromUrlFailure(error: error)
+            }
+        }
+    }
+    
+    func getFollowersOfUserRequest(username: String) {
+        TopicListService.getFollowersOfUser(username: username) { result in
+            switch result {
+            case .success(let result):
+                self.interactor?.onGetFollowersOfUserSuccess(result: result)
+            case .failure(let error):
+                self.interactor?.onGetFollowersOfUserFailure(error: error)
+            }
+        }
+    }
+
 }

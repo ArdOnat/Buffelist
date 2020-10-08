@@ -14,13 +14,5 @@ struct LoginResult: Decodable {
     var email: String
     var profilePhotoURL: String
     var biography: String
-    /*
-    "id": 261,
-    "username": "ArdOnat",
-    "firstName": "Arda",
-    "lastName": "Onat",
-    "email": "ardonat97@hotmail.com",
-    "profilePhotoURL": "https://buffelist.s3.eu-central-1.amazonaws.com/profile_photos/ArdOnat",
-    "biography": "iOS Developer at Hepsiburada"
- */
+    
 }

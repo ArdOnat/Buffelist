@@ -30,6 +30,8 @@
 		4C08F142251A644D0058485E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F141251A644D0058485E /* LoginViewController.swift */; };
 		4C08F14A251A645B0058485E /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C08F149251A645B0058485E /* LoginView.xib */; };
 		4C08F14F251A646D0058485E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F14E251A646D0058485E /* LoginView.swift */; };
+		4C23C57F252C54ED0014159E /* CreateContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23C57E252C54ED0014159E /* CreateContentResponse.swift */; };
+		4C23C58A252C67A00014159E /* GetInfoFromUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23C589252C67A00014159E /* GetInfoFromUrlResponse.swift */; };
 		4C38FDF2252A61C300D41CFC /* GetContentListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38FDF1252A61C300D41CFC /* GetContentListResponse.swift */; };
 		4C38FDF8252A632100D41CFC /* TopicListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38FDF7252A632100D41CFC /* TopicListService.swift */; };
 		4C38FE00252A64CD00D41CFC /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38FDFF252A64CD00D41CFC /* ContentModel.swift */; };
@@ -72,8 +74,8 @@
 		4CDB4A412520F51000BB48C7 /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A402520F51000BB48C7 /* RegisterWireFrame.swift */; };
 		4CDB4A482520F56600BB48C7 /* RegisterAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A472520F56600BB48C7 /* RegisterAPIDataManager.swift */; };
 		4CDB4A4D2520F74C00BB48C7 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A4C2520F74C00BB48C7 /* RegisterService.swift */; };
-		4CDB4A522520F8E400BB48C7 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A512520F8E400BB48C7 /* RegisterResponse.swift */; };
 		4CDB4A572521010900BB48C7 /* RegisterModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A562521010900BB48C7 /* RegisterModuleBuilder.swift */; };
+		4CE508D6252F03BF00F2A7C5 /* SearchUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE508D5252F03BF00F2A7C5 /* SearchUserResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		4C08F141251A644D0058485E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4C08F149251A645B0058485E /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		4C08F14E251A646D0058485E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4C23C57E252C54ED0014159E /* CreateContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContentResponse.swift; sourceTree = "<group>"; };
+		4C23C589252C67A00014159E /* GetInfoFromUrlResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoFromUrlResponse.swift; sourceTree = "<group>"; };
 		4C38FDF1252A61C300D41CFC /* GetContentListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContentListResponse.swift; sourceTree = "<group>"; };
 		4C38FDF7252A632100D41CFC /* TopicListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListService.swift; sourceTree = "<group>"; };
 		4C38FDFF252A64CD00D41CFC /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
@@ -165,8 +169,8 @@
 		4CDB4A402520F51000BB48C7 /* RegisterWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireFrame.swift; sourceTree = "<group>"; };
 		4CDB4A472520F56600BB48C7 /* RegisterAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAPIDataManager.swift; sourceTree = "<group>"; };
 		4CDB4A4C2520F74C00BB48C7 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
-		4CDB4A512520F8E400BB48C7 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		4CDB4A562521010900BB48C7 /* RegisterModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModuleBuilder.swift; sourceTree = "<group>"; };
+		4CE508D5252F03BF00F2A7C5 /* SearchUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -740,8 +744,10 @@
 			children = (
 				4C814794251D0CB0006CE13D /* LoginResponse.swift */,
 				4C8147A0251D0F63006CE13D /* GetResetLinkResponse.swift */,
-				4CDB4A512520F8E400BB48C7 /* RegisterResponse.swift */,
 				4C38FDF1252A61C300D41CFC /* GetContentListResponse.swift */,
+				4C23C57E252C54ED0014159E /* CreateContentResponse.swift */,
+				4C23C589252C67A00014159E /* GetInfoFromUrlResponse.swift */,
+				4CE508D5252F03BF00F2A7C5 /* SearchUserResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -932,11 +938,13 @@
 				4C06D098251BBD110037BE85 /* HomeViewController.swift in Sources */,
 				4C81475D251D0238006CE13D /* LoginModuleInterface.swift in Sources */,
 				4C08F142251A644D0058485E /* LoginViewController.swift in Sources */,
+				4C23C57F252C54ED0014159E /* CreateContentResponse.swift in Sources */,
 				4C08F0F2251A60600058485E /* AppDelegate.swift in Sources */,
 				4C687A2A25239E910018C799 /* RealmObjectAdapter.swift in Sources */,
 				4CDB4A482520F56600BB48C7 /* RegisterAPIDataManager.swift in Sources */,
 				4C06D0A0251BBD1C0037BE85 /* HomeView.swift in Sources */,
 				4C814767251D0402006CE13D /* LoginInteractor.swift in Sources */,
+				4CE508D6252F03BF00F2A7C5 /* SearchUserResponse.swift in Sources */,
 				4C08F14F251A646D0058485E /* LoginView.swift in Sources */,
 				4C44B00425263EE1005C7DCF /* UIViewExtension.swift in Sources */,
 				4C6D38FB2528B43F004C29A2 /* TopicListModuleInterface.swift in Sources */,
@@ -945,6 +953,7 @@
 				4C38FDF2252A61C300D41CFC /* GetContentListResponse.swift in Sources */,
 				4C81476C251D052A006CE13D /* LoginWireFrame.swift in Sources */,
 				4C814795251D0CB0006CE13D /* LoginResponse.swift in Sources */,
+				4C23C58A252C67A00014159E /* GetInfoFromUrlResponse.swift in Sources */,
 				4CDB4A4D2520F74C00BB48C7 /* RegisterService.swift in Sources */,
 				4CDB4A412520F51000BB48C7 /* RegisterWireFrame.swift in Sources */,
 				4C4908832520A0FE00EFBAC7 /* RegisterView.swift in Sources */,
@@ -968,7 +977,6 @@
 				4C033A93251F5B1C00256C71 /* LoginLocalDataManager.swift in Sources */,
 				4C6D39002528B4A8004C29A2 /* TopicListViewController.swift in Sources */,
 				4C6D39052528B4BB004C29A2 /* TopicListView.swift in Sources */,
-				4CDB4A522520F8E400BB48C7 /* RegisterResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
