@@ -26,8 +26,8 @@ class TopicListAPIDataManager: TopicListAPIDataManagerProtocol {
         }
     }
     
-    func createContentRequest(info: GetInfoFromUrlResult, contentListId: Int) {
-        TopicListService.createContent(info: info, contentListId: contentListId) { result in
+    func createContentRequest(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int) {
+        TopicListService.createContent(info: info, contentTitle: contentTitle, contentListId: contentListId) { result in
             switch result {
             case .success(let result):
                 self.interactor?.onCreateContentSuccess(result: result)

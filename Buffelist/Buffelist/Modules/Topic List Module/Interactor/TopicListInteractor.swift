@@ -9,11 +9,12 @@ class TopicListInteractor {
 
     weak var presenter: TopicListInteractorToPresenterProtocol?
     var APIDataManager: TopicListAPIDataManagerProtocol?
-    //var LocalDataManager: TopicListLocalDataManagerProtocol?
+    var LocalDataManager: TopicListLocalDataManagerProtocol?
+    var username: String = ""
 
     init() {
         self.APIDataManager = TopicListAPIDataManager(interactor: self)
-        //self.LocalDataManager = TopicListLocalDataManager(interactor: self)
+        self.LocalDataManager = TopicListLocalDataManager(interactor: self)
     }
     
 }
@@ -23,13 +24,22 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
     // MARK: - Get Content List Service
     
     func sendGetContentListRequest(username: String) {
+        self.username = username
         APIDataManager?.getContentListRequest(username: username)
     }
     
     func onGetContentListSuccess(result: GetContentListResult) {
         let contentList = result.contents.map { ContentModel(fromContentInformation: $0)}.reversed() as [ContentModel]
         let contentListId = result.id
-        presenter?.onGetContentListSuccess(contentList: contentList, contentListId: contentListId)
+        
+        if username == UserProvider.user().username {
+            LocalDataManager?.updateUserContentListId(contentListId: contentListId) {
+                self.presenter?.onGetContentListSuccess(contentList: contentList)
+            }
+        }
+        else {
+            self.presenter?.onGetContentListSuccess(contentList: contentList)
+        }
     }
     
     func onGetContentListFailure(error: Error) {
@@ -52,8 +62,8 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
     
     // MARK: - Create Content Service
     
-    func sendCreateContentRequest(info: GetInfoFromUrlResult, contentListId: Int) {
-        APIDataManager?.createContentRequest(info: info, contentListId: contentListId)
+    func sendCreateContentRequest(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int) {
+        APIDataManager?.createContentRequest(info: info, contentTitle: contentTitle, contentListId: contentListId)
     }
     
     func onCreateContentSuccess(result: CreateContentResult) {
@@ -105,6 +115,5 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
     func onUnfollowUserFailure(error: Error) {
         presenter?.onUnfollowUserFailure(error: error)
     }
-    
     
 }

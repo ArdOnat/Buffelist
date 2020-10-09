@@ -45,6 +45,7 @@
 		4C4908882520A10900EFBAC7 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4908872520A10900EFBAC7 /* RegisterView.xib */; };
 		4C49088D2520A11F00EFBAC7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49088C2520A11F00EFBAC7 /* RegisterViewController.swift */; };
 		4C4908952520A6D700EFBAC7 /* RegisterModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4908942520A6D700EFBAC7 /* RegisterModuleInterface.swift */; };
+		4C5D6D5F2530C96800B60E1F /* TopicListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D6D5E2530C96800B60E1F /* TopicListLocalDataManager.swift */; };
 		4C687A0125224F130018C799 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A0025224F130018C799 /* RealmService.swift */; };
 		4C687A0825224F700018C799 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A0725224F700018C799 /* UserProvider.swift */; };
 		4C687A0E252258A80018C799 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A0D252258A80018C799 /* UserModel.swift */; };
@@ -144,6 +145,7 @@
 		4C4908872520A10900EFBAC7 /* RegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
 		4C49088C2520A11F00EFBAC7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4C4908942520A6D700EFBAC7 /* RegisterModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModuleInterface.swift; sourceTree = "<group>"; };
+		4C5D6D5E2530C96800B60E1F /* TopicListLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListLocalDataManager.swift; sourceTree = "<group>"; };
 		4C687A0025224F130018C799 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		4C687A0725224F700018C799 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
 		4C687A0D252258A80018C799 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 		4C687A0C2522588A0018C799 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4C38FDFF252A64CD00D41CFC /* ContentModel.swift */,
 				4C687A0D252258A80018C799 /* UserModel.swift */,
 			);
 			path = Models;
@@ -630,7 +633,7 @@
 		4C6D39242528C784004C29A2 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				4C38FDFF252A64CD00D41CFC /* ContentModel.swift */,
+				4C5D6D5E2530C96800B60E1F /* TopicListLocalDataManager.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -1111,6 +1114,7 @@
 				4C6D391F2528C714004C29A2 /* TopicListWireFrame.swift in Sources */,
 				4C687A22252398C00018C799 /* UserItem.swift in Sources */,
 				4C8147A1251D0F63006CE13D /* GetResetLinkResponse.swift in Sources */,
+				4C5D6D5F2530C96800B60E1F /* TopicListLocalDataManager.swift in Sources */,
 				4C687A0125224F130018C799 /* RealmService.swift in Sources */,
 				4C06D0C8251BC9C10037BE85 /* HomeAPIDataManager.swift in Sources */,
 				4C033A89251F285400256C71 /* PopupView.swift in Sources */,

@@ -69,6 +69,7 @@
             <size key="customSize" width="346" height="252"/>
             <connections>
                 <outlet property="dateLabel" destination="cKN-Z2-wry" id="qxp-90-adc"/>
+                <outlet property="deleteImage" destination="kp4-77-VAa" id="U0G-TB-oNr"/>
                 <outlet property="itemImageView" destination="O6G-tN-Qtr" id="irj-bg-l0j"/>
                 <outlet property="nameLabel" destination="5hc-sl-WSt" id="xYs-mH-v93"/>
             </connections>

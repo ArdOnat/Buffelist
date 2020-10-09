@@ -59,6 +59,7 @@ extension UserItem {
         profilePhotoURL = userModel.profilePhotoURL
         biography = userModel.biography
         token = userModel.token
+        contentListId = userModel.contentListId
     }
     
 }

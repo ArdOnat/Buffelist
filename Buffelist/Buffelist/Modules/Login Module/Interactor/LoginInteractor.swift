@@ -37,7 +37,7 @@ extension LoginInteractor: LoginPresenterToInteractorProtocol {
     }
     
     func createUser(result: LoginResult, token: String, password: String) {
-        self.LocalDataManager?.createUser(result: result, password: password, token: token) {
+        LocalDataManager?.createUser(result: result, password: password, token: token) {
             self.presenter?.onUserCreated()
         }
     }

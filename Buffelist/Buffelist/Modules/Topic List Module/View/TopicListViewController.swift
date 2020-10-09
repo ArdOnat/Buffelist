@@ -19,7 +19,6 @@ class TopicListViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
     var contentList = [ContentModel]()
-    var contentListId = -1
     var username:String = ""
     var isFollowing = false
     
@@ -146,6 +145,10 @@ extension TopicListViewController: TopicListViewUserActionHandler {
         }
     }
     
+    @objc func deleteImagePressed(index: Int) {
+        
+    }
+    
 }
 
 extension TopicListViewController: TopicListPresenterToViewProtocol {
@@ -157,9 +160,8 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
         presenter?.getContentList(username: username)
     }
     
-    func onGetContentListSuccess(contentList: [ContentModel], contentListId: Int) {
+    func onGetContentListSuccess(contentList: [ContentModel]) {
         self.contentList = contentList
-        self.contentListId = contentListId
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
             self.subTopicListView.collectionView.reloadData()
@@ -183,8 +185,8 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
         popupVC.alertContent = AlertContentConfig( alertInformationText: "Select Content Title", alertUpButtonTitle: "Add", alertDownButtonTitle: "Cancel", popupType: PopupType.textFieldOneButton)
         
         
-        popupVC.didTapUpButton = { text in
-            self.createContent(info: result)
+        popupVC.didTapUpButton = { contentTitle in
+            self.createContent(info: result, contentTitle: contentTitle ?? "")
             self.popup?.dismiss()
         }
         
@@ -204,9 +206,9 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
     
     // MARK: - Create Content Service
     
-    func createContent(info: GetInfoFromUrlResult) {
+    func createContent(info: GetInfoFromUrlResult, contentTitle: String) {
         self.activityIndicator.startAnimating()
-        presenter?.createContent(info: info, contentListId: contentListId)
+        presenter?.createContent(info: info, contentTitle: contentTitle, contentListId: UserProvider.user().contentListId)
     }
     
     func onCreateContentSuccess(result: CreateContentResult) {
@@ -291,6 +293,12 @@ extension TopicListViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell: ContentCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as! ContentCollectionViewCell
         
         cell.configure(itemInformation: contentList[indexPath.row])
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.deleteImagePressed))
+        singleTap.numberOfTapsRequired = 1
+
+        cell.deleteImage.isUserInteractionEnabled = true
+        cell.deleteImage.addGestureRecognizer(singleTap)
+
         
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.5

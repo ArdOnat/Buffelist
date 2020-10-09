@@ -64,6 +64,8 @@ private extension UserProvider {
 extension UserProvider {
     
     static func updateUserContentListId(contentListId: Int) {
-        user().contentListId = contentListId
+        try? RealmService.write {
+            user().contentListId = contentListId
+        }
     }
 }

@@ -31,8 +31,8 @@ extension TopicListPresenter: TopicListViewToPresenterProtocol {
         interactor?.sendGetInfoFromUrlRequest(url: url)
     }
     
-    func createContent(info: GetInfoFromUrlResult, contentListId: Int) {
-        interactor?.sendCreateContentRequest(info: info, contentListId: contentListId)
+    func createContent(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int) {
+        interactor?.sendCreateContentRequest(info: info, contentTitle: contentTitle, contentListId: contentListId)
     }
     
     func getFollowersOfUser(username: String) {
@@ -53,8 +53,8 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     
     // MARK: - Get Content List Service
     
-    func onGetContentListSuccess(contentList: [ContentModel], contentListId: Int) {
-        view?.onGetContentListSuccess(contentList: contentList, contentListId: contentListId)
+    func onGetContentListSuccess(contentList: [ContentModel]) {
+        view?.onGetContentListSuccess(contentList: contentList)
     }
     
     func onGetContentListFailure(error: Error) {
@@ -65,7 +65,6 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     
     func onGetInfoFromUrlSuccess(result: GetInfoFromUrlResult) {
         view?.onGetInfoFromUrlSuccess(result: result)
-        //createContent(info: result)
     }
     
     func onGetInfoFromUrlFailure(error: Error) {
@@ -86,7 +85,6 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     
     func onGetFollowersOfUserSuccess(result: [SearchUserResult]) {
         view?.onGetFollowersOfUserSuccess(result: result, isFollowing: isFollowingUser(result: result))
-        
     }
     
     func onGetFollowersOfUserFailure(error: Error) {
@@ -94,6 +92,7 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     }
     
     func isFollowingUser(result: [SearchUserResult]) -> Bool {
+        // TODO: move to local data manager
         var isFollowing = false
         for user in result {
             if user.username == UserProvider.user().username {

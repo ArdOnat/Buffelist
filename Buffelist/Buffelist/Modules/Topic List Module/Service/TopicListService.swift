@@ -29,7 +29,7 @@ class TopicListService: TopicListServiceProtocol {
         }
     }
     
-    static func createContent(info: GetInfoFromUrlResult, contentListId: Int, completion: @escaping (Result<CreateContentResult, AFError>) -> ()) {
+    static func createContent(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int, completion: @escaping (Result<CreateContentResult, AFError>) -> ()) {
         
         let completeEndpoint = endPoint + "/api/content"
         
@@ -37,7 +37,7 @@ class TopicListService: TopicListServiceProtocol {
             "Authorization": UserProvider.user().token,
         ]
      
-        let parameters = ["imageUrl": info.imageUrl, "title": info.title, "url": info.url, "contentListId": contentListId] as [String : Any]
+        let parameters = ["imageUrl": info.imageUrl, "title": contentTitle, "url": info.url, "contentListId": contentListId] as [String : Any]
         
         guard let url = URL(string: completeEndpoint) else {
             completion(.failure(.invalidURL(url: endPoint)))

@@ -27,13 +27,13 @@ protocol TopicListPresenterToViewProtocol: class {
     var presenter: TopicListViewToPresenterProtocol?  { get set }
     
     func getContentList(username: String)
-    func onGetContentListSuccess(contentList: [ContentModel], contentListId: Int)
+    func onGetContentListSuccess(contentList: [ContentModel])
     func onGetContentListFailure(error: String)
     
     func onGetInfoFromUrlSuccess(result: GetInfoFromUrlResult)
     func onGetInfoFromUrlFailure(error: String)
     
-    func createContent(info: GetInfoFromUrlResult)
+    func createContent(info: GetInfoFromUrlResult, contentTitle: String)
     func onCreateContentSuccess(result: CreateContentResult)
     func onCreateContentFailure(error: String)
     
@@ -64,7 +64,7 @@ protocol TopicListViewToPresenterProtocol: class {
     
     func getInfoFromUrl(url: String)
     
-    func createContent(info: GetInfoFromUrlResult, contentListId: Int)
+    func createContent(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int)
     
     func getFollowersOfUser(username: String)
     
@@ -76,7 +76,7 @@ protocol TopicListViewToPresenterProtocol: class {
 protocol TopicListInteractorToPresenterProtocol: class {
     var interactor: TopicListPresenterToInteractorProtocol? { get set }
     
-    func onGetContentListSuccess(contentList: [ContentModel], contentListId: Int)
+    func onGetContentListSuccess(contentList: [ContentModel])
     func onGetContentListFailure(error: Error)
     
     func onGetInfoFromUrlSuccess(result: GetInfoFromUrlResult)
@@ -107,7 +107,7 @@ protocol TopicListPresenterToInteractorProtocol: class {
     func onGetInfoFromUrlSuccess(result: GetInfoFromUrlResult)
     func onGetInfoFromUrlFailure(error: Error)
     
-    func sendCreateContentRequest(info: GetInfoFromUrlResult, contentListId: Int)
+    func sendCreateContentRequest(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int)
     func onCreateContentSuccess(result: CreateContentResult)
     func onCreateContentFailure(error: Error)
     
@@ -132,7 +132,7 @@ protocol TopicListAPIDataManagerProtocol: class {
     
     func getInfoFromUrlRequest(url: String)
     
-    func createContentRequest(info: GetInfoFromUrlResult, contentListId: Int)
+    func createContentRequest(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int)
     
     func getFollowersOfUserRequest(username: String)
     
@@ -141,11 +141,17 @@ protocol TopicListAPIDataManagerProtocol: class {
     func unfollowUserRequest(username: String)
 }
 
+//MARK: LocalDataManager -
+protocol TopicListLocalDataManagerProtocol: class {
+    var interactor: TopicListPresenterToInteractorProtocol? { get set }
+    func updateUserContentListId(contentListId: Int, completion: (()->())?)
+}
+
 //MARK: Service -
 protocol TopicListServiceProtocol {
     static func getContentList(username: String, completion: @escaping (Result<GetContentListResult, AFError>) -> ())
     static func getInfoFromUrl(url: String, completion: @escaping (Result<GetInfoFromUrlResult, AFError>) -> ())
-    static func createContent(info: GetInfoFromUrlResult, contentListId: Int, completion: @escaping (Result<CreateContentResult, AFError>) -> ())
+    static func createContent(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int, completion: @escaping (Result<CreateContentResult, AFError>) -> ())
     static func getFollowersOfUser(username: String, completion: @escaping (Result<[SearchUserResult], AFError>) -> ())
     static func followUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())
     static func unfollowUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())

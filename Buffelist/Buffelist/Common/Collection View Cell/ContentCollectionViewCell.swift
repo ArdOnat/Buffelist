@@ -12,6 +12,7 @@ class ContentCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var deleteImage: UIImageView!
     
     override func prepareForReuse() {
         super.prepareForReuse()
