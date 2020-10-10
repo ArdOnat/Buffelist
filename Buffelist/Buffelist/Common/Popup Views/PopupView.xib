@@ -23,7 +23,7 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbk-gg-egu">
                             <rect key="frame" x="8" y="0.0" width="379" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -35,22 +35,20 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="qzp-Mt-bxt">
                             <rect key="frame" x="8" y="151" width="379" height="132"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsX-xV-9Ed">
-                                    <rect key="frame" x="8" y="0.0" width="363" height="50"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsX-xV-9Ed" customClass="BuffelistButton" customModule="Buffelist" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="379" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="EG5-dI-UMV"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcW-ic-HOq">
-                                    <rect key="frame" x="8" y="82" width="363" height="50"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcW-ic-HOq" customClass="BuffelistButton" customModule="Buffelist" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="82" width="379" height="50"/>
                                     <state key="normal" title="Button"/>
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="fsX-xV-9Ed" secondAttribute="trailing" constant="8" id="CPg-ks-z5D"/>
                                 <constraint firstItem="fsX-xV-9Ed" firstAttribute="height" secondItem="zcW-ic-HOq" secondAttribute="height" id="lUt-rW-wW1"/>
-                                <constraint firstItem="fsX-xV-9Ed" firstAttribute="leading" secondItem="qzp-Mt-bxt" secondAttribute="leading" constant="8" id="pyp-Er-UU8"/>
                                 <constraint firstItem="fsX-xV-9Ed" firstAttribute="width" secondItem="zcW-ic-HOq" secondAttribute="width" id="xeU-9w-Xjd"/>
                             </constraints>
                         </stackView>
@@ -61,6 +59,7 @@
                         <constraint firstAttribute="trailing" secondItem="VAk-q6-2Y6" secondAttribute="trailing" constant="8" id="Hck-2d-Zg6"/>
                         <constraint firstItem="VAk-q6-2Y6" firstAttribute="leading" secondItem="fmK-f5-pOp" secondAttribute="leading" constant="8" id="Wca-ud-BYn"/>
                         <constraint firstItem="Hbk-gg-egu" firstAttribute="leading" secondItem="fmK-f5-pOp" secondAttribute="leading" constant="8" id="leH-10-R3Z"/>
+                        <constraint firstItem="fsX-xV-9Ed" firstAttribute="width" secondItem="VAk-q6-2Y6" secondAttribute="width" id="miL-1u-6GG"/>
                         <constraint firstAttribute="trailing" secondItem="qzp-Mt-bxt" secondAttribute="trailing" constant="8" id="yKM-V8-9oe"/>
                     </constraints>
                 </stackView>
@@ -76,10 +75,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="downButton" destination="zcW-ic-HOq" id="nht-yx-Gzc"/>
+                <outlet property="downButton" destination="zcW-ic-HOq" id="JfN-gV-5p0"/>
                 <outlet property="popupInformationLabel" destination="Hbk-gg-egu" id="gLP-KE-zdg"/>
                 <outlet property="popupInformationTextField" destination="VAk-q6-2Y6" id="5RZ-uK-EX8"/>
-                <outlet property="upButton" destination="fsX-xV-9Ed" id="IQq-Ki-90y"/>
+                <outlet property="upButton" destination="fsX-xV-9Ed" id="CTl-GH-0V3"/>
             </connections>
             <point key="canvasLocation" x="159.19999999999999" y="156.97151424287858"/>
         </view>

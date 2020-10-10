@@ -9,8 +9,8 @@ import Foundation
 
 import PopupDialog
 
-class TopicListViewController: UIViewController {
-
+class TopicListViewController: UIViewController, DeleteHandler {
+    
     var presenter: TopicListViewToPresenterProtocol?
     
     var subTopicListView: TopicListView!
@@ -21,6 +21,8 @@ class TopicListViewController: UIViewController {
     var contentList = [ContentModel]()
     var username:String = ""
     var isFollowing = false
+    var contentToDelete: Int = 0
+    var isUserPage = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,6 +53,8 @@ class TopicListViewController: UIViewController {
         subTopicListView.segmentedControl.selectedSegmentIndex = 0
         
         if username == UserProvider.user().username {
+            isUserPage = true
+            
             subTopicListView.usernameTitleLabel.text = String("Your Reading List").uppercased()
             
             subTopicListView.followButton.isHidden = true
@@ -60,6 +64,8 @@ class TopicListViewController: UIViewController {
             subTopicListView.addItemToListButton.isEnabled = true
         }
         else {
+            isUserPage = false
+            
             subTopicListView.usernameTitleLabel.text = username.uppercased()
             
             subTopicListView.followButton.isHidden = false
@@ -145,8 +151,9 @@ extension TopicListViewController: TopicListViewUserActionHandler {
         }
     }
     
-    @objc func deleteImagePressed(index: Int) {
-        
+    func deletePressed(sender: UIButton) {
+        print(sender.tag)
+        deleteContent(contentId: sender.tag)
     }
     
 }
@@ -281,6 +288,26 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
         print(error)
     }
     
+    // MARK: - Delete Content Service
+    
+    func deleteContent(contentId: Int) {
+        self.activityIndicator.startAnimating()
+        presenter?.deleteContent(contentId: contentId)
+    }
+    
+    func onDeleteContentSuccess() {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.getContentList(username: self.username)
+        }
+    }
+    
+    func onDeleteContentFailure(error: String) {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+        }
+        print(error)
+    }
 }
 
 extension TopicListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -292,13 +319,15 @@ extension TopicListViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ContentCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as! ContentCollectionViewCell
         
-        cell.configure(itemInformation: contentList[indexPath.row])
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.deleteImagePressed))
-        singleTap.numberOfTapsRequired = 1
-
-        cell.deleteImage.isUserInteractionEnabled = true
-        cell.deleteImage.addGestureRecognizer(singleTap)
-
+        if isUserPage {
+            cell.configureWithDelete(itemInformation: contentList[indexPath.row])
+        }
+        else {
+            cell.configureWithoutDelete(itemInformation: contentList[indexPath.row])
+        }
+        
+        cell.deleteButton.tag = indexPath.row
+        cell.handler = self
         
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.5

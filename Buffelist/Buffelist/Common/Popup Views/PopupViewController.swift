@@ -47,13 +47,17 @@ class PopupViewController: UIViewController {
         subPopupView.upButton.setTitle(alertContent?.alertUpButtonTitle, for: .normal)
         subPopupView.downButton.setTitle(alertContent?.alertDownButtonTitle, for: .normal)
         
+        subPopupView.upButton.style = .redBackgroundWhiteTextNoRadius
+        subPopupView.downButton.style = .redBackgroundWhiteTextNoRadius
+        
         switch popupType {
         case .oneButton:
             subPopupView.popupInformationLabel.isHidden = false
             subPopupView.popupInformationTextField.isHidden = false
-            subPopupView.upButton.isHidden = true
-            subPopupView.downButton.isHidden = false
-        case .twoButton:            subPopupView.popupInformationLabel.isHidden = false
+            subPopupView.upButton.isHidden = false
+            subPopupView.downButton.isHidden = true
+        case .twoButton:
+            subPopupView.popupInformationLabel.isHidden = false
             subPopupView.popupInformationTextField.isHidden = false
             subPopupView.upButton.isHidden = false
             subPopupView.downButton.isHidden = false

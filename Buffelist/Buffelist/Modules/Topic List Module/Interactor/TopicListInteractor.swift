@@ -116,4 +116,18 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
         presenter?.onUnfollowUserFailure(error: error)
     }
     
+    // MARK: - Delete Content Service
+    
+    func sendDeleteContentRequest(contentId: Int) {
+        APIDataManager?.deleteContentRequest(contentId: contentId)
+    }
+    
+    func onDeleteContentSuccess() {
+        presenter?.onDeleteContentSuccess()
+    }
+    
+    func onDeleteContentFailure(error: Error) {
+        presenter?.onDeleteContentFailure(error: error)
+    }
+    
 }

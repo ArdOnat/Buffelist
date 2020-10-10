@@ -48,6 +48,10 @@ protocol TopicListPresenterToViewProtocol: class {
     func unfollowUser(username: String)
     func onUnfollowUserSuccess()
     func onUnfollowUserFailure(error: String)
+    
+    func deleteContent(contentId: Int)
+    func onDeleteContentSuccess()
+    func onDeleteContentFailure(error: String)
 }
 
 protocol TopicListViewUserActionHandler {
@@ -71,6 +75,8 @@ protocol TopicListViewToPresenterProtocol: class {
     func followUser(username: String)
     
     func unfollowUser(username: String)
+    
+    func deleteContent(contentId: Int)
 }
 
 protocol TopicListInteractorToPresenterProtocol: class {
@@ -93,6 +99,9 @@ protocol TopicListInteractorToPresenterProtocol: class {
     
     func onUnfollowUserSuccess()
     func onUnfollowUserFailure(error: Error)
+    
+    func onDeleteContentSuccess()
+    func onDeleteContentFailure(error: Error)
 }
 
 //MARK: Interactor -
@@ -122,6 +131,10 @@ protocol TopicListPresenterToInteractorProtocol: class {
     func sendUnfollowUserRequest(username: String)
     func onUnfollowUserSuccess()
     func onUnfollowUserFailure(error: Error)
+    
+    func sendDeleteContentRequest(contentId: Int)
+    func onDeleteContentSuccess()
+    func onDeleteContentFailure(error: Error)
 }
 
 //MARK: APIDataManager -
@@ -139,6 +152,8 @@ protocol TopicListAPIDataManagerProtocol: class {
     func followUserRequest(username: String)
     
     func unfollowUserRequest(username: String)
+    
+    func deleteContentRequest(contentId: Int)
 }
 
 //MARK: LocalDataManager -
@@ -155,4 +170,5 @@ protocol TopicListServiceProtocol {
     static func getFollowersOfUser(username: String, completion: @escaping (Result<[SearchUserResult], AFError>) -> ())
     static func followUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())
     static func unfollowUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())
+    static func deleteContent(contentId: Int, completion: @escaping (Result<Data?, AFError>) -> ())
 }

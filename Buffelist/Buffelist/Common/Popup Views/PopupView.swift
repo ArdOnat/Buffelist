@@ -17,8 +17,8 @@ class PopupView: UIView {
 
     @IBOutlet weak var popupInformationLabel: UILabel!
     @IBOutlet weak var popupInformationTextField: UITextField!
-    @IBOutlet weak var upButton: UIButton!
-    @IBOutlet weak var downButton: UIButton!
+    @IBOutlet weak var upButton: BuffelistButton!
+    @IBOutlet weak var downButton: BuffelistButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

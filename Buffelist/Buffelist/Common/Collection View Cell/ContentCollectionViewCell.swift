@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol DeleteHandler {
+    func deletePressed(sender: UIButton)
+}
+
 class ContentCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var deleteImage: UIImageView!
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    var handler: DeleteHandler?
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -27,12 +34,28 @@ class ContentCollectionViewCell: UICollectionViewCell {
         dateLabel.text = "a"
     }
     
-    func configure(itemInformation: ContentModel) {
+    func configureWithDelete(itemInformation: ContentModel) {
         itemImageView.downloaded(from: itemInformation.imageUrl)
         nameLabel.text = "\(itemInformation.title)"
         dateLabel.text = "\(itemInformation.createdAt.epochSecond)"
+        
+        deleteImage.isHidden = false
+        deleteButton.isHidden = false
+        deleteButton.isEnabled = true
     }
     
-    //func configure
+    func configureWithoutDelete(itemInformation: ContentModel) {
+        itemImageView.downloaded(from: itemInformation.imageUrl)
+        nameLabel.text = "\(itemInformation.title)"
+        dateLabel.text = "\(itemInformation.createdAt.epochSecond)"
+        
+        deleteImage.isHidden = true
+        deleteButton.isHidden = true
+        deleteButton.isEnabled = false
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        handler?.deletePressed(sender: sender)
+    }
     
 }

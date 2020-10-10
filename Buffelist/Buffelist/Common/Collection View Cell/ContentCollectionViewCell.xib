@@ -54,21 +54,34 @@
                             <constraint firstAttribute="trailing" secondItem="swi-5n-Ptb" secondAttribute="trailing" id="V0U-bL-mEg"/>
                         </constraints>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZj-6a-r2a">
+                        <rect key="frame" x="173.5" y="158.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Sf6-eQ-fY5"/>
+                            <constraint firstAttribute="width" constant="50" id="jaT-Vk-Ak7"/>
+                        </constraints>
+                        <connections>
+                            <action selector="deleteButtonPressed:" destination="shW-NX-Xw3" eventType="touchUpInside" id="dOZ-jE-RUe"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Uku-LB-yAk" firstAttribute="leading" secondItem="5l1-BJ-BkU" secondAttribute="leading" constant="16" id="62R-hD-Qov"/>
                     <constraint firstItem="O6G-tN-Qtr" firstAttribute="height" secondItem="5l1-BJ-BkU" secondAttribute="height" multiplier="0.4" id="CUu-Cs-tEV"/>
+                    <constraint firstItem="AZj-6a-r2a" firstAttribute="leading" secondItem="cKN-Z2-wry" secondAttribute="trailing" constant="6" id="Edg-14-Nf1"/>
                     <constraint firstAttribute="trailing" secondItem="O6G-tN-Qtr" secondAttribute="trailing" id="YOl-Ov-Yug"/>
                     <constraint firstItem="O6G-tN-Qtr" firstAttribute="leading" secondItem="5l1-BJ-BkU" secondAttribute="leading" id="fnj-ae-Xia"/>
                     <constraint firstAttribute="trailing" secondItem="Uku-LB-yAk" secondAttribute="trailing" constant="16" id="gi4-HV-yxv"/>
                     <constraint firstItem="O6G-tN-Qtr" firstAttribute="top" secondItem="5l1-BJ-BkU" secondAttribute="top" id="hM7-xO-A36"/>
                     <constraint firstItem="Uku-LB-yAk" firstAttribute="top" secondItem="O6G-tN-Qtr" secondAttribute="bottom" constant="8" id="iuE-6f-VmR"/>
+                    <constraint firstItem="AZj-6a-r2a" firstAttribute="centerY" secondItem="cKN-Z2-wry" secondAttribute="centerY" id="s7Q-R0-UWu"/>
                     <constraint firstItem="O6G-tN-Qtr" firstAttribute="width" secondItem="5l1-BJ-BkU" secondAttribute="width" id="vgT-MD-jNn"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="346" height="252"/>
             <connections>
                 <outlet property="dateLabel" destination="cKN-Z2-wry" id="qxp-90-adc"/>
+                <outlet property="deleteButton" destination="AZj-6a-r2a" id="EWA-W1-Sv0"/>
                 <outlet property="deleteImage" destination="kp4-77-VAa" id="U0G-TB-oNr"/>
                 <outlet property="itemImageView" destination="O6G-tN-Qtr" id="irj-bg-l0j"/>
                 <outlet property="nameLabel" destination="5hc-sl-WSt" id="xYs-mH-v93"/>

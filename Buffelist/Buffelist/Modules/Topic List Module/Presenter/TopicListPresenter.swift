@@ -47,6 +47,10 @@ extension TopicListPresenter: TopicListViewToPresenterProtocol {
         interactor?.sendUnfollowUserRequest(username: username)
     }
     
+    func deleteContent(contentId: Int) {
+        interactor?.sendDeleteContentRequest(contentId: contentId)
+    }
+    
 }
 
 extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
@@ -125,6 +129,16 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     
     func onUnfollowUserFailure(error: Error) {
         view?.onUnfollowUserFailure(error: error.localizedDescription)
+    }
+    
+    // MARK: - Delete Content Service
+    
+    func onDeleteContentSuccess() {
+        view?.onDeleteContentSuccess()
+    }
+    
+    func onDeleteContentFailure(error: Error) {
+        view?.onDeleteContentFailure(error: error.localizedDescription)
     }
     
 }

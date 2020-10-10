@@ -83,7 +83,6 @@ class TopicListService: TopicListServiceProtocol {
             print(response.result)
             completion(response.result)
         }
-        
     }
     
     static func getFollowersOfUser(username: String, completion: @escaping (Result<[SearchUserResult], AFError>) -> ()) {
@@ -103,7 +102,6 @@ class TopicListService: TopicListServiceProtocol {
             print(response.result)
             completion(response.result)
         }
-        
     }
     
     static func followUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ()) {
@@ -123,7 +121,6 @@ class TopicListService: TopicListServiceProtocol {
             print(response.result)
             completion(response.result)
         }
-        
     }
     
     static func unfollowUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ()) {
@@ -143,7 +140,35 @@ class TopicListService: TopicListServiceProtocol {
             print(response.result)
             completion(response.result)
         }
+    }
+    
+    static func deleteContent(contentId: Int, completion: @escaping (Result<Data?, AFError>) -> ()) {
         
+        let completeEndpoint = endPoint + "/api/content"
+        
+        let parameters = ["contentId": contentId]
+        
+        guard let url = URL(string: completeEndpoint) else {
+            completion(.failure(.invalidURL(url: endPoint)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
+        
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.outputFormatting = .withoutEscapingSlashes
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
+        
+        print(String(decoding: request.httpBody!, as:UTF8.self))
+        request.httpMethod = HTTPMethod.delete.rawValue
+        request.setValue(UserProvider.user().token, forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        AF.request(request).validate().response { response in
+            print(response.result)
+            completion(response.result)
+        }
     }
     
 }

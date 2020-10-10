@@ -80,5 +80,16 @@ class TopicListAPIDataManager: TopicListAPIDataManagerProtocol {
             }
         }
     }
+    
+    func deleteContentRequest(contentId: Int) {
+        TopicListService.deleteContent(contentId: contentId) { result in
+            switch result {
+            case .success(let result):
+                self.interactor?.onDeleteContentSuccess()
+            case .failure(let error):
+                self.interactor?.onUnfollowUserFailure(error: error)
+            }
+        }
+    }
 
 }
