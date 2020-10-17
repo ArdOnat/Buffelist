@@ -50,6 +50,9 @@
 		4C687A0E252258A80018C799 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A0D252258A80018C799 /* UserModel.swift */; };
 		4C687A22252398C00018C799 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A21252398C00018C799 /* UserItem.swift */; };
 		4C687A2A25239E910018C799 /* RealmObjectAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A2925239E910018C799 /* RealmObjectAdapter.swift */; };
+		4C6AC1A6253219B100FB8AE0 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6AC1A5253219B100FB8AE0 /* PeopleViewController.swift */; };
+		4C6AC1AE253219B900FB8AE0 /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6AC1AD253219B800FB8AE0 /* PeopleView.swift */; };
+		4C6AC1B3253219C100FB8AE0 /* PeopleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6AC1B2253219C100FB8AE0 /* PeopleView.xib */; };
 		4C6D38F22528B427004C29A2 /* TopicListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D38F12528B427004C29A2 /* TopicListModuleBuilder.swift */; };
 		4C6D38FB2528B43F004C29A2 /* TopicListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D38FA2528B43F004C29A2 /* TopicListModuleInterface.swift */; };
 		4C6D39002528B4A8004C29A2 /* TopicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D38FF2528B4A8004C29A2 /* TopicListViewController.swift */; };
@@ -61,6 +64,7 @@
 		4C6D392A2528C7BC004C29A2 /* TopicListAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D39292528C7BC004C29A2 /* TopicListAPIDataManager.swift */; };
 		4C6D39332528DD6D004C29A2 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D39322528DD6D004C29A2 /* ContentCollectionViewCell.swift */; };
 		4C6D393B2528DDA5004C29A2 /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6D393A2528DDA5004C29A2 /* ContentCollectionViewCell.xib */; };
+		4C7156DF253332720094D3F6 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7156DE253332720094D3F6 /* UIImageViewExtension.swift */; };
 		4C81475D251D0238006CE13D /* LoginModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C81475C251D0238006CE13D /* LoginModuleInterface.swift */; };
 		4C814762251D0387006CE13D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814761251D0387006CE13D /* LoginPresenter.swift */; };
 		4C814767251D0402006CE13D /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C814766251D0402006CE13D /* LoginInteractor.swift */; };
@@ -77,6 +81,13 @@
 		4CDB4A4D2520F74C00BB48C7 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A4C2520F74C00BB48C7 /* RegisterService.swift */; };
 		4CDB4A572521010900BB48C7 /* RegisterModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A562521010900BB48C7 /* RegisterModuleBuilder.swift */; };
 		4CE508D6252F03BF00F2A7C5 /* SearchUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE508D5252F03BF00F2A7C5 /* SearchUserResponse.swift */; };
+		4CF45B0B2532F5BF00AA41DA /* PeopleListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF45B0A2532F5BF00AA41DA /* PeopleListModuleInterface.swift */; };
+		4CF45B132532F8C900AA41DA /* PeopleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF45B122532F8C900AA41DA /* PeopleListPresenter.swift */; };
+		4CF45B182532F8D300AA41DA /* PeopleListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF45B172532F8D300AA41DA /* PeopleListInteractor.swift */; };
+		4CF45B1D2532F8DC00AA41DA /* PeopleListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF45B1C2532F8DC00AA41DA /* PeopleListWireFrame.swift */; };
+		4CF45B242532F8F800AA41DA /* PeopleListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF45B232532F8F800AA41DA /* PeopleListService.swift */; };
+		4CF45B292532F90E00AA41DA /* PeopleListAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF45B282532F90E00AA41DA /* PeopleListAPIDataManager.swift */; };
+		4CF45B2E2533101F00AA41DA /* PeopleListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF45B2D2533101F00AA41DA /* PeopleListModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +157,9 @@
 		4C687A0D252258A80018C799 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4C687A21252398C00018C799 /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		4C687A2925239E910018C799 /* RealmObjectAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjectAdapter.swift; sourceTree = "<group>"; };
+		4C6AC1A5253219B100FB8AE0 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		4C6AC1AD253219B800FB8AE0 /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
+		4C6AC1B2253219C100FB8AE0 /* PeopleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleView.xib; sourceTree = "<group>"; };
 		4C6D38F12528B427004C29A2 /* TopicListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListModuleBuilder.swift; sourceTree = "<group>"; };
 		4C6D38FA2528B43F004C29A2 /* TopicListModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListModuleInterface.swift; sourceTree = "<group>"; };
 		4C6D38FF2528B4A8004C29A2 /* TopicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +171,7 @@
 		4C6D39292528C7BC004C29A2 /* TopicListAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListAPIDataManager.swift; sourceTree = "<group>"; };
 		4C6D39322528DD6D004C29A2 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C6D393A2528DDA5004C29A2 /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
+		4C7156DE253332720094D3F6 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		4C81475C251D0238006CE13D /* LoginModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleInterface.swift; sourceTree = "<group>"; };
 		4C814761251D0387006CE13D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		4C814766251D0402006CE13D /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -173,6 +188,13 @@
 		4CDB4A4C2520F74C00BB48C7 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		4CDB4A562521010900BB48C7 /* RegisterModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModuleBuilder.swift; sourceTree = "<group>"; };
 		4CE508D5252F03BF00F2A7C5 /* SearchUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserResponse.swift; sourceTree = "<group>"; };
+		4CF45B0A2532F5BF00AA41DA /* PeopleListModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListModuleInterface.swift; sourceTree = "<group>"; };
+		4CF45B122532F8C900AA41DA /* PeopleListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListPresenter.swift; sourceTree = "<group>"; };
+		4CF45B172532F8D300AA41DA /* PeopleListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListInteractor.swift; sourceTree = "<group>"; };
+		4CF45B1C2532F8DC00AA41DA /* PeopleListWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListWireFrame.swift; sourceTree = "<group>"; };
+		4CF45B232532F8F800AA41DA /* PeopleListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListService.swift; sourceTree = "<group>"; };
+		4CF45B282532F90E00AA41DA /* PeopleListAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListAPIDataManager.swift; sourceTree = "<group>"; };
+		4CF45B2D2533101F00AA41DA /* PeopleListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +390,7 @@
 				4C08F139251A63490058485E /* Login Module */,
 				4C4908782520A09000EFBAC7 /* Register Module */,
 				4C6D38E92528B2AF004C29A2 /* Topic List Module */,
+				4C6AC19C2532192900FB8AE0 /* People List Module */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -391,8 +414,8 @@
 			isa = PBXGroup;
 			children = (
 				4C08F141251A644D0058485E /* LoginViewController.swift */,
-				4C08F149251A645B0058485E /* LoginView.xib */,
 				4C08F14E251A646D0058485E /* LoginView.swift */,
+				4C08F149251A645B0058485E /* LoginView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				4C44B00325263EE1005C7DCF /* UIViewExtension.swift */,
+				4C7156DE253332720094D3F6 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -540,6 +564,88 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		4C6AC19C2532192900FB8AE0 /* People List Module */ = {
+			isa = PBXGroup;
+			children = (
+				4C6AC19D2532194C00FB8AE0 /* Module Builder */,
+				4C6AC19E2532195800FB8AE0 /* Interface */,
+				4C6AC19F2532195D00FB8AE0 /* View */,
+				4C6AC1A02532196200FB8AE0 /* Presenter */,
+				4C6AC1A12532196D00FB8AE0 /* Interactor */,
+				4C6AC1A22532197200FB8AE0 /* Wire Frame */,
+				4C6AC1A32532197600FB8AE0 /* Data Manager */,
+				4C6AC1A42532197B00FB8AE0 /* Service */,
+			);
+			path = "People List Module";
+			sourceTree = "<group>";
+		};
+		4C6AC19D2532194C00FB8AE0 /* Module Builder */ = {
+			isa = PBXGroup;
+			children = (
+				4CF45B2D2533101F00AA41DA /* PeopleListModuleBuilder.swift */,
+			);
+			path = "Module Builder";
+			sourceTree = "<group>";
+		};
+		4C6AC19E2532195800FB8AE0 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4CF45B0A2532F5BF00AA41DA /* PeopleListModuleInterface.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		4C6AC19F2532195D00FB8AE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C6AC1A5253219B100FB8AE0 /* PeopleViewController.swift */,
+				4C6AC1AD253219B800FB8AE0 /* PeopleView.swift */,
+				4C6AC1B2253219C100FB8AE0 /* PeopleView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C6AC1A02532196200FB8AE0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4CF45B122532F8C900AA41DA /* PeopleListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4C6AC1A12532196D00FB8AE0 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4CF45B172532F8D300AA41DA /* PeopleListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4C6AC1A22532197200FB8AE0 /* Wire Frame */ = {
+			isa = PBXGroup;
+			children = (
+				4CF45B1C2532F8DC00AA41DA /* PeopleListWireFrame.swift */,
+			);
+			path = "Wire Frame";
+			sourceTree = "<group>";
+		};
+		4C6AC1A32532197600FB8AE0 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4CF45B212532F8E000AA41DA /* Local */,
+				4CF45B222532F8EA00AA41DA /* API */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		4C6AC1A42532197B00FB8AE0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4CF45B232532F8F800AA41DA /* PeopleListService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		4C6D38E92528B2AF004C29A2 /* Topic List Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,8 +681,8 @@
 			isa = PBXGroup;
 			children = (
 				4C6D38FF2528B4A8004C29A2 /* TopicListViewController.swift */,
-				4C6D39092528B4D0004C29A2 /* TopicListView.xib */,
 				4C6D39042528B4BB004C29A2 /* TopicListView.swift */,
+				4C6D39092528B4D0004C29A2 /* TopicListView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -779,6 +885,21 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		4CF45B212532F8E000AA41DA /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4CF45B222532F8EA00AA41DA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4CF45B282532F90E00AA41DA /* PeopleListAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		8A427690E4755E08BE80B8A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -896,6 +1017,7 @@
 				4C033A8E251F286400256C71 /* PopupView.xib in Resources */,
 				4C08F0FB251A60610058485E /* Assets.xcassets in Resources */,
 				4C461656252B962B00CBCEF7 /* ContentTableViewCell.xib in Resources */,
+				4C6AC1B3253219C100FB8AE0 /* PeopleView.xib in Resources */,
 				4C08F14A251A645B0058485E /* LoginView.xib in Resources */,
 				4C6D390A2528B4D0004C29A2 /* TopicListView.xib in Resources */,
 			);
@@ -927,21 +1049,27 @@
 				4C814784251D0914006CE13D /* LoginAPIDataManager.swift in Sources */,
 				4C06D0BC251BC8740037BE85 /* HomeModuleBuilder.swift in Sources */,
 				4C6D39332528DD6D004C29A2 /* ContentCollectionViewCell.swift in Sources */,
+				4C6AC1A6253219B100FB8AE0 /* PeopleViewController.swift in Sources */,
 				4C06D0C1251BC8A60037BE85 /* HomeInteractor.swift in Sources */,
 				4C4908952520A6D700EFBAC7 /* RegisterModuleInterface.swift in Sources */,
 				4C38FE00252A64CD00D41CFC /* ContentModel.swift in Sources */,
 				4C6D391A2528C707004C29A2 /* TopicListInteractor.swift in Sources */,
+				4CF45B2E2533101F00AA41DA /* PeopleListModuleBuilder.swift in Sources */,
 				4C6D39152528C6FC004C29A2 /* TopicListPresenter.swift in Sources */,
 				4C44AFFE25263E23005C7DCF /* BuffelistButton.swift in Sources */,
 				4C46164E252B961D00CBCEF7 /* ContentTableViewCell.swift in Sources */,
 				4C814762251D0387006CE13D /* LoginPresenter.swift in Sources */,
 				4C44B00C25264342005C7DCF /* KeyboardHandler.swift in Sources */,
 				4C6D392A2528C7BC004C29A2 /* TopicListAPIDataManager.swift in Sources */,
+				4C7156DF253332720094D3F6 /* UIImageViewExtension.swift in Sources */,
 				4C033A98251F6BCD00256C71 /* AlertContentConfig.swift in Sources */,
+				4CF45B182532F8D300AA41DA /* PeopleListInteractor.swift in Sources */,
 				4C06D098251BBD110037BE85 /* HomeViewController.swift in Sources */,
 				4C81475D251D0238006CE13D /* LoginModuleInterface.swift in Sources */,
 				4C08F142251A644D0058485E /* LoginViewController.swift in Sources */,
 				4C23C57F252C54ED0014159E /* CreateContentResponse.swift in Sources */,
+				4CF45B1D2532F8DC00AA41DA /* PeopleListWireFrame.swift in Sources */,
+				4C6AC1AE253219B900FB8AE0 /* PeopleView.swift in Sources */,
 				4C08F0F2251A60600058485E /* AppDelegate.swift in Sources */,
 				4C687A2A25239E910018C799 /* RealmObjectAdapter.swift in Sources */,
 				4CDB4A482520F56600BB48C7 /* RegisterAPIDataManager.swift in Sources */,
@@ -949,6 +1077,7 @@
 				4C814767251D0402006CE13D /* LoginInteractor.swift in Sources */,
 				4CE508D6252F03BF00F2A7C5 /* SearchUserResponse.swift in Sources */,
 				4C08F14F251A646D0058485E /* LoginView.swift in Sources */,
+				4CF45B242532F8F800AA41DA /* PeopleListService.swift in Sources */,
 				4C44B00425263EE1005C7DCF /* UIViewExtension.swift in Sources */,
 				4C6D38FB2528B43F004C29A2 /* TopicListModuleInterface.swift in Sources */,
 				4C38FDF8252A632100D41CFC /* TopicListService.swift in Sources */,
@@ -956,6 +1085,7 @@
 				4C38FDF2252A61C300D41CFC /* GetContentListResponse.swift in Sources */,
 				4C81476C251D052A006CE13D /* LoginWireFrame.swift in Sources */,
 				4C814795251D0CB0006CE13D /* LoginResponse.swift in Sources */,
+				4CF45B292532F90E00AA41DA /* PeopleListAPIDataManager.swift in Sources */,
 				4C23C58A252C67A00014159E /* GetInfoFromUrlResponse.swift in Sources */,
 				4CDB4A4D2520F74C00BB48C7 /* RegisterService.swift in Sources */,
 				4CDB4A412520F51000BB48C7 /* RegisterWireFrame.swift in Sources */,
@@ -971,9 +1101,11 @@
 				4CDB4A372520EFF800BB48C7 /* RegisterPresenter.swift in Sources */,
 				4C6D38F22528B427004C29A2 /* TopicListModuleBuilder.swift in Sources */,
 				4C06D0B2251BC3FC0037BE85 /* HomePresenter.swift in Sources */,
+				4CF45B132532F8C900AA41DA /* PeopleListPresenter.swift in Sources */,
 				4C6D391F2528C714004C29A2 /* TopicListWireFrame.swift in Sources */,
 				4C687A22252398C00018C799 /* UserItem.swift in Sources */,
 				4C8147A1251D0F63006CE13D /* GetResetLinkResponse.swift in Sources */,
+				4CF45B0B2532F5BF00AA41DA /* PeopleListModuleInterface.swift in Sources */,
 				4C5D6D5F2530C96800B60E1F /* TopicListLocalDataManager.swift in Sources */,
 				4C687A0125224F130018C799 /* RealmService.swift in Sources */,
 				4C06D0C8251BC9C10037BE85 /* HomeAPIDataManager.swift in Sources */,

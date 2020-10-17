@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PeopleViewController" customModule="Buffelist" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="bcI-31-2I3" id="auP-ph-d53"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="bcI-31-2I3" customClass="PeopleView" customModule="Buffelist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bP-Rr-KOF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="REa-re-ms8">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-HT-qt9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you will see people that you follow." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2x-gW-YTX">
+                                    <rect key="frame" x="0.0" y="84.5" width="375" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-TM-B9Z">
+                                    <rect key="frame" x="0.0" y="133.5" width="375" height="533.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="P6T-h1-ckh">
+                                        <size key="itemSize" width="175" height="275"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="1xV-TM-B9Z" firstAttribute="height" secondItem="REa-re-ms8" secondAttribute="height" multiplier="0.8" id="vme-9f-Res"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="REa-re-ms8" secondAttribute="bottom" id="Abc-7O-0FX"/>
+                        <constraint firstItem="REa-re-ms8" firstAttribute="leading" secondItem="6bP-Rr-KOF" secondAttribute="leading" id="Fg5-FR-cCD"/>
+                        <constraint firstItem="REa-re-ms8" firstAttribute="centerY" secondItem="6bP-Rr-KOF" secondAttribute="centerY" id="k4t-Ci-KTC"/>
+                        <constraint firstAttribute="trailing" secondItem="REa-re-ms8" secondAttribute="trailing" id="o8D-Cz-nvl"/>
+                        <constraint firstItem="REa-re-ms8" firstAttribute="centerX" secondItem="6bP-Rr-KOF" secondAttribute="centerX" id="tai-Q7-9Ae"/>
+                        <constraint firstItem="REa-re-ms8" firstAttribute="top" secondItem="6bP-Rr-KOF" secondAttribute="top" id="w1m-uE-0Jf"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="RNc-ci-EfD"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6bP-Rr-KOF" secondAttribute="bottom" id="QYr-9k-iby"/>
+                <constraint firstItem="6bP-Rr-KOF" firstAttribute="top" secondItem="bcI-31-2I3" secondAttribute="top" id="fhH-lP-S9Y"/>
+                <constraint firstItem="6bP-Rr-KOF" firstAttribute="leading" secondItem="bcI-31-2I3" secondAttribute="leading" id="jdU-rE-0xb"/>
+                <constraint firstAttribute="trailing" secondItem="6bP-Rr-KOF" secondAttribute="trailing" id="mWc-cC-VxB"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionView" destination="1xV-TM-B9Z" id="W09-f7-ZUB"/>
+                <outlet property="informationLabel" destination="j2x-gW-YTX" id="civ-22-j1H"/>
+                <outlet property="scrollView" destination="6bP-Rr-KOF" id="QvR-MA-txK"/>
+                <outlet property="searchBar" destination="Brg-HT-qt9" id="e16-MG-fgB"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

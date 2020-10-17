@@ -9,7 +9,7 @@ import Foundation
 
 import PopupDialog
 
-class TopicListViewController: UIViewController, DeleteHandler {
+class TopicListViewController: UIViewController, ContentCellActionHandler {
     
     var presenter: TopicListViewToPresenterProtocol?
     
@@ -63,10 +63,23 @@ class TopicListViewController: UIViewController, DeleteHandler {
             subTopicListView.addItemToListButton.isHidden = false
             subTopicListView.addItemToListButton.isEnabled = true
         }
-        else {
+        else if username == "trends" {
             isUserPage = false
             
             subTopicListView.usernameTitleLabel.text = username.uppercased()
+            
+            subTopicListView.followButton.isHidden = false
+            subTopicListView.followButton.isEnabled = true
+            
+            subTopicListView.addItemToListButton.isHidden = true
+            subTopicListView.addItemToListButton.isEnabled = false
+            
+            getFollowersOfUser(username: username)
+        }
+        else {
+            isUserPage = false
+            
+            subTopicListView.usernameTitleLabel.text = "\(username.uppercased())'S LIST)"
             
             subTopicListView.followButton.isHidden = false
             subTopicListView.followButton.isEnabled = true
@@ -152,8 +165,13 @@ extension TopicListViewController: TopicListViewUserActionHandler {
     }
     
     func deletePressed(sender: UIButton) {
-        print(sender.tag)
-        deleteContent(contentId: sender.tag)
+        deleteContent(contentId: contentList[sender.tag].id)
+    }
+    
+    func linkDirectionButtonPressed(sender: UIButton) {
+        if let url = URL(string: contentList[sender.tag].url) {
+            UIApplication.shared.open(url)
+        }
     }
     
 }
@@ -327,7 +345,8 @@ extension TopicListViewController: UICollectionViewDelegate, UICollectionViewDat
         }
         
         cell.deleteButton.tag = indexPath.row
-        cell.handler = self
+        cell.linkDirectionButton.tag = indexPath.row
+        cell.contentCellActionHandler = self
         
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.5
@@ -363,25 +382,4 @@ extension TopicListViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-}
-
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
 }

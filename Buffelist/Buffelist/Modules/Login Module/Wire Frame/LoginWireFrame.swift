@@ -22,10 +22,11 @@ extension LoginWireframe: LoginWireframeProtocol {
     func navigateToPeople(view: LoginPresenterToViewProtocol) {
         let tabBarController = UITabBarController()
         let topicListModuleBuilder = TopicListModuleBuilder()
+        let peopleListModuleBuilder = PeopleListModuleBuilder()
         
         let vc1 = topicListModuleBuilder.createModule(username: "trends")
         let vc2 = topicListModuleBuilder.createModule(username: UserProvider.user().username)
-        let vc3 = topicListModuleBuilder.createModule(username: "trends")
+        let vc3 = peopleListModuleBuilder.createModule(username: UserProvider.user().username)
         
         tabBarController.tabBar.tintColor = .black
 

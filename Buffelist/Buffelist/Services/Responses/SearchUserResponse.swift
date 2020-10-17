@@ -8,7 +8,7 @@
 struct SearchUserResult: Decodable {
     
     var biography: String?
-    var email: String
+    var email: String?
     var firstName: String?
     var id: Int
     var lastName: String?
