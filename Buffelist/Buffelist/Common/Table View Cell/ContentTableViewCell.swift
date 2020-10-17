@@ -26,7 +26,7 @@ class ContentTableViewCell: UITableViewCell {
     
     func configure(itemInformation: ContentModel) {
         nameLabel.text = "\(itemInformation.title)"
-        dateLabel.text = "\(itemInformation.createdAt.epochSecond)"
+        dateLabel.text = "\(itemInformation.createdAt.date)"
     }
     
 }

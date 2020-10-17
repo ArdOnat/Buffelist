@@ -59,10 +59,10 @@ extension PeopleListPresenter: PeopleListInteractorToPresenterProtocol {
 
 extension PeopleListPresenter {
     
-    func navigateToUserProfile(username: String) {
+    func navigateToUserProfile(username: String, photoURL: String) {
         
         if let view = view {
-            router?.navigateToUserProfile(username: username, view: view)
+            router?.navigateToUserProfile(username: username, photoURL: photoURL, view: view)
         }
     }
     

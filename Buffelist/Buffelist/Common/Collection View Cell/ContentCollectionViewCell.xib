@@ -19,19 +19,19 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="buffelist_icon" translatesAutoresizingMaskIntoConstraints="NO" id="O6G-tN-Qtr">
                         <rect key="frame" x="0.0" y="0.0" width="346" height="126"/>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Uku-LB-yAk">
-                        <rect key="frame" x="16" y="134" width="314" height="94"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Uku-LB-yAk">
+                        <rect key="frame" x="16" y="134" width="314" height="69"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="artworkUrl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5hc-sl-WSt">
-                                <rect key="frame" x="0.0" y="0.0" width="314" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="artworkUrl" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hc-sl-WSt">
+                                <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="swi-5n-Ptb">
-                                <rect key="frame" x="0.0" y="55" width="314" height="39"/>
+                                <rect key="frame" x="0.0" y="30" width="314" height="39"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="artworkUrl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cKN-Z2-wry">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="artworkUrl" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="cKN-Z2-wry">
                                         <rect key="frame" x="0.0" y="0.0" width="265" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.39949165239726031" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -57,7 +57,7 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZj-6a-r2a">
-                        <rect key="frame" x="287" y="183.5" width="30" height="50"/>
+                        <rect key="frame" x="287" y="158.5" width="30" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Sf6-eQ-fY5"/>
                         </constraints>
@@ -66,7 +66,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iit-a9-Gt6">
-                        <rect key="frame" x="16" y="134" width="314" height="39"/>
+                        <rect key="frame" x="16" y="134" width="314" height="30"/>
                         <connections>
                             <action selector="linkDirectionButtonPressed:" destination="shW-NX-Xw3" eventType="touchUpInside" id="2c8-d3-Je2"/>
                         </connections>

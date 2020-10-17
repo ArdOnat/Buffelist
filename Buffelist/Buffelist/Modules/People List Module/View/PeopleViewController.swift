@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PeopleViewController: UIViewController, PeopleCellActionHandler {
+class PeopleViewController: UIViewController, PeopleCellActionHandler, OnTapKeyboardHideable {
 
     var presenter: PeopleListViewToPresenterProtocol?
     
@@ -22,11 +22,6 @@ class PeopleViewController: UIViewController, PeopleCellActionHandler {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        subPeopleView.informationLabel.text = "Here you will see people that you follow"
-        navigationItem.leftBarButtonItem = nil
-        
-        getFollowingsOfUser(username: username)
     }
     
     override func viewDidLoad() {
@@ -36,22 +31,27 @@ class PeopleViewController: UIViewController, PeopleCellActionHandler {
         setupUIFunctionality()
         configureKeyboardHandler()
         setupDelegation()
+        setupHideKeyboardOnTapRecognizer()
         getFollowingsOfUser(username: UserProvider.user().username)
     }
     
     private func setupUI() {
         subPeopleView = view  as? PeopleView
         
+        navigationController?.navigationBar.isHidden = true
+        
         subPeopleView.collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "ContentCollectionViewCell")
         subPeopleView.collectionView.allowsSelection = false
     }
     
-    @objc func reloadView() {
-        viewWillAppear(true)
+    private func setupUIFunctionality() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        subPeopleView.collectionView.refreshControl = refreshControl
     }
     
-    private func setupUIFunctionality() {
-        
+    @objc func pullToRefresh() {
+        getFollowingsOfUser(username: UserProvider.user().username)
     }
     
     private func configureKeyboardHandler() {
@@ -66,7 +66,7 @@ class PeopleViewController: UIViewController, PeopleCellActionHandler {
     }
     
     func linkDirectionButtonPressed(sender: UIButton) {
-        presenter?.navigateToUserProfile(username: peopleList[sender.tag].username)
+        presenter?.navigateToUserProfile(username: peopleList[sender.tag].username, photoURL: peopleList[sender.tag].profilePhotoURL ?? "")
     }
 
 }
@@ -85,11 +85,15 @@ extension PeopleViewController: PeopleListPresenterToViewProtocol {
         self.peopleList = peopleList
         DispatchQueue.main.async {
             self.subPeopleView.collectionView.reloadData()
+            self.subPeopleView.collectionView.refreshControl?.endRefreshing()
         }
     }
     
     func onGetFollowingsOfUserFailure(error: String) {
         activityIndicator.stopAnimating()
+        DispatchQueue.main.async {
+            self.subPeopleView.collectionView.refreshControl?.endRefreshing()
+        }
     }
     
     // MARK: - Get Followings Of User Service
@@ -101,10 +105,6 @@ extension PeopleViewController: PeopleListPresenterToViewProtocol {
     
     func onSearchUserSuccess(peopleList: [SearchUserResult]) {
         self.subPeopleView.informationLabel.text = "Search Result"
-        self.isSearched = true
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Return To Follows", style: .plain, target: nil, action: #selector(self.reloadView))
         
         self.activityIndicator.stopAnimating()
         self.peopleList = peopleList

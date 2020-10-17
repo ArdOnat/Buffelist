@@ -21,7 +21,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Cou-eT-cBB">
-                            <rect key="frame" x="16" y="16" width="343" height="441"/>
+                            <rect key="frame" x="16" y="16" width="343" height="422"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="kFW-CB-DKx">
                                     <rect key="frame" x="31" y="0.0" width="281" height="164"/>
@@ -36,24 +36,24 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="71z-kM-lki">
-                                    <rect key="frame" x="16" y="241" width="311" height="121"/>
+                                    <rect key="frame" x="16" y="241" width="311" height="102"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-Gi-24p" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                            <rect key="frame" x="0.0" y="0.0" width="311" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="34"/>
                                             <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="02h-te-dUL" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                            <rect key="frame" x="0.0" y="77.5" width="311" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="68" width="311" height="34"/>
                                             <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         </textField>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="m2o-BZ-ec0">
-                                    <rect key="frame" x="9.5" y="386" width="324" height="55"/>
+                                    <rect key="frame" x="9.5" y="367" width="324" height="55"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1i-Vv-dnt" customClass="BuffelistButton" customModule="Buffelist" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="55"/>
@@ -107,14 +107,6 @@
             <point key="canvasLocation" x="402" y="-561"/>
         </view>
     </objects>
-    <designables>
-        <designable name="02h-te-dUL">
-            <size key="intrinsicContentSize" width="311" height="43.483671874999999"/>
-        </designable>
-        <designable name="dhE-Gi-24p">
-            <size key="intrinsicContentSize" width="311" height="43.483671874999999"/>
-        </designable>
-    </designables>
     <resources>
         <image name="4" width="1919.97998046875" height="462.57000732421875"/>
     </resources>

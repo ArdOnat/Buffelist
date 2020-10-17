@@ -19,10 +19,10 @@ class PeopleListWireframe {
 // MARK: SearchScreenWireframeProtocol
 extension PeopleListWireframe: PeopleListWireframeProtocol {
     
-    func navigateToUserProfile(username: String, view: PeopleListPresenterToViewProtocol) {
+    func navigateToUserProfile(username: String, photoURL: String, view: PeopleListPresenterToViewProtocol) {
         
         let topicListModuleBuilder = TopicListModuleBuilder()
-        let vc1 = topicListModuleBuilder.createModule(username: username)
+        let vc1 = topicListModuleBuilder.createModule(username: username, profilePhotoURL: photoURL)
         
         if let viewController = view as? PeopleViewController {
             viewController.navigationController?.pushViewController(vc1.viewControllers.first!, animated: true)

@@ -91,5 +91,16 @@ class TopicListAPIDataManager: TopicListAPIDataManagerProtocol {
             }
         }
     }
+    
+    func searchUserByUsernameRequest(username: String) {
+        TopicListService.searchUserByUsername(username: username) { result in
+            switch result {
+            case .success(let result):
+                self.interactor?.onSearchUserByUsernameSuccess(result: result)
+            case .failure(let error):
+                self.interactor?.onSearchUserByUsernameFailure(error: error)
+            }
+        }
+    }
 
 }

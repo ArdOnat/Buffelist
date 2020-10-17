@@ -130,4 +130,18 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
         presenter?.onDeleteContentFailure(error: error)
     }
     
+    // MARK: - Search User By Username Service
+    
+    func sendSearchUserByUsernameRequest(username: String) {
+        APIDataManager?.searchUserByUsernameRequest(username: username)
+    }
+    
+    func onSearchUserByUsernameSuccess(result: SearchUserResult) {
+        presenter?.onSearchUserByUsernameSuccess(result: result)
+    }
+    
+    func onSearchUserByUsernameFailure(error: Error) {
+        presenter?.onSearchUserByUsernameFailure(error: error)
+    }
+    
 }

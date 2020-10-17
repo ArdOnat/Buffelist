@@ -8,7 +8,7 @@
 import UIKit
 import PopupDialog
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, OnTapKeyboardHideable {
 
     var presenter: LoginViewToPresenterProtocol?
     
@@ -22,9 +22,12 @@ class LoginViewController: UIViewController {
         setupUI()
         setupUIFunctionality()
         configureKeyboardHandler()
+        setupHideKeyboardOnTapRecognizer()
     }
     
     private func setupUI() {
+        navigationController?.navigationBar.isHidden = true
+        
         subLoginView = view  as? LoginView
         
         subLoginView.usernameTextField.placeholder = "Email or Username"

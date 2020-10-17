@@ -18,27 +18,27 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bP-Rr-KOF">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bP-Rr-KOF">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="REa-re-ms8">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <stackView opaque="NO" contentMode="center" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IGC-X1-wk2">
+                            <rect key="frame" x="0.0" y="8" width="375" height="651"/>
                             <subviews>
-                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-HT-qt9">
+                                <searchBar contentMode="redraw" verticalCompressionResistancePriority="751" text="" placeholder="Search people" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-HT-qt9">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you will see people that you follow." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2x-gW-YTX">
-                                    <rect key="frame" x="0.0" y="84.5" width="375" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you will see people that you follow." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2x-gW-YTX">
+                                    <rect key="frame" x="0.0" y="72" width="375" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-TM-B9Z">
-                                    <rect key="frame" x="0.0" y="133.5" width="375" height="533.5"/>
+                                    <rect key="frame" x="0.0" y="108.5" width="375" height="542.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="P6T-h1-ckh">
-                                        <size key="itemSize" width="175" height="275"/>
+                                        <size key="itemSize" width="175" height="240"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
@@ -46,17 +46,21 @@
                                 </collectionView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="1xV-TM-B9Z" firstAttribute="height" secondItem="REa-re-ms8" secondAttribute="height" multiplier="0.8" id="vme-9f-Res"/>
+                                <constraint firstAttribute="trailing" secondItem="1xV-TM-B9Z" secondAttribute="trailing" id="9VP-t6-f05"/>
+                                <constraint firstItem="1xV-TM-B9Z" firstAttribute="height" secondItem="IGC-X1-wk2" secondAttribute="height" multiplier="0.833333" id="A1P-A0-7fU"/>
+                                <constraint firstItem="1xV-TM-B9Z" firstAttribute="leading" secondItem="IGC-X1-wk2" secondAttribute="leading" id="M7n-AM-NHq"/>
+                                <constraint firstAttribute="bottom" secondItem="1xV-TM-B9Z" secondAttribute="bottom" id="c7F-rd-uZU"/>
+                                <constraint firstItem="1xV-TM-B9Z" firstAttribute="width" secondItem="IGC-X1-wk2" secondAttribute="width" id="wfp-VI-5BP"/>
                             </constraints>
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="REa-re-ms8" secondAttribute="bottom" id="Abc-7O-0FX"/>
-                        <constraint firstItem="REa-re-ms8" firstAttribute="leading" secondItem="6bP-Rr-KOF" secondAttribute="leading" id="Fg5-FR-cCD"/>
-                        <constraint firstItem="REa-re-ms8" firstAttribute="centerY" secondItem="6bP-Rr-KOF" secondAttribute="centerY" id="k4t-Ci-KTC"/>
-                        <constraint firstAttribute="trailing" secondItem="REa-re-ms8" secondAttribute="trailing" id="o8D-Cz-nvl"/>
-                        <constraint firstItem="REa-re-ms8" firstAttribute="centerX" secondItem="6bP-Rr-KOF" secondAttribute="centerX" id="tai-Q7-9Ae"/>
-                        <constraint firstItem="REa-re-ms8" firstAttribute="top" secondItem="6bP-Rr-KOF" secondAttribute="top" id="w1m-uE-0Jf"/>
+                        <constraint firstAttribute="bottom" secondItem="IGC-X1-wk2" secondAttribute="bottom" id="Mly-Ru-lIQ"/>
+                        <constraint firstItem="IGC-X1-wk2" firstAttribute="top" secondItem="6bP-Rr-KOF" secondAttribute="top" constant="8" id="Ucg-XW-Xst"/>
+                        <constraint firstItem="IGC-X1-wk2" firstAttribute="centerX" secondItem="6bP-Rr-KOF" secondAttribute="centerX" id="V9O-FN-VxL"/>
+                        <constraint firstAttribute="trailing" secondItem="IGC-X1-wk2" secondAttribute="trailing" id="fHr-Aq-eNp"/>
+                        <constraint firstItem="IGC-X1-wk2" firstAttribute="leading" secondItem="6bP-Rr-KOF" secondAttribute="leading" id="wuF-On-BNV"/>
+                        <constraint firstItem="IGC-X1-wk2" firstAttribute="centerY" secondItem="6bP-Rr-KOF" secondAttribute="centerY" id="xxB-Bj-Rez"/>
                     </constraints>
                 </scrollView>
             </subviews>

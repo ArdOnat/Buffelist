@@ -14,5 +14,7 @@ struct SearchUserResult: Decodable {
     var lastName: String?
     var profilePhotoURL: String?
     var username: String
+    var isFollowingUser: Bool?
+    var isUserFollowing: Bool?
     
 }

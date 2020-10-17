@@ -12,7 +12,7 @@ import Alamofire
 //MARK: ModuleBuilder -
 
 protocol TopicListModuleBuilderProtocol {
-    func createModule(username: String) -> UINavigationController
+    func createModule(username: String, profilePhotoURL: String?) -> UINavigationController
 }
 
 //MARK: Wireframe -
@@ -38,7 +38,7 @@ protocol TopicListPresenterToViewProtocol: class {
     func onCreateContentFailure(error: String)
     
     func getFollowersOfUser(username:String)
-    func onGetFollowersOfUserSuccess(result: [SearchUserResult], isFollowing: Bool)
+    func onGetFollowersOfUserSuccess(result: [SearchUserResult])
     func onGetFollowersOfUserFailure(error: String)
     
     func followUser(username: String)
@@ -52,6 +52,10 @@ protocol TopicListPresenterToViewProtocol: class {
     func deleteContent(contentId: Int)
     func onDeleteContentSuccess()
     func onDeleteContentFailure(error: String)
+    
+    func searchUserByUsername(username: String)
+    func onSearchUserByUsernameSuccess(result: SearchUserResult)
+    func onSearchUserByUsernameFailure(error: String)
 }
 
 protocol TopicListViewUserActionHandler {
@@ -77,6 +81,8 @@ protocol TopicListViewToPresenterProtocol: class {
     func unfollowUser(username: String)
     
     func deleteContent(contentId: Int)
+    
+    func searchUserByUsername(username: String)
 }
 
 protocol TopicListInteractorToPresenterProtocol: class {
@@ -102,6 +108,9 @@ protocol TopicListInteractorToPresenterProtocol: class {
     
     func onDeleteContentSuccess()
     func onDeleteContentFailure(error: Error)
+    
+    func onSearchUserByUsernameSuccess(result: SearchUserResult)
+    func onSearchUserByUsernameFailure(error: Error)
 }
 
 //MARK: Interactor -
@@ -135,6 +144,10 @@ protocol TopicListPresenterToInteractorProtocol: class {
     func sendDeleteContentRequest(contentId: Int)
     func onDeleteContentSuccess()
     func onDeleteContentFailure(error: Error)
+    
+    func sendSearchUserByUsernameRequest(username: String)
+    func onSearchUserByUsernameSuccess(result: SearchUserResult)
+    func onSearchUserByUsernameFailure(error: Error)
 }
 
 //MARK: APIDataManager -
@@ -154,6 +167,8 @@ protocol TopicListAPIDataManagerProtocol: class {
     func unfollowUserRequest(username: String)
     
     func deleteContentRequest(contentId: Int)
+    
+    func searchUserByUsernameRequest(username: String)
 }
 
 //MARK: LocalDataManager -
@@ -171,4 +186,6 @@ protocol TopicListServiceProtocol {
     static func followUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())
     static func unfollowUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())
     static func deleteContent(contentId: Int, completion: @escaping (Result<Data?, AFError>) -> ())
+    static func searchUserByUsername(username: String,  completion: @escaping (Result<SearchUserResult, AFError>) -> ())
+    
 }

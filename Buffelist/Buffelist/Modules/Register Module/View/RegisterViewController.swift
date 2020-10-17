@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, OnTapKeyboardHideable {
 
     var presenter: RegisterViewToPresenterProtocol?
     
@@ -20,6 +20,7 @@ class RegisterViewController: UIViewController {
         setupUI()
         setupUIFunctionality()
         configureKeyboardHandler()
+        setupHideKeyboardOnTapRecognizer()
     }
     
     private func setupUI() {

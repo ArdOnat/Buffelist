@@ -17,7 +17,7 @@ protocol PeopleListModuleBuilderProtocol {
 
 //MARK: Wireframe -
 protocol PeopleListWireframeProtocol {
-    func navigateToUserProfile(username: String, view: PeopleListPresenterToViewProtocol )
+    func navigateToUserProfile(username: String, photoURL: String, view: PeopleListPresenterToViewProtocol )
 }
 
 //MARK: View -
@@ -44,7 +44,7 @@ protocol PeopleListViewToPresenterProtocol: class {
     func getFollowingsOfUser(username: String)
     func searchUser(username: String)
     
-    func navigateToUserProfile(username: String)
+    func navigateToUserProfile(username: String, photoURL: String)
 }
 
 protocol PeopleListInteractorToPresenterProtocol: class {

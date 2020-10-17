@@ -51,6 +51,10 @@ extension TopicListPresenter: TopicListViewToPresenterProtocol {
         interactor?.sendDeleteContentRequest(contentId: contentId)
     }
     
+    func searchUserByUsername(username: String) {
+        interactor?.sendSearchUserByUsernameRequest(username: username)
+    }
+    
 }
 
 extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
@@ -88,7 +92,7 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     // MARK: - Get Followers Of User Service
     
     func onGetFollowersOfUserSuccess(result: [SearchUserResult]) {
-        view?.onGetFollowersOfUserSuccess(result: result, isFollowing: isFollowingUser(result: result))
+        view?.onGetFollowersOfUserSuccess(result: result)
     }
     
     func onGetFollowersOfUserFailure(error: Error) {
@@ -139,6 +143,16 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     
     func onDeleteContentFailure(error: Error) {
         view?.onDeleteContentFailure(error: error.localizedDescription)
+    }
+    
+    // MARK: - Search User By Username Service
+    
+    func onSearchUserByUsernameSuccess(result: SearchUserResult) {
+        view?.onSearchUserByUsernameSuccess(result: result)
+    }
+    
+    func onSearchUserByUsernameFailure(error: Error) {
+        view?.onSearchUserByUsernameFailure(error: error.localizedDescription)
     }
     
 }
