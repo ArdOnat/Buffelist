@@ -9,6 +9,7 @@ target 'Buffelist' do
   pod 'PopupDialog'
   pod 'RealmSwift'
   pod 'SkyFloatingLabelTextField'
+  pod 'Cartography', '~> 3.0'
 
   target 'BuffelistTests' do
     inherit! :search_paths

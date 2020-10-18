@@ -30,6 +30,11 @@
 		4C08F142251A644D0058485E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F141251A644D0058485E /* LoginViewController.swift */; };
 		4C08F14A251A645B0058485E /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C08F149251A645B0058485E /* LoginView.xib */; };
 		4C08F14F251A646D0058485E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08F14E251A646D0058485E /* LoginView.swift */; };
+		4C1A873F253C6E9C00E78027 /* FollowingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A873E253C6E9C00E78027 /* FollowingsView.xib */; };
+		4C1A8744253C6ECD00E78027 /* FollowingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A8743253C6ECD00E78027 /* FollowingsView.swift */; };
+		4C1A8754253C703200E78027 /* SearchPeopleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1A8753253C703200E78027 /* SearchPeopleView.xib */; };
+		4C1A8759253C704600E78027 /* SearchPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A8758253C704600E78027 /* SearchPeopleView.swift */; };
+		4C1A876D253C790300E78027 /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A876C253C790300E78027 /* NibOwnerLoadable.swift */; };
 		4C1FDE4C253B159000F105F8 /* OnTapKeyboardHideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FDE4B253B159000F105F8 /* OnTapKeyboardHideable.swift */; };
 		4C23C57F252C54ED0014159E /* CreateContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23C57E252C54ED0014159E /* CreateContentResponse.swift */; };
 		4C23C58A252C67A00014159E /* GetInfoFromUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23C589252C67A00014159E /* GetInfoFromUrlResponse.swift */; };
@@ -52,7 +57,6 @@
 		4C687A22252398C00018C799 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A21252398C00018C799 /* UserItem.swift */; };
 		4C687A2A25239E910018C799 /* RealmObjectAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C687A2925239E910018C799 /* RealmObjectAdapter.swift */; };
 		4C6AC1A6253219B100FB8AE0 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6AC1A5253219B100FB8AE0 /* PeopleViewController.swift */; };
-		4C6AC1AE253219B900FB8AE0 /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6AC1AD253219B800FB8AE0 /* PeopleView.swift */; };
 		4C6AC1B3253219C100FB8AE0 /* PeopleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6AC1B2253219C100FB8AE0 /* PeopleView.xib */; };
 		4C6D38F22528B427004C29A2 /* TopicListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D38F12528B427004C29A2 /* TopicListModuleBuilder.swift */; };
 		4C6D38FB2528B43F004C29A2 /* TopicListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D38FA2528B43F004C29A2 /* TopicListModuleInterface.swift */; };
@@ -138,6 +142,11 @@
 		4C08F141251A644D0058485E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4C08F149251A645B0058485E /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		4C08F14E251A646D0058485E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4C1A873E253C6E9C00E78027 /* FollowingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingsView.xib; sourceTree = "<group>"; };
+		4C1A8743253C6ECD00E78027 /* FollowingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingsView.swift; sourceTree = "<group>"; };
+		4C1A8753253C703200E78027 /* SearchPeopleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPeopleView.xib; sourceTree = "<group>"; };
+		4C1A8758253C704600E78027 /* SearchPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPeopleView.swift; sourceTree = "<group>"; };
+		4C1A876C253C790300E78027 /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
 		4C1FDE4B253B159000F105F8 /* OnTapKeyboardHideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTapKeyboardHideable.swift; sourceTree = "<group>"; };
 		4C23C57E252C54ED0014159E /* CreateContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContentResponse.swift; sourceTree = "<group>"; };
 		4C23C589252C67A00014159E /* GetInfoFromUrlResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoFromUrlResponse.swift; sourceTree = "<group>"; };
@@ -160,7 +169,6 @@
 		4C687A21252398C00018C799 /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		4C687A2925239E910018C799 /* RealmObjectAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjectAdapter.swift; sourceTree = "<group>"; };
 		4C6AC1A5253219B100FB8AE0 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
-		4C6AC1AD253219B800FB8AE0 /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		4C6AC1B2253219C100FB8AE0 /* PeopleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleView.xib; sourceTree = "<group>"; };
 		4C6D38F12528B427004C29A2 /* TopicListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListModuleBuilder.swift; sourceTree = "<group>"; };
 		4C6D38FA2528B43F004C29A2 /* TopicListModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListModuleInterface.swift; sourceTree = "<group>"; };
@@ -422,6 +430,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4C1A8745253C6ED300E78027 /* Followings */ = {
+			isa = PBXGroup;
+			children = (
+				4C1A8743253C6ECD00E78027 /* FollowingsView.swift */,
+				4C1A873E253C6E9C00E78027 /* FollowingsView.xib */,
+			);
+			path = Followings;
+			sourceTree = "<group>";
+		};
+		4C1A874C253C6EDC00E78027 /* Search People */ = {
+			isa = PBXGroup;
+			children = (
+				4C1A8753253C703200E78027 /* SearchPeopleView.xib */,
+				4C1A8758253C704600E78027 /* SearchPeopleView.swift */,
+			);
+			path = "Search People";
+			sourceTree = "<group>";
+		};
 		4C38FDF6252A630600D41CFC /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,8 +626,9 @@
 		4C6AC19F2532195D00FB8AE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C1A874C253C6EDC00E78027 /* Search People */,
+				4C1A8745253C6ED300E78027 /* Followings */,
 				4C6AC1A5253219B100FB8AE0 /* PeopleViewController.swift */,
-				4C6AC1AD253219B800FB8AE0 /* PeopleView.swift */,
 				4C6AC1B2253219C100FB8AE0 /* PeopleView.xib */,
 			);
 			path = View;
@@ -826,6 +853,7 @@
 				4C033A97251F6BCD00256C71 /* AlertContentConfig.swift */,
 				4C44B00B25264342005C7DCF /* KeyboardHandler.swift */,
 				4C44AFFD25263E23005C7DCF /* BuffelistButton.swift */,
+				4C1A876C253C790300E78027 /* NibOwnerLoadable.swift */,
 				4C46164C252B95FD00CBCEF7 /* Table View Cell */,
 				4C6D39312528DD4E004C29A2 /* Collection View Cell */,
 				4C44B00225263ECD005C7DCF /* Extensions */,
@@ -1016,6 +1044,8 @@
 				4C6D393B2528DDA5004C29A2 /* ContentCollectionViewCell.xib in Resources */,
 				4C08F0FE251A60610058485E /* LaunchScreen.storyboard in Resources */,
 				4C4908882520A10900EFBAC7 /* RegisterView.xib in Resources */,
+				4C1A8754253C703200E78027 /* SearchPeopleView.xib in Resources */,
+				4C1A873F253C6E9C00E78027 /* FollowingsView.xib in Resources */,
 				4C06D0A5251BBD250037BE85 /* HomeView.xib in Resources */,
 				4C033A8E251F286400256C71 /* PopupView.xib in Resources */,
 				4C08F0FB251A60610058485E /* Assets.xcassets in Resources */,
@@ -1070,9 +1100,9 @@
 				4C06D098251BBD110037BE85 /* HomeViewController.swift in Sources */,
 				4C81475D251D0238006CE13D /* LoginModuleInterface.swift in Sources */,
 				4C08F142251A644D0058485E /* LoginViewController.swift in Sources */,
+				4C1A876D253C790300E78027 /* NibOwnerLoadable.swift in Sources */,
 				4C23C57F252C54ED0014159E /* CreateContentResponse.swift in Sources */,
 				4CF45B1D2532F8DC00AA41DA /* PeopleListWireFrame.swift in Sources */,
-				4C6AC1AE253219B900FB8AE0 /* PeopleView.swift in Sources */,
 				4C08F0F2251A60600058485E /* AppDelegate.swift in Sources */,
 				4C687A2A25239E910018C799 /* RealmObjectAdapter.swift in Sources */,
 				4CDB4A482520F56600BB48C7 /* RegisterAPIDataManager.swift in Sources */,
@@ -1081,6 +1111,7 @@
 				4CE508D6252F03BF00F2A7C5 /* SearchUserResponse.swift in Sources */,
 				4C08F14F251A646D0058485E /* LoginView.swift in Sources */,
 				4CF45B242532F8F800AA41DA /* PeopleListService.swift in Sources */,
+				4C1A8744253C6ECD00E78027 /* FollowingsView.swift in Sources */,
 				4C44B00425263EE1005C7DCF /* UIViewExtension.swift in Sources */,
 				4C6D38FB2528B43F004C29A2 /* TopicListModuleInterface.swift in Sources */,
 				4C38FDF8252A632100D41CFC /* TopicListService.swift in Sources */,
@@ -1101,6 +1132,7 @@
 				4C06D0AD251BC2150037BE85 /* HomeModuleInterface.swift in Sources */,
 				4C687A0825224F700018C799 /* UserProvider.swift in Sources */,
 				4C06D0B7251BC7A00037BE85 /* HomeWireFrame.swift in Sources */,
+				4C1A8759253C704600E78027 /* SearchPeopleView.swift in Sources */,
 				4CDB4A372520EFF800BB48C7 /* RegisterPresenter.swift in Sources */,
 				4C6D38F22528B427004C29A2 /* TopicListModuleBuilder.swift in Sources */,
 				4C06D0B2251BC3FC0037BE85 /* HomePresenter.swift in Sources */,

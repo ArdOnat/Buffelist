@@ -7,12 +7,17 @@
 
 import UIKit
 
-class PeopleViewController: UIViewController, PeopleCellActionHandler, OnTapKeyboardHideable {
-
+class PeopleViewController: UIViewController, PeopleCellActionHandler, OnTapKeyboardHideable, SearchPeopleViewActionHandler {
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var followingsView: FollowingsView!
+    @IBOutlet weak var searchPeopleView: SearchPeopleView!
+    
     var presenter: PeopleListViewToPresenterProtocol?
     
     private var keyboardHandler: KeyboardHandler!
-    var subPeopleView: PeopleView!
+    var subSearchPeopleView: SearchPeopleView!
+    var subFollowingsView: FollowingsView!
     var vSpinner : UIView?
     let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
@@ -20,6 +25,18 @@ class PeopleViewController: UIViewController, PeopleCellActionHandler, OnTapKeyb
     var username: String = ""
     var isSearched: Bool = false
 
+    var viewController: UIViewController? {
+        return self
+    }
+    
+    init() {
+        super.init(nibName: "PeopleView", bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        return nil
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -36,16 +53,21 @@ class PeopleViewController: UIViewController, PeopleCellActionHandler, OnTapKeyb
     }
     
     private func setupUI() {
-        subPeopleView = view  as? PeopleView
-        
+
         navigationController?.navigationBar.isHidden = true
         
-        subPeopleView.collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "ContentCollectionViewCell")
-        subPeopleView.collectionView.allowsSelection = false
+        segmentedControl.addTarget(self, action: #selector(self.segmentedControlValueChanged), for: .valueChanged)
         
-        subPeopleView.returnToFollowsButton.setStatus(isEnabled: false)
-        subPeopleView.returnToFollowsButton.isHidden = true
-        subPeopleView.returnToFollowsButton.style = .redBackgroundWhiteTextNoRadius
+        followingsView.collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "ContentCollectionViewCell")
+        followingsView.collectionView.allowsSelection = false
+        
+        searchPeopleView.collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "ContentCollectionViewCell")
+        searchPeopleView.collectionView.allowsSelection = false
+        
+        followingsView.isHidden = false
+        searchPeopleView.isHidden = true
+        
+        segmentedControl.selectedSegmentIndex = 0
         
         view.addSubview(activityIndicator)
         activityIndicator.center = view.center
@@ -55,36 +77,46 @@ class PeopleViewController: UIViewController, PeopleCellActionHandler, OnTapKeyb
     private func setupUIFunctionality() {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
-        subPeopleView.collectionView.refreshControl = refreshControl
-        
-        subPeopleView.returnToFollowsButton.addTarget(self, action: #selector(self.returnToFollowsButtonPressed), for: .touchUpInside)
+        followingsView.collectionView.refreshControl = refreshControl
     }
     
     private func configureKeyboardHandler() {
-        keyboardHandler = KeyboardHandler(with: subPeopleView.scrollView, responders: [subPeopleView.scrollView.subviews.first!])
+        keyboardHandler = KeyboardHandler(with: searchPeopleView.scrollView, responders: [searchPeopleView.subviews.first!])
     }
     
     private func setupDelegation() {
-        subPeopleView.searchBar.delegate = self
+        followingsView.collectionView.delegate = self
+        followingsView.collectionView.dataSource = self
         
-        subPeopleView.collectionView.delegate = self
-        subPeopleView.collectionView.dataSource = self
+        searchPeopleView.collectionView.delegate = self
+        searchPeopleView.collectionView.dataSource = self
+        
+        searchPeopleView.searchPeopleViewActionHandler = self
     }
     
     func linkDirectionButtonPressed(sender: UIButton) {
         presenter?.navigateToUserProfile(username: peopleList[sender.tag].username, photoURL: peopleList[sender.tag].profilePhotoURL ?? "")
     }
     
-    @objc func returnToFollowsButtonPressed(sender: UIButton) {
-        subPeopleView.informationLabel.text = "Here you will see people that you follow."
-        subPeopleView.returnToFollowsButton.setStatus(isEnabled: false)
-        subPeopleView.returnToFollowsButton.isHidden = true
-        activityIndicator.startAnimating()
+    @objc func pullToRefresh() {
         getFollowingsOfUser(username: UserProvider.user().username)
     }
     
-    @objc func pullToRefresh() {
-        getFollowingsOfUser(username: UserProvider.user().username)
+    @objc func segmentedControlValueChanged() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            followingsView.isHidden = false
+            searchPeopleView.isHidden = true
+            getFollowingsOfUser(username: UserProvider.user().username)
+        }
+        else {
+            followingsView.isHidden = true
+            searchPeopleView.isHidden = false
+            searchUser(username: searchPeopleView.searchBar.text ?? "")
+        }
+    }
+    
+    func searchButtonClicked(searchText: String) {
+        searchUser(username: searchText)
     }
 
 }
@@ -102,14 +134,14 @@ extension PeopleViewController: PeopleListPresenterToViewProtocol {
         
         self.peopleList = peopleList
         DispatchQueue.main.async {
-            self.subPeopleView.collectionView.reloadData()
-            self.subPeopleView.collectionView.refreshControl?.endRefreshing()
+            self.followingsView.collectionView.reloadData()
+            self.followingsView.collectionView.refreshControl?.endRefreshing()
         }
     }
     
     func onGetFollowingsOfUserFailure(error: String) {
         DispatchQueue.main.async {
-            self.subPeopleView.collectionView.refreshControl?.endRefreshing()
+            self.followingsView.collectionView.refreshControl?.endRefreshing()
         }
     }
     
@@ -126,27 +158,12 @@ extension PeopleViewController: PeopleListPresenterToViewProtocol {
         self.peopleList = peopleList
         
         DispatchQueue.main.async {
-            self.subPeopleView.collectionView.reloadData()
+            self.searchPeopleView.collectionView.reloadData()
         }
     }
     
     func onSearchUserFailure(error: String) {
         self.activityIndicator.stopAnimating()
-    }
-    
-}
-
-extension PeopleViewController: UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
-        subPeopleView.informationLabel.text = "Search Result"
-        subPeopleView.returnToFollowsButton.setStatus(isEnabled: true)
-        subPeopleView.returnToFollowsButton.isHidden = false
-        searchUser(username: searchBar.text ?? "")
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
     }
     
 }

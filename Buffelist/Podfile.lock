@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.2)
+  - Cartography (3.1.0)
   - DynamicBlurView (4.1.0)
   - PopupDialog (1.1.1):
     - DynamicBlurView (~> 4.0)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Cartography (~> 3.0)
   - PopupDialog
   - RealmSwift
   - SkyFloatingLabelTextField
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cartography
     - DynamicBlurView
     - PopupDialog
     - Realm
@@ -27,12 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
   PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   Realm: 155c60aec98b1044a05d676017be6900a9ee93b6
   RealmSwift: fa80dc70fa91f762c2bc3d09328da92214b36bbb
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
 
-PODFILE CHECKSUM: b0569f404a4972202bda0dcb38f6bc4047ced657
+PODFILE CHECKSUM: 5d56ac576ddc5951aa6d863953465ab96e95765c
 
 COCOAPODS: 1.9.3
