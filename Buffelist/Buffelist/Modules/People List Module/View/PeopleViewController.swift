@@ -122,8 +122,7 @@ extension PeopleViewController: PeopleListPresenterToViewProtocol {
     
     func onSearchUserSuccess(peopleList: [SearchUserResult]) {
         self.activityIndicator.stopAnimating()
-        
-        self.subPeopleView.informationLabel.text = "Search Result"
+
         self.peopleList = peopleList
         
         DispatchQueue.main.async {
@@ -140,8 +139,9 @@ extension PeopleViewController: PeopleListPresenterToViewProtocol {
 extension PeopleViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
-        self.subPeopleView.returnToFollowsButton.setStatus(isEnabled: true)
-        self.subPeopleView.returnToFollowsButton.isHidden = false
+        subPeopleView.informationLabel.text = "Search Result"
+        subPeopleView.returnToFollowsButton.setStatus(isEnabled: true)
+        subPeopleView.returnToFollowsButton.isHidden = false
         searchUser(username: searchBar.text ?? "")
     }
     
