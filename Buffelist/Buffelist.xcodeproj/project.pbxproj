@@ -268,8 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				4C06D097251BBD110037BE85 /* HomeViewController.swift */,
-				4C06D0A4251BBD250037BE85 /* HomeView.xib */,
 				4C06D09F251BBD1C0037BE85 /* HomeView.swift */,
+				4C06D0A4251BBD250037BE85 /* HomeView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -822,6 +822,7 @@
 		4C814788251D0A76006CE13D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4C1FDE4B253B159000F105F8 /* OnTapKeyboardHideable.swift */,
 				4C033A97251F6BCD00256C71 /* AlertContentConfig.swift */,
 				4C44B00B25264342005C7DCF /* KeyboardHandler.swift */,
 				4C44AFFD25263E23005C7DCF /* BuffelistButton.swift */,
@@ -829,7 +830,6 @@
 				4C6D39312528DD4E004C29A2 /* Collection View Cell */,
 				4C44B00225263ECD005C7DCF /* Extensions */,
 				4C033A79251F280D00256C71 /* Popup Views */,
-				4C1FDE4B253B159000F105F8 /* OnTapKeyboardHideable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";

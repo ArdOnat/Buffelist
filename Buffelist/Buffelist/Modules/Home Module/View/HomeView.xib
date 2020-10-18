@@ -33,6 +33,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="0z1-XN-mcU"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                             <state key="normal" title="Platform"/>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TVn-si-gxv">
@@ -40,10 +41,12 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7A-oZ-Im3" customClass="BuffelistButton" customModule="Buffelist" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="161.5" height="50"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                     <state key="normal" title="Login"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qP-F4-Ix6" customClass="BuffelistButton" customModule="Buffelist" customModuleProvider="target">
                                     <rect key="frame" x="181.5" y="0.0" width="161.5" height="50"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                     <state key="normal" title="Register"/>
                                 </button>
                             </subviews>

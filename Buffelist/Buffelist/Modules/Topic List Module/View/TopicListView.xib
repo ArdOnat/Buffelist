@@ -31,8 +31,8 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRENDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0y-eq-Htr">
-                    <rect key="frame" x="100" y="36" width="68.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <rect key="frame" x="100" y="36.5" width="59" height="19.5"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -51,6 +51,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="usN-ml-3FJ"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                             <state key="normal" title="Add item."/>
                         </button>
                     </subviews>
@@ -60,11 +61,12 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul4-Wj-W0V" customClass="BuffelistButton" customModule="Buffelist" customModuleProvider="target">
-                    <rect key="frame" x="184.5" y="31" width="80" height="30"/>
+                    <rect key="frame" x="175" y="31" width="80" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Fpp-TP-5m1"/>
                         <constraint firstAttribute="width" constant="80" id="Q0l-RS-6nG"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                     <state key="normal" title="Follow"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -93,6 +95,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ykf-rP-Coo" secondAttribute="bottom" id="MyL-kR-6pe"/>
                 <constraint firstItem="n0y-eq-Htr" firstAttribute="leading" secondItem="omq-pK-j5p" secondAttribute="trailing" constant="24" id="Qsn-BU-wNt"/>
                 <constraint firstItem="Ykf-rP-Coo" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="U6p-ur-Wgk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ul4-Wj-W0V" secondAttribute="trailing" constant="8" id="cJ1-OG-JNJ"/>
                 <constraint firstItem="MQI-ia-4gZ" firstAttribute="height" secondItem="Ykf-rP-Coo" secondAttribute="height" id="cZj-ke-9km"/>
                 <constraint firstItem="Ul4-Wj-W0V" firstAttribute="centerY" secondItem="n0y-eq-Htr" secondAttribute="centerY" id="cb1-c6-gx6"/>
                 <constraint firstItem="Ykf-rP-Coo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gg5-Zb-Sij"/>

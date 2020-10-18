@@ -21,46 +21,52 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bP-Rr-KOF">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="center" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IGC-X1-wk2">
-                            <rect key="frame" x="0.0" y="8" width="375" height="651"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P7e-0e-CNm">
+                            <rect key="frame" x="8" y="0.0" width="359" height="667"/>
                             <subviews>
                                 <searchBar contentMode="redraw" verticalCompressionResistancePriority="751" text="" placeholder="Search people" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-HT-qt9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="359" height="56"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you will see people that you follow." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2x-gW-YTX">
-                                    <rect key="frame" x="0.0" y="72" width="375" height="20.5"/>
-                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DXh-wp-lcO">
+                                    <rect key="frame" x="0.0" y="66" width="359" height="48.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu9-Tu-7aH" customClass="BuffelistButton" customModule="Buffelist" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="8.5" width="81" height="32"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <state key="normal" title="Follows"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you will see people that you follow." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2x-gW-YTX">
+                                            <rect key="frame" x="89" y="5" width="270" height="38.5"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Zu9-Tu-7aH" firstAttribute="width" secondItem="j2x-gW-YTX" secondAttribute="width" multiplier="0.3" id="Nr5-JW-GZE"/>
+                                    </constraints>
+                                </stackView>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-TM-B9Z">
-                                    <rect key="frame" x="0.0" y="108.5" width="375" height="542.5"/>
+                                    <rect key="frame" x="0.0" y="124.5" width="359" height="542.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="P6T-h1-ckh">
-                                        <size key="itemSize" width="175" height="240"/>
+                                        <size key="itemSize" width="170" height="240"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                        <inset key="sectionInset" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="1xV-TM-B9Z" secondAttribute="trailing" id="9VP-t6-f05"/>
-                                <constraint firstItem="1xV-TM-B9Z" firstAttribute="height" secondItem="IGC-X1-wk2" secondAttribute="height" multiplier="0.833333" id="A1P-A0-7fU"/>
-                                <constraint firstItem="1xV-TM-B9Z" firstAttribute="leading" secondItem="IGC-X1-wk2" secondAttribute="leading" id="M7n-AM-NHq"/>
-                                <constraint firstAttribute="bottom" secondItem="1xV-TM-B9Z" secondAttribute="bottom" id="c7F-rd-uZU"/>
-                                <constraint firstItem="1xV-TM-B9Z" firstAttribute="width" secondItem="IGC-X1-wk2" secondAttribute="width" id="wfp-VI-5BP"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="IGC-X1-wk2" secondAttribute="bottom" id="Mly-Ru-lIQ"/>
-                        <constraint firstItem="IGC-X1-wk2" firstAttribute="top" secondItem="6bP-Rr-KOF" secondAttribute="top" constant="8" id="Ucg-XW-Xst"/>
-                        <constraint firstItem="IGC-X1-wk2" firstAttribute="centerX" secondItem="6bP-Rr-KOF" secondAttribute="centerX" id="V9O-FN-VxL"/>
-                        <constraint firstAttribute="trailing" secondItem="IGC-X1-wk2" secondAttribute="trailing" id="fHr-Aq-eNp"/>
-                        <constraint firstItem="IGC-X1-wk2" firstAttribute="leading" secondItem="6bP-Rr-KOF" secondAttribute="leading" id="wuF-On-BNV"/>
-                        <constraint firstItem="IGC-X1-wk2" firstAttribute="centerY" secondItem="6bP-Rr-KOF" secondAttribute="centerY" id="xxB-Bj-Rez"/>
+                        <constraint firstItem="P7e-0e-CNm" firstAttribute="centerY" secondItem="6bP-Rr-KOF" secondAttribute="centerY" id="03y-G5-NeH"/>
+                        <constraint firstItem="P7e-0e-CNm" firstAttribute="leading" secondItem="6bP-Rr-KOF" secondAttribute="leading" constant="8" id="XSv-sU-pg4"/>
+                        <constraint firstAttribute="bottom" secondItem="P7e-0e-CNm" secondAttribute="bottom" id="Yea-jV-0lH"/>
+                        <constraint firstItem="P7e-0e-CNm" firstAttribute="top" secondItem="6bP-Rr-KOF" secondAttribute="top" id="ZlR-qY-CVg"/>
+                        <constraint firstAttribute="trailing" secondItem="P7e-0e-CNm" secondAttribute="trailing" constant="8" id="ict-GP-FDj"/>
+                        <constraint firstItem="P7e-0e-CNm" firstAttribute="centerX" secondItem="6bP-Rr-KOF" secondAttribute="centerX" id="usK-Vc-lPc"/>
                     </constraints>
                 </scrollView>
             </subviews>
@@ -75,6 +81,7 @@
             <connections>
                 <outlet property="collectionView" destination="1xV-TM-B9Z" id="W09-f7-ZUB"/>
                 <outlet property="informationLabel" destination="j2x-gW-YTX" id="civ-22-j1H"/>
+                <outlet property="returnToFollowsButton" destination="Zu9-Tu-7aH" id="B0N-WQ-aUU"/>
                 <outlet property="scrollView" destination="6bP-Rr-KOF" id="QvR-MA-txK"/>
                 <outlet property="searchBar" destination="Brg-HT-qt9" id="e16-MG-fgB"/>
             </connections>

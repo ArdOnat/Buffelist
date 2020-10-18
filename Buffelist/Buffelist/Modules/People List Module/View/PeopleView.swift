@@ -13,6 +13,7 @@ class PeopleView: UIView {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var informationLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var returnToFollowsButton: BuffelistButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

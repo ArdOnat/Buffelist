@@ -207,14 +207,12 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
     // MARK: - Get Content List Service
     
     func getContentList(username: String) {
-        self.activityIndicator.startAnimating()
         presenter?.getContentList(username: username)
     }
     
     func onGetContentListSuccess(contentList: [ContentModel]) {
         self.contentList = contentList
         DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
             self.subTopicListView.collectionView.reloadData()
             self.subTopicListView.tableView.reloadData()
             self.subTopicListView.collectionView.refreshControl?.endRefreshing()
@@ -223,7 +221,6 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
     
     func onGetContentListFailure(error: String) {
         DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
             self.subTopicListView.collectionView.refreshControl?.endRefreshing()
         }
     }
