@@ -32,29 +32,29 @@
                     </segments>
                 </segmentedControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtR-dr-x72" customClass="FollowingsView" customModule="Buffelist" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="66.5" width="375" height="600.5"/>
+                    <rect key="frame" x="0.0" y="46" width="375" height="621"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJO-ft-b34" userLabel="Search People View" customClass="SearchPeopleView" customModule="Buffelist" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="73.5" width="375" height="587"/>
+                    <rect key="frame" x="0.0" y="46" width="375" height="621"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="RNc-ci-EfD"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="YtR-dr-x72" firstAttribute="trailing" secondItem="RNc-ci-EfD" secondAttribute="trailing" id="0nV-Yg-7qu"/>
+                <constraint firstItem="SJO-ft-b34" firstAttribute="bottom" secondItem="RNc-ci-EfD" secondAttribute="bottom" id="1Dz-pm-DUY"/>
                 <constraint firstItem="qxq-jZ-kyc" firstAttribute="top" secondItem="RNc-ci-EfD" secondAttribute="top" constant="16" id="BQA-3H-FLw"/>
                 <constraint firstItem="qxq-jZ-kyc" firstAttribute="leading" secondItem="RNc-ci-EfD" secondAttribute="leading" constant="16" id="Cmk-hd-2hZ"/>
                 <constraint firstItem="RNc-ci-EfD" firstAttribute="trailing" secondItem="qxq-jZ-kyc" secondAttribute="trailing" constant="16" id="Ddt-Hb-nqp"/>
-                <constraint firstItem="SJO-ft-b34" firstAttribute="width" secondItem="YtR-dr-x72" secondAttribute="width" id="HkP-85-a1k"/>
-                <constraint firstItem="SJO-ft-b34" firstAttribute="centerY" secondItem="YtR-dr-x72" secondAttribute="centerY" id="PCP-Dk-1eW"/>
-                <constraint firstItem="YtR-dr-x72" firstAttribute="height" secondItem="bcI-31-2I3" secondAttribute="height" multiplier="0.9" id="WhD-1T-lfE"/>
-                <constraint firstItem="YtR-dr-x72" firstAttribute="centerX" secondItem="RNc-ci-EfD" secondAttribute="centerX" id="gMj-uq-CUy"/>
-                <constraint firstAttribute="bottom" secondItem="YtR-dr-x72" secondAttribute="bottom" id="hF1-bm-gLS"/>
+                <constraint firstItem="SJO-ft-b34" firstAttribute="top" secondItem="qxq-jZ-kyc" secondAttribute="bottom" id="IgZ-SL-dge"/>
+                <constraint firstItem="SJO-ft-b34" firstAttribute="centerX" secondItem="YtR-dr-x72" secondAttribute="centerX" id="S52-ks-Irw"/>
+                <constraint firstItem="YtR-dr-x72" firstAttribute="leading" secondItem="RNc-ci-EfD" secondAttribute="leading" id="Tsi-3W-s7J"/>
+                <constraint firstItem="YtR-dr-x72" firstAttribute="bottom" secondItem="RNc-ci-EfD" secondAttribute="bottom" id="hNS-PK-es7"/>
                 <constraint firstItem="qxq-jZ-kyc" firstAttribute="centerX" secondItem="RNc-ci-EfD" secondAttribute="centerX" id="hUy-MG-IWS"/>
-                <constraint firstItem="YtR-dr-x72" firstAttribute="width" secondItem="bcI-31-2I3" secondAttribute="width" id="ocU-85-YLk"/>
-                <constraint firstItem="SJO-ft-b34" firstAttribute="centerX" secondItem="YtR-dr-x72" secondAttribute="centerX" id="xxg-qZ-aV3"/>
-                <constraint firstItem="SJO-ft-b34" firstAttribute="height" secondItem="YtR-dr-x72" secondAttribute="height" multiplier="0.977519" id="yEd-OA-0oI"/>
+                <constraint firstItem="SJO-ft-b34" firstAttribute="width" secondItem="YtR-dr-x72" secondAttribute="width" id="req-or-unV"/>
+                <constraint firstItem="YtR-dr-x72" firstAttribute="top" secondItem="qxq-jZ-kyc" secondAttribute="bottom" id="syk-Se-4oj"/>
             </constraints>
             <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>

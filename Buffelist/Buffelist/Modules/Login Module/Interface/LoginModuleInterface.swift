@@ -11,7 +11,7 @@ import Alamofire
 //MARK: ModuleBuilder -
 
 protocol LoginModuleBuilderProtocol {
-    static func createModule() -> UINavigationController
+    static func createModule(parentNavigationController: UINavigationController) -> UINavigationController
 }
 
 //MARK: Wireframe -
@@ -22,6 +22,8 @@ protocol LoginWireframeProtocol {
 //MARK: View -
 protocol LoginPresenterToViewProtocol: class {
     var presenter: LoginViewToPresenterProtocol?  { get set }
+    
+    var parentNavigationController: UINavigationController? { get set }
 }
 
 protocol LoginViewUserActionHandler {

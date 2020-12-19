@@ -18,7 +18,6 @@ class UserProvider {
     }
     
     static func user() -> UserModel {
-        print(adapter.objects())
         if let user = adapter.objects()?.first {
             return user
         }
@@ -56,6 +55,7 @@ class UserProvider {
 private extension UserProvider {
     
     static func userModel(for identifier: Int) -> UserModel? {
+        print(adapter.objects())
         return adapter.objects()?.filter("\(#keyPath(UserModel.id)) == '\(identifier)'").first
     }
     

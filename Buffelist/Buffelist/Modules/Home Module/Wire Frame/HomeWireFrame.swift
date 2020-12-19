@@ -24,9 +24,8 @@ extension HomeWireframe: HomeWireframeProtocol {
     }
     
     func navigateToLogin(view: HomePresenterToViewProtocol) {
-        let loginViewController = LoginModuleBuilder.createModule()
-        
         if let viewController = view as? HomeViewController {
+            let loginViewController = LoginModuleBuilder.createModule(parentNavigationController: viewController.navigationController!)
             viewController.navigationController?.pushViewController(loginViewController.viewControllers.first!, animated: true)
         }
     }

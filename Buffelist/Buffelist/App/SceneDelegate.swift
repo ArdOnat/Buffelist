@@ -17,26 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        let tabBarController = UITabBarController()
+        let topicListModuleBuilder = TopicListModuleBuilder()
+        let peopleListModuleBuilder = PeopleListModuleBuilder()
+        let profileModuleBuilder = ProfileModuleBuilder()
         
         if UserProvider.users().count == 0 {
-            
             let homeModuleBuilder = HomeModuleBuilder()
             
             let homeModule = homeModuleBuilder.createModule()
-            
-            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-            window?.windowScene = windowScene
-            window?.rootViewController = homeModule
-            window?.makeKeyAndVisible()
-        }
-        else {
-            let tabBarController = UITabBarController()
-            let topicListModuleBuilder = TopicListModuleBuilder()
-            let peopleListModuleBuilder = PeopleListModuleBuilder()
-            
             let vc1 = topicListModuleBuilder.createModule(username: "trends")
-            let vc2 = topicListModuleBuilder.createModule(username: UserProvider.user().username)
-            let vc3 = peopleListModuleBuilder.createModule(username: UserProvider.user().username)
+            let vc2 = topicListModuleBuilder.createModule(username: "")
+            let vc3 = peopleListModuleBuilder.createModule(username: "")
+            let vc4 = profileModuleBuilder.createModule()
             
             tabBarController.tabBar.tintColor = .black
             
@@ -46,16 +39,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             vc1.tabBarItem = UITabBarItem(title: "Trend Contents", image: UIImage(named: "trends"), tag: 1)
             vc2.tabBarItem = UITabBarItem(title: "My List", image: UIImage(named: "list"), tag: 2)
             vc3.tabBarItem = UITabBarItem(title: "People", image: UIImage(named: "people"), tag: 3)
-
-            tabBarController.viewControllers = [vc1, vc2, vc3]
-            tabBarController.setViewControllers(tabBarController.viewControllers, animated: true)
+            vc4.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "people"), tag: 4)
             
-            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-            window?.windowScene = windowScene
-            window?.rootViewController = tabBarController
-            window?.makeKeyAndVisible()
-            
+            tabBarController.viewControllers = [vc1, vc2, vc3, vc4]
         }
+        else {
+            let vc1 = topicListModuleBuilder.createModule(username: "trends")
+            let vc2 = topicListModuleBuilder.createModule(username: UserProvider.user().username)
+            let vc3 = peopleListModuleBuilder.createModule(username: UserProvider.user().username)
+            let vc4 = profileModuleBuilder.createModule()
+            
+            tabBarController.tabBar.tintColor = .black
+            
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Regular", size: 14)!], for: .normal)
+            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "AppleSDGothicNeo-Regular", size: 14)!], for: .selected)
+            
+            vc1.tabBarItem = UITabBarItem(title: "Trend Contents", image: UIImage(named: "trends"), tag: 1)
+            vc2.tabBarItem = UITabBarItem(title: "My List", image: UIImage(named: "list"), tag: 2)
+            vc3.tabBarItem = UITabBarItem(title: "People", image: UIImage(named: "people"), tag: 3)
+            vc4.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "people"), tag: 4)
+
+            tabBarController.viewControllers = [vc1, vc2, vc3, vc4]
+        }
+        
+        tabBarController.setViewControllers(tabBarController.viewControllers, animated: true)
+        
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

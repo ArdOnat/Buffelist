@@ -32,8 +32,13 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
         let contentList = result.contents.map { ContentModel(fromContentInformation: $0)}.reversed() as [ContentModel]
         let contentListId = result.id
         
-        if username == UserProvider.user().username {
-            LocalDataManager?.updateUserContentListId(contentListId: contentListId) {
+        if UserProvider.users().count != 0 {
+            if username == UserProvider.user().username {
+                LocalDataManager?.updateUserContentListId(contentListId: contentListId) {
+                    self.presenter?.onGetContentListSuccess(contentList: contentList)
+                }
+            }
+            else {
                 self.presenter?.onGetContentListSuccess(contentList: contentList)
             }
         }
@@ -133,6 +138,7 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
     // MARK: - Search User By Username Service
     
     func sendSearchUserByUsernameRequest(username: String) {
+        self.username = username
         APIDataManager?.searchUserByUsernameRequest(username: username)
     }
     
@@ -142,6 +148,10 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
     
     func onSearchUserByUsernameFailure(error: Error) {
         presenter?.onSearchUserByUsernameFailure(error: error)
+    }
+    
+    func updateUser(information: SearchUserResult) {
+        LocalDataManager?.updateUser(information: information)
     }
     
 }

@@ -20,4 +20,8 @@ class TopicListLocalDataManager: TopicListLocalDataManagerProtocol {
         completion!() // TODO: change
     }
     
+    func updateUser(information: SearchUserResult) {
+        UserProvider.user().update(with: NewUserInfo(userInformation: information))
+    }
+    
 }

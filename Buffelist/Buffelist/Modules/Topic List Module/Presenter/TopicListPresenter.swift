@@ -55,6 +55,12 @@ extension TopicListPresenter: TopicListViewToPresenterProtocol {
         interactor?.sendSearchUserByUsernameRequest(username: username)
     }
     
+    func navigateToLogin() {
+        if let view = view {
+            router?.navigateToLogin(view: view)
+        }
+    }
+    
 }
 
 extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
@@ -148,6 +154,10 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     // MARK: - Search User By Username Service
     
     func onSearchUserByUsernameSuccess(result: SearchUserResult) {
+        if result.username == UserProvider.user().username {
+            interactor?.updateUser(information: result)
+        }
+        
         view?.onSearchUserByUsernameSuccess(result: result)
     }
     

@@ -16,7 +16,7 @@ class LoginLocalDataManager: LoginLocalDataManagerProtocol {
     }
     
     func createUser(result: LoginResult, password: String, token: String, completion: (()->())? = nil) {
-        UserProvider.create(with: UserItem(id: result.id, username: result.username, password: password, firstName: result.firstName, lastName: result.lastName, email: result.email, profilePhotoURL: result.profilePhotoURL, biography: result.biography, token: token, contentListId: -1))
+        UserProvider.create(with: UserItem(id: result.id, username: result.username, password: password, firstName: result.firstName ?? "", lastName: result.lastName ?? "", email: result.email, profilePhotoURL: result.profilePhotoURL, biography: result.biography ?? "", token: token, contentListId: -1))
         completion!() // TODO: Change
     }
     

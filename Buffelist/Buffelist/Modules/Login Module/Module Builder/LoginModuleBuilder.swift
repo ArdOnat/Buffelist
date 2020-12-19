@@ -9,7 +9,7 @@ import UIKit
 
 class LoginModuleBuilder: LoginModuleBuilderProtocol {
     
-    static func createModule() -> UINavigationController {
+    static func createModule(parentNavigationController: UINavigationController) -> UINavigationController {
         let viewController = LoginViewController()
         let interactor = LoginInteractor()
         let router = LoginWireframe()
@@ -21,6 +21,7 @@ class LoginModuleBuilder: LoginModuleBuilderProtocol {
         interactor.presenter = presenter
         
         viewController.presenter = presenter
+        viewController.parentNavigationController = parentNavigationController
         
         return navigationController
     }

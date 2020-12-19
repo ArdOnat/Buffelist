@@ -49,7 +49,10 @@ class PeopleViewController: UIViewController, PeopleCellActionHandler, OnTapKeyb
         configureKeyboardHandler()
         setupDelegation()
         setupHideKeyboardOnTapRecognizer()
-        getFollowingsOfUser(username: UserProvider.user().username)
+        
+        if UserProvider.users().count != 0 {
+            getFollowingsOfUser(username: UserProvider.user().username)
+        }
     }
     
     private func setupUI() {
@@ -106,12 +109,17 @@ class PeopleViewController: UIViewController, PeopleCellActionHandler, OnTapKeyb
         if segmentedControl.selectedSegmentIndex == 0 {
             followingsView.isHidden = false
             searchPeopleView.isHidden = true
-            getFollowingsOfUser(username: UserProvider.user().username)
+            
+            if UserProvider.users().count != 0 {
+                getFollowingsOfUser(username: UserProvider.user().username)
+            }
         }
         else {
             followingsView.isHidden = true
             searchPeopleView.isHidden = false
-            searchUser(username: searchPeopleView.searchBar.text ?? "")
+            if searchPeopleView.searchBar.text != nil && searchPeopleView.searchBar.text != "" {
+                searchUser(username: searchPeopleView.searchBar.text!)
+            }
         }
     }
     

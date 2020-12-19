@@ -24,6 +24,7 @@ class LoginService: LoginServiceProtocol {
         }
         
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseDecodable(of: LoginResult.self) { response in
+            print(response)
             completion(response.result, response.response?.headers.dictionary["Authorization"] ?? "" )
         }
     }

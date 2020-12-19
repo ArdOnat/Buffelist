@@ -5,6 +5,8 @@
 //  Created by Arda Onat on 24.09.2020.
 //
 
+import Foundation
+
 class LoginPresenter {
     
     weak var view: LoginPresenterToViewProtocol?
@@ -46,6 +48,7 @@ extension LoginPresenter: LoginInteractorToPresenterProtocol {
         if let view = view {
             router?.navigateToPeople(view: view)
         }
+        NotificationCenter.default.post(name: .didAuthenticationStatusChanged, object: nil)
     }
     
 }

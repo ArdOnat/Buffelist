@@ -83,6 +83,8 @@ protocol TopicListViewToPresenterProtocol: class {
     func deleteContent(contentId: Int)
     
     func searchUserByUsername(username: String)
+    
+    func navigateToLogin()
 }
 
 protocol TopicListInteractorToPresenterProtocol: class {
@@ -111,6 +113,8 @@ protocol TopicListInteractorToPresenterProtocol: class {
     
     func onSearchUserByUsernameSuccess(result: SearchUserResult)
     func onSearchUserByUsernameFailure(error: Error)
+    
+    func navigateToLogin()
 }
 
 //MARK: Interactor -
@@ -148,6 +152,8 @@ protocol TopicListPresenterToInteractorProtocol: class {
     func sendSearchUserByUsernameRequest(username: String)
     func onSearchUserByUsernameSuccess(result: SearchUserResult)
     func onSearchUserByUsernameFailure(error: Error)
+    
+    func updateUser(information: SearchUserResult)
 }
 
 //MARK: APIDataManager -
@@ -175,6 +181,7 @@ protocol TopicListAPIDataManagerProtocol: class {
 protocol TopicListLocalDataManagerProtocol: class {
     var interactor: TopicListPresenterToInteractorProtocol? { get set }
     func updateUserContentListId(contentListId: Int, completion: (()->())?)
+    func updateUser(information: SearchUserResult)
 }
 
 //MARK: Service -

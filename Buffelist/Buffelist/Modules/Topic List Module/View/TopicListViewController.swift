@@ -31,13 +31,17 @@ class TopicListViewController: UIViewController, ContentCellActionHandler {
         getContentList(username: username)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
         setupUIFunctionality()
         setupDelegation()
-        getContentList(username: username)
     }
     
     private func setupUI() {
@@ -55,7 +59,7 @@ class TopicListViewController: UIViewController, ContentCellActionHandler {
         
         subTopicListView.segmentedControl.selectedSegmentIndex = 0
         
-        if username == UserProvider.user().username {
+        if UserProvider.users().count != 0 && username == UserProvider.user().username {
             isUserPage = true
             
             subTopicListView.usernameTitleLabel.text = String("Your Reading List").uppercased()
@@ -75,13 +79,19 @@ class TopicListViewController: UIViewController, ContentCellActionHandler {
             
             subTopicListView.userImageView.downloaded(from: profilePhotoURL)
             
-            subTopicListView.followButton.isHidden = true
+            subTopicListView.followButton.isHidden = false
             subTopicListView.followButton.isEnabled = true
             
             subTopicListView.addItemToListButton.isHidden = true
             subTopicListView.addItemToListButton.isEnabled = false
             
-            searchUserByUsername(username: username)
+            if UserProvider.users().count != 0 {
+                searchUserByUsername(username: username)
+            }
+            else {
+                subTopicListView.followButton.isHidden = true
+                subTopicListView.followButton.isEnabled = false
+            }
         }
         else {
             isUserPage = false
@@ -95,13 +105,19 @@ class TopicListViewController: UIViewController, ContentCellActionHandler {
                 subTopicListView.userImageView.image = UIImage(named: "astronaut")
             }
             
-            subTopicListView.followButton.isHidden = true
+            subTopicListView.followButton.isHidden = false
             subTopicListView.followButton.isEnabled = true
             
             subTopicListView.addItemToListButton.isHidden = true
             subTopicListView.addItemToListButton.isEnabled = false
             
-            searchUserByUsername(username: username)
+            if UserProvider.users().count != 0 {
+                searchUserByUsername(username: username)
+            }
+            else {
+                subTopicListView.followButton.isHidden = true
+                subTopicListView.followButton.isEnabled = false
+            }
         }
         
         view.addSubview(activityIndicator)
@@ -146,6 +162,27 @@ class TopicListViewController: UIViewController, ContentCellActionHandler {
     
     @objc func pullToRefresh() {
         getContentList(username: username)
+    }
+    
+    func showLoginOrRegisterPopup() {
+        let popupVC = PopupViewController()
+        popupVC.alertContent = AlertContentConfig( alertInformationText: "Login or register required. To unlock all features let's join the community.", alertUpButtonTitle: "Login Or Register", alertDownButtonTitle: "Close", popupType: PopupType.twoButtonNotextField)
+        
+        popupVC.didTapUpButton = { _ in
+            self.popup?.dismiss()
+            self.navigateToLogin()
+        }
+        
+        popupVC.didTapDownButton = {
+            self.popup?.dismiss()
+        }
+        
+        popup = PopupDialog(viewController: popupVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, tapGestureDismissal: false, panGestureDismissal: false)
+        self.present(popup!, animated: true, completion: nil)
+    }
+    
+    func navigateToLogin() {
+        presenter?.navigateToLogin()
     }
     
 }

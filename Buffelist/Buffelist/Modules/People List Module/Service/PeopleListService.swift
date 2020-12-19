@@ -35,16 +35,12 @@ class PeopleListService: PeopleListServiceProtocol {
         
         let parameters = ["searchText": username]
         
-        let headers: HTTPHeaders = [
-            "Authorization": UserProvider.user().token,
-        ]
-        
         guard let url = URL(string: completeEndpoint) else {
             completion(.failure(.invalidURL(url: endPoint)))
             return
         }
         
-        AF.request(url, method: .get, parameters: parameters, headers: headers).validate().responseDecodable(of: [SearchUserResult].self) { response in
+        AF.request(url, method: .get, parameters: parameters).validate().responseDecodable(of: [SearchUserResult].self) { response in
             print(response)
             completion(response.result)
         }

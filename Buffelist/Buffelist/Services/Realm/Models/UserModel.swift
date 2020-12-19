@@ -75,4 +75,17 @@ struct NewUserInfo {
     var biography: String
     var token: String
     var contentListId: Int
+    
+    init(userInformation: SearchUserResult) {
+        self.id = userInformation.id
+        self.password = UserProvider.user().password
+        self.username = userInformation.username
+        self.firstName = userInformation.firstName ?? ""
+        self.lastName = userInformation.lastName ?? ""
+        self.email = userInformation.email ?? ""
+        self.profilePhotoURL = userInformation.profilePhotoURL ?? ""
+        self.biography = userInformation.biography ?? ""
+        self.token = UserProvider.user().token
+        self.contentListId = UserProvider.user().contentListId
+    }
 }

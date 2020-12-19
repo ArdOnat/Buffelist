@@ -15,6 +15,7 @@ class LoginViewController: UIViewController, OnTapKeyboardHideable {
     var subLoginView: LoginView!
     var popup: PopupDialog?
     private var keyboardHandler: KeyboardHandler!
+    var parentNavigationController: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class LoginViewController: UIViewController, OnTapKeyboardHideable {
     }
     
     private func setupUI() {
-        navigationController?.navigationBar.isHidden = true
+        parentNavigationController?.navigationBar.isHidden = true
         
         subLoginView = view  as? LoginView
         

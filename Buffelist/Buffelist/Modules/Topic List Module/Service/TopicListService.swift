@@ -174,14 +174,14 @@ class TopicListService: TopicListServiceProtocol {
     static func searchUserByUsername(username: String, completion: @escaping (Result<SearchUserResult, AFError>) -> ()) {
         let completeEndpoint = endPoint + "/api/users/username/\(username)"
         
-        let headers: HTTPHeaders = [
-            "Authorization": UserProvider.user().token,
-        ]
-        
         guard let url = URL(string: completeEndpoint) else {
             completion(.failure(.invalidURL(url: endPoint)))
             return
         }
+        
+        let headers: HTTPHeaders = [
+            "Authorization": UserProvider.user().token,
+        ]
         
         AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: SearchUserResult.self) { response in
             print(response.result)
