@@ -26,28 +26,6 @@ class TopicListAPIDataManager: TopicListAPIDataManagerProtocol {
         }
     }
     
-    func createContentRequest(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int) {
-        TopicListService.createContent(info: info, contentTitle: contentTitle, contentListId: contentListId) { result in
-            switch result {
-            case .success(let result):
-                self.interactor?.onCreateContentSuccess(result: result)
-            case .failure(let error):
-                self.interactor?.onCreateContentFailure(error: error)
-            }
-        }
-    }
-    
-    func getInfoFromUrlRequest(url: String) {
-        TopicListService.getInfoFromUrl(url: url) { result in
-            switch result {
-            case .success(let result):
-                self.interactor?.onGetInfoFromUrlSuccess(result: result)
-            case .failure(let error):
-                self.interactor?.onGetInfoFromUrlFailure(error: error)
-            }
-        }
-    }
-    
     func getFollowersOfUserRequest(username: String) {
         TopicListService.getFollowersOfUser(username: username) { result in
             switch result {
@@ -75,17 +53,6 @@ class TopicListAPIDataManager: TopicListAPIDataManagerProtocol {
             switch result {
             case .success(let result):
                 self.interactor?.onUnfollowUserSuccess()
-            case .failure(let error):
-                self.interactor?.onUnfollowUserFailure(error: error)
-            }
-        }
-    }
-    
-    func deleteContentRequest(contentId: Int) {
-        TopicListService.deleteContent(contentId: contentId) { result in
-            switch result {
-            case .success(let result):
-                self.interactor?.onDeleteContentSuccess()
             case .failure(let error):
                 self.interactor?.onUnfollowUserFailure(error: error)
             }

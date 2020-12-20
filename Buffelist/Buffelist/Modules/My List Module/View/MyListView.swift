@@ -1,5 +1,5 @@
 //
-//  TopicListView.swift
+//  MyListView.swift
 //  Buffelist
 //
 //  Created by Arda Onat on 3.10.2020.
@@ -8,11 +8,11 @@
 import Foundation
 import SkyFloatingLabelTextField
 
-class TopicListView: UIView {
+class MyListView: UIView {
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var followButton: BuffelistButton!
+    @IBOutlet weak var addItemToListButton: BuffelistButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var usernameTitleLabel: UILabel!

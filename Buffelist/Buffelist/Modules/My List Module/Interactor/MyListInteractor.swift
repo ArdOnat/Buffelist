@@ -1,25 +1,25 @@
 //
-//  TopicListInteractor.swift
+//  MyListInteractor.swift
 //  Buffelist
 //
 //  Created by Arda Onat on 3.10.2020.
 //
 
-class TopicListInteractor {
+class MyListInteractor {
 
-    weak var presenter: TopicListInteractorToPresenterProtocol?
-    var APIDataManager: TopicListAPIDataManagerProtocol?
-    var LocalDataManager: TopicListLocalDataManagerProtocol?
+    weak var presenter: MyListInteractorToPresenterProtocol?
+    var APIDataManager: MyListAPIDataManagerProtocol?
+    var LocalDataManager: MyListLocalDataManagerProtocol?
     var username: String = ""
 
     init() {
-        self.APIDataManager = TopicListAPIDataManager(interactor: self)
-        self.LocalDataManager = TopicListLocalDataManager(interactor: self)
+        self.APIDataManager = MyListAPIDataManager(interactor: self)
+        self.LocalDataManager = MyListLocalDataManager(interactor: self)
     }
     
 }
 
-extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
+extension MyListInteractor: MyListPresenterToInteractorProtocol {
     
     // MARK: - Get Content List Service
     
@@ -49,6 +49,34 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
     
     func onGetContentListFailure(error: Error) {
         presenter?.onGetContentListFailure(error: error)
+    }
+    
+    // MARK: - Get Info From Url Service
+    
+    func sendGetInfoFromUrlRequest(url: String) {
+        APIDataManager?.getInfoFromUrlRequest(url: url)
+    }
+    
+    func onGetInfoFromUrlSuccess(result: GetInfoFromUrlResult) {
+        presenter?.onGetInfoFromUrlSuccess(result: result)
+    }
+    
+    func onGetInfoFromUrlFailure(error: Error) {
+        presenter?.onGetInfoFromUrlFailure(error: error)
+    }
+    
+    // MARK: - Create Content Service
+    
+    func sendCreateContentRequest(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int) {
+        APIDataManager?.createContentRequest(info: info, contentTitle: contentTitle, contentListId: contentListId)
+    }
+    
+    func onCreateContentSuccess(result: CreateContentResult) {
+        presenter?.onCreateContentSuccess(result: result)
+    }
+    
+    func onCreateContentFailure(error: Error) {
+        presenter?.onCreateContentFailure(error: error)
     }
     
     // MARK: - Get Followers Of User Service
@@ -91,6 +119,20 @@ extension TopicListInteractor: TopicListPresenterToInteractorProtocol {
     
     func onUnfollowUserFailure(error: Error) {
         presenter?.onUnfollowUserFailure(error: error)
+    }
+    
+    // MARK: - Delete Content Service
+    
+    func sendDeleteContentRequest(contentId: Int) {
+        APIDataManager?.deleteContentRequest(contentId: contentId)
+    }
+    
+    func onDeleteContentSuccess() {
+        presenter?.onDeleteContentSuccess()
+    }
+    
+    func onDeleteContentFailure(error: Error) {
+        presenter?.onDeleteContentFailure(error: error)
     }
     
     // MARK: - Search User By Username Service

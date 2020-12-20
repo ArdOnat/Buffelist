@@ -97,6 +97,17 @@
 		4C8D5A3025445FDA00C536BD /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8D5A2F25445FDA00C536BD /* ProfileService.swift */; };
 		4C8D5A45254463C900C536BD /* TextFieldHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8D5A44254463C900C536BD /* TextFieldHandler.swift */; };
 		4C8D5A4D2544828300C536BD /* ProfileLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8D5A4C2544828300C536BD /* ProfileLocalDataManager.swift */; };
+		4CCC2098258F69420046057C /* MyListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC2097258F69420046057C /* MyListModuleBuilder.swift */; };
+		4CCC20A0258F695D0046057C /* MyLisModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC209F258F695D0046057C /* MyLisModuleInterface.swift */; };
+		4CCC20A5258F69790046057C /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC20A4258F69790046057C /* MyListViewController.swift */; };
+		4CCC20AA258F699A0046057C /* MyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC20A9258F699A0046057C /* MyListView.swift */; };
+		4CCC20AF258F69AC0046057C /* MyListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCC20AE258F69AC0046057C /* MyListView.xib */; };
+		4CCC20B4258F6A9E0046057C /* MyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC20B3258F6A9E0046057C /* MyListPresenter.swift */; };
+		4CCC20B9258F6AB40046057C /* MyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC20B8258F6AB40046057C /* MyListInteractor.swift */; };
+		4CCC20BE258F6ACE0046057C /* MyListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC20BD258F6ACE0046057C /* MyListWireFrame.swift */; };
+		4CCC20C5258F6AFE0046057C /* MyListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC20C4258F6AFE0046057C /* MyListLocalDataManager.swift */; };
+		4CCC20CD258F6B0D0046057C /* MyListAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC20CC258F6B0D0046057C /* MyListAPIDataManager.swift */; };
+		4CCC20D2258F6B2F0046057C /* MyListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC20D1258F6B2F0046057C /* MyListService.swift */; };
 		4CDB4A372520EFF800BB48C7 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A362520EFF800BB48C7 /* RegisterPresenter.swift */; };
 		4CDB4A3C2520F11F00BB48C7 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A3B2520F11F00BB48C7 /* RegisterInteractor.swift */; };
 		4CDB4A412520F51000BB48C7 /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB4A402520F51000BB48C7 /* RegisterWireFrame.swift */; };
@@ -230,6 +241,17 @@
 		4C8D5A2F25445FDA00C536BD /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		4C8D5A44254463C900C536BD /* TextFieldHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHandler.swift; sourceTree = "<group>"; };
 		4C8D5A4C2544828300C536BD /* ProfileLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLocalDataManager.swift; sourceTree = "<group>"; };
+		4CCC2097258F69420046057C /* MyListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListModuleBuilder.swift; sourceTree = "<group>"; };
+		4CCC209F258F695D0046057C /* MyLisModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLisModuleInterface.swift; sourceTree = "<group>"; };
+		4CCC20A4258F69790046057C /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
+		4CCC20A9258F699A0046057C /* MyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListView.swift; sourceTree = "<group>"; };
+		4CCC20AE258F69AC0046057C /* MyListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyListView.xib; sourceTree = "<group>"; };
+		4CCC20B3258F6A9E0046057C /* MyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListPresenter.swift; sourceTree = "<group>"; };
+		4CCC20B8258F6AB40046057C /* MyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListInteractor.swift; sourceTree = "<group>"; };
+		4CCC20BD258F6ACE0046057C /* MyListWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListWireFrame.swift; sourceTree = "<group>"; };
+		4CCC20C4258F6AFE0046057C /* MyListLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListLocalDataManager.swift; sourceTree = "<group>"; };
+		4CCC20CC258F6B0D0046057C /* MyListAPIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListAPIDataManager.swift; sourceTree = "<group>"; };
+		4CCC20D1258F6B2F0046057C /* MyListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListService.swift; sourceTree = "<group>"; };
 		4CDB4A362520EFF800BB48C7 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		4CDB4A3B2520F11F00BB48C7 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		4CDB4A402520F51000BB48C7 /* RegisterWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireFrame.swift; sourceTree = "<group>"; };
@@ -459,6 +481,7 @@
 				4C06D08F251BBC7E0037BE85 /* Home Module */,
 				4C08F139251A63490058485E /* Login Module */,
 				4C4908782520A09000EFBAC7 /* Register Module */,
+				4CCC2074258F68A30046057C /* My List Module */,
 				4C6D38E92528B2AF004C29A2 /* Topic List Module */,
 				4C6AC19C2532192900FB8AE0 /* People List Module */,
 				4C8D59A325444EC700C536BD /* Profile Module */,
@@ -1089,6 +1112,104 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		4CCC2074258F68A30046057C /* My List Module */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC2088258F68FD0046057C /* Module Builder */,
+				4CCC2095258F69220046057C /* Interface */,
+				4CCC2094258F691E0046057C /* View */,
+				4CCC2093258F69190046057C /* Presenter */,
+				4CCC2092258F69140046057C /* Interactor */,
+				4CCC2091258F690E0046057C /* Wire Frame */,
+				4CCC2090258F69090046057C /* Data Manager */,
+				4CCC208F258F69040046057C /* Service */,
+			);
+			path = "My List Module";
+			sourceTree = "<group>";
+		};
+		4CCC2088258F68FD0046057C /* Module Builder */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC2097258F69420046057C /* MyListModuleBuilder.swift */,
+			);
+			path = "Module Builder";
+			sourceTree = "<group>";
+		};
+		4CCC208F258F69040046057C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC20D1258F6B2F0046057C /* MyListService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4CCC2090258F69090046057C /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC20C2258F6AE60046057C /* Local */,
+				4CCC20C3258F6AEB0046057C /* API */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		4CCC2091258F690E0046057C /* Wire Frame */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC20BD258F6ACE0046057C /* MyListWireFrame.swift */,
+			);
+			path = "Wire Frame";
+			sourceTree = "<group>";
+		};
+		4CCC2092258F69140046057C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC20B8258F6AB40046057C /* MyListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4CCC2093258F69190046057C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC20B3258F6A9E0046057C /* MyListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4CCC2094258F691E0046057C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC20A4258F69790046057C /* MyListViewController.swift */,
+				4CCC20A9258F699A0046057C /* MyListView.swift */,
+				4CCC20AE258F69AC0046057C /* MyListView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CCC2095258F69220046057C /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC209F258F695D0046057C /* MyLisModuleInterface.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		4CCC20C2258F6AE60046057C /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC20C4258F6AFE0046057C /* MyListLocalDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4CCC20C3258F6AEB0046057C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4CCC20CC258F6B0D0046057C /* MyListAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		4CDB4A452520F54200BB48C7 /* Local */ = {
 			isa = PBXGroup;
 			children = (
@@ -1249,6 +1370,7 @@
 				4C8D59CF25444FFC00C536BD /* ProfileBottomView.xib in Resources */,
 				4C06D0A5251BBD250037BE85 /* HomeView.xib in Resources */,
 				4C8D59AC25444F3200C536BD /* ProfileInformationView.xib in Resources */,
+				4CCC20AF258F69AC0046057C /* MyListView.xib in Resources */,
 				4C033A8E251F286400256C71 /* PopupView.xib in Resources */,
 				4C08F0FB251A60610058485E /* Assets.xcassets in Resources */,
 				4C461656252B962B00CBCEF7 /* ContentTableViewCell.xib in Resources */,
@@ -1384,7 +1506,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCC20CD258F6B0D0046057C /* MyListAPIDataManager.swift in Sources */,
 				4CDB4A572521010900BB48C7 /* RegisterModuleBuilder.swift in Sources */,
+				4CCC20C5258F6AFE0046057C /* MyListLocalDataManager.swift in Sources */,
 				4C49088D2520A11F00EFBAC7 /* RegisterViewController.swift in Sources */,
 				4C814784251D0914006CE13D /* LoginAPIDataManager.swift in Sources */,
 				4C06D0BC251BC8740037BE85 /* HomeModuleBuilder.swift in Sources */,
@@ -1414,14 +1538,18 @@
 				4C1A876D253C790300E78027 /* NibOwnerLoadable.swift in Sources */,
 				4C23C57F252C54ED0014159E /* CreateContentResponse.swift in Sources */,
 				4CF45B1D2532F8DC00AA41DA /* PeopleListWireFrame.swift in Sources */,
+				4CCC20B9258F6AB40046057C /* MyListInteractor.swift in Sources */,
 				4C08F0F2251A60600058485E /* AppDelegate.swift in Sources */,
 				4C687A2A25239E910018C799 /* RealmObjectAdapter.swift in Sources */,
 				4CDB4A482520F56600BB48C7 /* RegisterAPIDataManager.swift in Sources */,
 				4C06D0A0251BBD1C0037BE85 /* HomeView.swift in Sources */,
+				4CCC20D2258F6B2F0046057C /* MyListService.swift in Sources */,
 				4C814767251D0402006CE13D /* LoginInteractor.swift in Sources */,
+				4CCC20AA258F699A0046057C /* MyListView.swift in Sources */,
 				4CE508D6252F03BF00F2A7C5 /* SearchUserResponse.swift in Sources */,
 				4C08F14F251A646D0058485E /* LoginView.swift in Sources */,
 				4CF45B242532F8F800AA41DA /* PeopleListService.swift in Sources */,
+				4CCC20A5258F69790046057C /* MyListViewController.swift in Sources */,
 				4C1A8744253C6ECD00E78027 /* FollowingsView.swift in Sources */,
 				4C8D5A3025445FDA00C536BD /* ProfileService.swift in Sources */,
 				4C44B00425263EE1005C7DCF /* UIViewExtension.swift in Sources */,
@@ -1449,9 +1577,12 @@
 				4C06D0AD251BC2150037BE85 /* HomeModuleInterface.swift in Sources */,
 				4C687A0825224F700018C799 /* UserProvider.swift in Sources */,
 				4C06D0B7251BC7A00037BE85 /* HomeWireFrame.swift in Sources */,
+				4CCC2098258F69420046057C /* MyListModuleBuilder.swift in Sources */,
 				4C1A8759253C704600E78027 /* SearchPeopleView.swift in Sources */,
 				4C8D5A1B25445EE400C536BD /* ProfileInteractor.swift in Sources */,
 				4CDB4A372520EFF800BB48C7 /* RegisterPresenter.swift in Sources */,
+				4CCC20BE258F6ACE0046057C /* MyListWireFrame.swift in Sources */,
+				4CCC20A0258F695D0046057C /* MyLisModuleInterface.swift in Sources */,
 				4C6D38F22528B427004C29A2 /* TopicListModuleBuilder.swift in Sources */,
 				4C06D0B2251BC3FC0037BE85 /* HomePresenter.swift in Sources */,
 				4CF45B132532F8C900AA41DA /* PeopleListPresenter.swift in Sources */,
@@ -1468,6 +1599,7 @@
 				4C033A89251F285400256C71 /* PopupView.swift in Sources */,
 				4C033A93251F5B1C00256C71 /* LoginLocalDataManager.swift in Sources */,
 				4C6D39002528B4A8004C29A2 /* TopicListViewController.swift in Sources */,
+				4CCC20B4258F6A9E0046057C /* MyListPresenter.swift in Sources */,
 				4C6D39052528B4BB004C29A2 /* TopicListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

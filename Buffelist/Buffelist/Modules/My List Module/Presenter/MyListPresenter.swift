@@ -1,5 +1,5 @@
 //
-//  TopicListPresenter.swift
+//  MyListPresenter.swift
 //  Buffelist
 //
 //  Created by Arda Onat on 3.10.2020.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-class TopicListPresenter {
+class MyListPresenter {
     
-    weak var view: TopicListPresenterToViewProtocol?
-    var interactor: TopicListPresenterToInteractorProtocol?
-    var router: TopicListWireframeProtocol?
+    weak var view: MyListPresenterToViewProtocol?
+    var interactor: MyListPresenterToInteractorProtocol?
+    var router: MyListWireframeProtocol?
     
-    init( view: TopicListPresenterToViewProtocol, interactor: TopicListPresenterToInteractorProtocol, router: TopicListWireframeProtocol) {
+    init( view: MyListPresenterToViewProtocol, interactor: MyListPresenterToInteractorProtocol, router: MyListWireframeProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
@@ -21,11 +21,20 @@ class TopicListPresenter {
     
 }
 
-extension TopicListPresenter: TopicListViewToPresenterProtocol {
+extension MyListPresenter: MyListViewToPresenterProtocol {
     
     func getContentList(username: String) {
         interactor?.sendGetContentListRequest(username: username)
     }
+    
+    func getInfoFromUrl(url: String) {
+        interactor?.sendGetInfoFromUrlRequest(url: url)
+    }
+    
+    func createContent(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int) {
+        interactor?.sendCreateContentRequest(info: info, contentTitle: contentTitle, contentListId: contentListId)
+    }
+    
     func getFollowersOfUser(username: String) {
         interactor?.sendGetFollowersOfUserRequest(username: username)
     }
@@ -36,6 +45,10 @@ extension TopicListPresenter: TopicListViewToPresenterProtocol {
     
     func unfollowUser(username: String) {
         interactor?.sendUnfollowUserRequest(username: username)
+    }
+    
+    func deleteContent(contentId: Int) {
+        interactor?.sendDeleteContentRequest(contentId: contentId)
     }
     
     func searchUserByUsername(username: String) {
@@ -50,7 +63,7 @@ extension TopicListPresenter: TopicListViewToPresenterProtocol {
     
 }
 
-extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
+extension MyListPresenter: MyListInteractorToPresenterProtocol {
     
     // MARK: - Get Content List Service
     
@@ -60,6 +73,26 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     
     func onGetContentListFailure(error: Error) {
         view?.onGetContentListFailure(error: error.localizedDescription)
+    }
+    
+    // MARK: - Get Info From Url Service
+    
+    func onGetInfoFromUrlSuccess(result: GetInfoFromUrlResult) {
+        view?.onGetInfoFromUrlSuccess(result: result)
+    }
+    
+    func onGetInfoFromUrlFailure(error: Error) {
+        view?.onGetInfoFromUrlFailure(error: error.localizedDescription)
+    }
+    
+    // MARK: - Create Content Service
+    
+    func onCreateContentSuccess(result: CreateContentResult) {
+        view?.onCreateContentSuccess(result: result)
+    }
+    
+    func onCreateContentFailure(error: Error) {
+        view?.onCreateContentFailure(error: error.localizedDescription)
     }
     
     // MARK: - Get Followers Of User Service
@@ -106,6 +139,16 @@ extension TopicListPresenter: TopicListInteractorToPresenterProtocol {
     
     func onUnfollowUserFailure(error: Error) {
         view?.onUnfollowUserFailure(error: error.localizedDescription)
+    }
+    
+    // MARK: - Delete Content Service
+    
+    func onDeleteContentSuccess() {
+        view?.onDeleteContentSuccess()
+    }
+    
+    func onDeleteContentFailure(error: Error) {
+        view?.onDeleteContentFailure(error: error.localizedDescription)
     }
     
     // MARK: - Search User By Username Service

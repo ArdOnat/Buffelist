@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyListViewController" customModule="Buffelist" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="n5A-mI-0Xs" id="dDa-Sm-wfi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="n5A-mI-0Xs" customClass="MyListView" customModule="Buffelist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bufflist_icon_3" translatesAutoresizingMaskIntoConstraints="NO" id="z13-9i-8LZ">
+                    <rect key="frame" x="16" y="60" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="z13-9i-8LZ" secondAttribute="height" multiplier="1:1" id="w6c-35-HJe"/>
+                        <constraint firstAttribute="height" constant="60" id="y8a-Xt-ktY"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="19"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRENDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qo-iB-OSf">
+                    <rect key="frame" x="100" y="80.5" width="59" height="19.5"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="dSW-69-mtD">
+                    <rect key="frame" x="8" y="136" width="398" height="30"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="168-5G-vDB">
+                            <rect key="frame" x="0.0" y="0.0" width="187" height="31"/>
+                            <segments>
+                                <segment title="Card"/>
+                                <segment title="List"/>
+                            </segments>
+                        </segmentedControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5X7-5B-3fc" customClass="BuffelistButton" customModule="Buffelist" customModuleProvider="target">
+                            <rect key="frame" x="211" y="0.0" width="187" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="S2e-mE-OxU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                            <state key="normal" title="Add item."/>
+                        </button>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mrs-ig-ZhD">
+                    <rect key="frame" x="0.0" y="174" width="414" height="688"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Xxn-Us-8FN">
+                    <rect key="frame" x="0.0" y="174" width="414" height="688"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="EHj-4U-Ur3">
+                        <size key="itemSize" width="175" height="250"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="a0u-PI-uyl"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="z13-9i-8LZ" firstAttribute="leading" secondItem="a0u-PI-uyl" secondAttribute="leading" constant="16" id="1V8-FV-bFR"/>
+                <constraint firstItem="5Qo-iB-OSf" firstAttribute="leading" secondItem="z13-9i-8LZ" secondAttribute="trailing" constant="24" id="2ZG-BE-utb"/>
+                <constraint firstItem="Xxn-Us-8FN" firstAttribute="top" secondItem="dSW-69-mtD" secondAttribute="bottom" constant="8" id="4hu-Wi-GRs"/>
+                <constraint firstItem="Xxn-Us-8FN" firstAttribute="leading" secondItem="a0u-PI-uyl" secondAttribute="leading" id="8hE-l1-oqR"/>
+                <constraint firstItem="Mrs-ig-ZhD" firstAttribute="height" secondItem="Xxn-Us-8FN" secondAttribute="height" id="8oR-cD-DQ7"/>
+                <constraint firstItem="dSW-69-mtD" firstAttribute="leading" secondItem="a0u-PI-uyl" secondAttribute="leading" constant="8" id="AVQ-AF-qpb"/>
+                <constraint firstItem="Xxn-Us-8FN" firstAttribute="trailing" secondItem="a0u-PI-uyl" secondAttribute="trailing" id="MiZ-y4-0Dq"/>
+                <constraint firstItem="a0u-PI-uyl" firstAttribute="trailing" secondItem="dSW-69-mtD" secondAttribute="trailing" constant="8" id="Rqc-2O-KZ2"/>
+                <constraint firstItem="Mrs-ig-ZhD" firstAttribute="centerY" secondItem="Xxn-Us-8FN" secondAttribute="centerY" id="WDH-mT-gr2"/>
+                <constraint firstItem="5Qo-iB-OSf" firstAttribute="centerY" secondItem="z13-9i-8LZ" secondAttribute="centerY" id="bbd-Xc-u11"/>
+                <constraint firstItem="Mrs-ig-ZhD" firstAttribute="width" secondItem="Xxn-Us-8FN" secondAttribute="width" id="hxO-0s-tMv"/>
+                <constraint firstItem="z13-9i-8LZ" firstAttribute="top" secondItem="a0u-PI-uyl" secondAttribute="top" constant="16" id="n8L-ym-6dh"/>
+                <constraint firstItem="dSW-69-mtD" firstAttribute="top" secondItem="z13-9i-8LZ" secondAttribute="bottom" constant="16" id="nOy-kU-XVk"/>
+                <constraint firstItem="a0u-PI-uyl" firstAttribute="bottom" secondItem="Xxn-Us-8FN" secondAttribute="bottom" id="nUG-Au-c1h"/>
+                <constraint firstItem="Mrs-ig-ZhD" firstAttribute="centerX" secondItem="Xxn-Us-8FN" secondAttribute="centerX" id="odo-gG-oT8"/>
+            </constraints>
+            <connections>
+                <outlet property="addItemToListButton" destination="5X7-5B-3fc" id="GT6-eD-jMW"/>
+                <outlet property="collectionView" destination="Xxn-Us-8FN" id="VMM-no-kMg"/>
+                <outlet property="segmentedControl" destination="168-5G-vDB" id="6Ew-oC-U6S"/>
+                <outlet property="tableView" destination="Mrs-ig-ZhD" id="Geb-Uu-omq"/>
+                <outlet property="userImageView" destination="z13-9i-8LZ" id="Sib-G5-LsV"/>
+                <outlet property="usernameTitleLabel" destination="5Qo-iB-OSf" id="46Q-Pa-OFf"/>
+            </connections>
+            <point key="canvasLocation" x="140" y="148.87556221889056"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bufflist_icon_3" width="1920" height="1920"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

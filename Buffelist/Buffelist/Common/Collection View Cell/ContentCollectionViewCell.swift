@@ -7,8 +7,12 @@
 
 import UIKit
 
-protocol ContentCellActionHandler {
+protocol MyListContentCellActionHandler {
     func deletePressed(sender: UIButton)
+    func linkDirectionButtonPressed(sender: UIButton)
+}
+
+protocol ContentCellActionHandler {
     func linkDirectionButtonPressed(sender: UIButton)
 }
 
@@ -25,6 +29,7 @@ class ContentCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var linkDirectionButton: UIButton!
     
+    var myListContentCellActionHandler: MyListContentCellActionHandler?
     var contentCellActionHandler: ContentCellActionHandler?
     var peopleCellActionHandler: PeopleCellActionHandler?
     
@@ -79,7 +84,7 @@ class ContentCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        contentCellActionHandler?.deletePressed(sender: sender)
+        myListContentCellActionHandler?.deletePressed(sender: sender)
     }
     
     @IBAction func linkDirectionButtonPressed(_ sender: UIButton) {

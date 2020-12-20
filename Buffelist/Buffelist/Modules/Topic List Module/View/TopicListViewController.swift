@@ -49,8 +49,6 @@ class TopicListViewController: UIViewController, ContentCellActionHandler {
         
         navigationController?.navigationBar.isHidden = true
         
-        subTopicListView.addItemToListButton.style = .grayTextGrayBorder
-        
         subTopicListView.collectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "ContentCollectionViewCell")
         subTopicListView.collectionView.allowsSelection = false
         
@@ -59,65 +57,26 @@ class TopicListViewController: UIViewController, ContentCellActionHandler {
         
         subTopicListView.segmentedControl.selectedSegmentIndex = 0
         
-        if UserProvider.users().count != 0 && username == UserProvider.user().username {
-            isUserPage = true
-            
-            subTopicListView.usernameTitleLabel.text = String("Your Reading List").uppercased()
-            
-            subTopicListView.userImageView.downloaded(from: UserProvider.user().profilePhotoURL)
-            
-            subTopicListView.followButton.isHidden = true
-            subTopicListView.followButton.isEnabled = false
-            
-            subTopicListView.addItemToListButton.isHidden = false
-            subTopicListView.addItemToListButton.isEnabled = true
-        }
-        else if username == "trends" {
-            isUserPage = false
-            
+        if username == "trends" {
             subTopicListView.usernameTitleLabel.text = username.uppercased()
-            
-            subTopicListView.userImageView.downloaded(from: profilePhotoURL)
-            
-            subTopicListView.followButton.isHidden = false
-            subTopicListView.followButton.isEnabled = true
-            
-            subTopicListView.addItemToListButton.isHidden = true
-            subTopicListView.addItemToListButton.isEnabled = false
-            
-            if UserProvider.users().count != 0 {
-                searchUserByUsername(username: username)
-            }
-            else {
-                subTopicListView.followButton.isHidden = true
-                subTopicListView.followButton.isEnabled = false
-            }
         }
         else {
-            isUserPage = false
-            
             subTopicListView.usernameTitleLabel.text = "\(username.uppercased())'S LIST"
-            
-            if profilePhotoURL != "" {
-                subTopicListView.userImageView.downloaded(from: profilePhotoURL)
-            }
-            else {
-                subTopicListView.userImageView.image = UIImage(named: "astronaut")
-            }
-            
-            subTopicListView.followButton.isHidden = false
-            subTopicListView.followButton.isEnabled = true
-            
-            subTopicListView.addItemToListButton.isHidden = true
-            subTopicListView.addItemToListButton.isEnabled = false
-            
-            if UserProvider.users().count != 0 {
-                searchUserByUsername(username: username)
-            }
-            else {
-                subTopicListView.followButton.isHidden = true
-                subTopicListView.followButton.isEnabled = false
-            }
+        }
+        
+        isUserPage = false
+        
+        subTopicListView.userImageView.downloaded(from: profilePhotoURL)
+        
+        subTopicListView.followButton.isHidden = false
+        subTopicListView.followButton.isEnabled = true
+        
+        if UserProvider.users().count != 0 {
+            searchUserByUsername(username: username)
+        }
+        else {
+            subTopicListView.followButton.isHidden = true
+            subTopicListView.followButton.isEnabled = false
         }
         
         view.addSubview(activityIndicator)
@@ -127,8 +86,6 @@ class TopicListViewController: UIViewController, ContentCellActionHandler {
     
     private func setupUIFunctionality() {
         subTopicListView.segmentedControl?.addTarget(self, action: #selector(self.segmentedControlChanged(_:)), for: .valueChanged)
-        
-        subTopicListView.addItemToListButton.addTarget(self, action: #selector(self.addItemToListButtonPressed), for: .touchUpInside)
         
         subTopicListView.followButton.addTarget(self, action: #selector(self.followButtonPressed), for: .touchUpInside)
         
@@ -163,28 +120,6 @@ class TopicListViewController: UIViewController, ContentCellActionHandler {
     @objc func pullToRefresh() {
         getContentList(username: username)
     }
-    
-    func showLoginOrRegisterPopup() {
-        let popupVC = PopupViewController()
-        popupVC.alertContent = AlertContentConfig( alertInformationText: "Login or register required. To unlock all features let's join the community.", alertUpButtonTitle: "Login Or Register", alertDownButtonTitle: "Close", popupType: PopupType.twoButtonNotextField)
-        
-        popupVC.didTapUpButton = { _ in
-            self.popup?.dismiss()
-            self.navigateToLogin()
-        }
-        
-        popupVC.didTapDownButton = {
-            self.popup?.dismiss()
-        }
-        
-        popup = PopupDialog(viewController: popupVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, tapGestureDismissal: false, panGestureDismissal: false)
-        self.present(popup!, animated: true, completion: nil)
-    }
-    
-    func navigateToLogin() {
-        presenter?.navigateToLogin()
-    }
-    
 }
 
 extension TopicListViewController: TopicListViewUserActionHandler {
@@ -202,22 +137,6 @@ extension TopicListViewController: TopicListViewUserActionHandler {
         }
     }
     
-    @objc func addItemToListButtonPressed() {
-        let popupVC = PopupViewController()
-        popupVC.alertContent = AlertContentConfig( alertInformationText: "Enter Content URL", alertUpButtonTitle: "Check Content Availability", alertDownButtonTitle: "", popupType: PopupType.textFieldOneButton)
-        
-        popupVC.didTapUpButton = { text in
-            if let text = text {
-                self.popup?.dismiss()
-                self.activityIndicator.startAnimating()
-                self.presenter?.getInfoFromUrl(url: text)
-            }
-        }
-        
-        popup = PopupDialog(viewController: popupVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, tapGestureDismissal: true, panGestureDismissal: false)
-        self.present(popup!, animated: true, completion: nil)
-    }
-    
     @objc func followButtonPressed() {
         if isFollowing {
             unfollowUser(username: username)
@@ -225,10 +144,6 @@ extension TopicListViewController: TopicListViewUserActionHandler {
         else {
             followUser(username: username)
         }
-    }
-    
-    func deletePressed(sender: UIButton) {
-        deleteContent(contentId: contentList[sender.tag].id)
     }
     
     func linkDirectionButtonPressed(sender: UIButton) {
@@ -260,55 +175,6 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
         DispatchQueue.main.async {
             self.subTopicListView.collectionView.refreshControl?.endRefreshing()
         }
-    }
-    
-    // MARK: - Get Info From Url Service
-    
-    func onGetInfoFromUrlSuccess(result: GetInfoFromUrlResult) {
-        activityIndicator.stopAnimating()
-        
-        let popupVC = PopupViewController()
-        popupVC.alertContent = AlertContentConfig( alertInformationText: "Select Content Title", alertUpButtonTitle: "Add", alertDownButtonTitle: "Cancel", popupType: PopupType.textFieldOneButton)
-        popupVC.subPopupView.popupInformationTextField.text = result.title
-        
-        popupVC.didTapUpButton = { contentTitle in
-            self.createContent(info: result, contentTitle: contentTitle ?? "")
-            self.popup?.dismiss()
-        }
-        
-        popupVC.didTapDownButton = {
-            self.popup?.dismiss()
-        }
-        
-        popup = PopupDialog(viewController: popupVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, tapGestureDismissal: true, panGestureDismissal: false)
-        self.present(popup!, animated: true, completion: nil)
-        
-    }
-    
-    func onGetInfoFromUrlFailure(error: String) {
-        activityIndicator.stopAnimating()
-        print(error)
-    }
-    
-    // MARK: - Create Content Service
-    
-    func createContent(info: GetInfoFromUrlResult, contentTitle: String) {
-        self.activityIndicator.startAnimating()
-        presenter?.createContent(info: info, contentTitle: contentTitle, contentListId: UserProvider.user().contentListId)
-    }
-    
-    func onCreateContentSuccess(result: CreateContentResult) {
-        DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-            self.getContentList(username: self.username)
-        }
-    }
-    
-    func onCreateContentFailure(error: String) {
-        DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-        }
-        print(error)
     }
     
     // MARK: - Search User By Username Service
@@ -382,27 +248,6 @@ extension TopicListViewController: TopicListPresenterToViewProtocol {
     
     func onUnfollowUserFailure(error: String) {
         activityIndicator.stopAnimating()
-        print(error)
-    }
-    
-    // MARK: - Delete Content Service
-    
-    func deleteContent(contentId: Int) {
-        self.activityIndicator.startAnimating()
-        presenter?.deleteContent(contentId: contentId)
-    }
-    
-    func onDeleteContentSuccess() {
-        DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-            self.getContentList(username: self.username)
-        }
-    }
-    
-    func onDeleteContentFailure(error: String) {
-        DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-        }
         print(error)
     }
 }
