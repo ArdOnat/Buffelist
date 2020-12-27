@@ -12,6 +12,7 @@ enum PopupType {
     case twoButton
     case textFieldOneButton
     case twoButtonNotextField
+    case oneButtonNoTextField
 }
 
 class PopupView: UIView {

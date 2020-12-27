@@ -41,14 +41,6 @@ protocol MyListPresenterToViewProtocol: class {
     func onGetFollowersOfUserSuccess(result: [SearchUserResult])
     func onGetFollowersOfUserFailure(error: String)
     
-    func followUser(username: String)
-    func onFollowUserSuccess()
-    func onFollowUserFailure(error: String)
-    
-    func unfollowUser(username: String)
-    func onUnfollowUserSuccess()
-    func onUnfollowUserFailure(error: String)
-    
     func deleteContent(contentId: Int)
     func onDeleteContentSuccess()
     func onDeleteContentFailure(error: String)
@@ -61,7 +53,6 @@ protocol MyListPresenterToViewProtocol: class {
 protocol MyListViewUserActionHandler {
     func segmentedControlChanged(_ segmentedControl: UISegmentedControl)
     func addItemToListButtonPressed()
-    func followButtonPressed()
 }
 
 //MARK: Presenter -
@@ -75,10 +66,6 @@ protocol MyListViewToPresenterProtocol: class {
     func createContent(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int)
     
     func getFollowersOfUser(username: String)
-    
-    func followUser(username: String)
-    
-    func unfollowUser(username: String)
     
     func deleteContent(contentId: Int)
     
@@ -101,12 +88,6 @@ protocol MyListInteractorToPresenterProtocol: class {
     
     func onGetFollowersOfUserSuccess(result: [SearchUserResult])
     func onGetFollowersOfUserFailure(error: Error)
-    
-    func onFollowUserSuccess()
-    func onFollowUserFailure(error: Error)
-    
-    func onUnfollowUserSuccess()
-    func onUnfollowUserFailure(error: Error)
     
     func onDeleteContentSuccess()
     func onDeleteContentFailure(error: Error)
@@ -137,14 +118,6 @@ protocol MyListPresenterToInteractorProtocol: class {
     func onGetFollowersOfUserSuccess(result: [SearchUserResult])
     func onGetFollowersOfUserFailure(error: Error)
     
-    func sendFollowUserRequest(username: String)
-    func onFollowUserSuccess()
-    func onFollowUserFailure(error: Error)
-    
-    func sendUnfollowUserRequest(username: String)
-    func onUnfollowUserSuccess()
-    func onUnfollowUserFailure(error: Error)
-    
     func sendDeleteContentRequest(contentId: Int)
     func onDeleteContentSuccess()
     func onDeleteContentFailure(error: Error)
@@ -168,10 +141,6 @@ protocol MyListAPIDataManagerProtocol: class {
     
     func getFollowersOfUserRequest(username: String)
     
-    func followUserRequest(username: String)
-    
-    func unfollowUserRequest(username: String)
-    
     func deleteContentRequest(contentId: Int)
     
     func searchUserByUsernameRequest(username: String)
@@ -190,8 +159,6 @@ protocol MyListServiceProtocol {
     static func getInfoFromUrl(url: String, completion: @escaping (Result<GetInfoFromUrlResult, AFError>) -> ())
     static func createContent(info: GetInfoFromUrlResult, contentTitle: String, contentListId: Int, completion: @escaping (Result<CreateContentResult, AFError>) -> ())
     static func getFollowersOfUser(username: String, completion: @escaping (Result<[SearchUserResult], AFError>) -> ())
-    static func followUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())
-    static func unfollowUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ())
     static func deleteContent(contentId: Int, completion: @escaping (Result<Data?, AFError>) -> ())
     static func searchUserByUsername(username: String,  completion: @escaping (Result<SearchUserResult, AFError>) -> ())
     

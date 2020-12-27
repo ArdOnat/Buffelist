@@ -117,6 +117,11 @@ class ProfileInformationView: UIView, NibOwnerLoadable {
         surnameTextField.text = UserProvider.user().lastName
         titleTextField.text = UserProvider.user().biography
     
+        usernameTextField.isHidden = false
+        nameTextField.isHidden = false
+        surnameTextField.isHidden = false
+        titleTextField.isHidden = false
+        
         prepareTextFieldHandlers()
         
         changePasswordButton.isHidden = false
@@ -129,6 +134,12 @@ class ProfileInformationView: UIView, NibOwnerLoadable {
         nameTextField.text = ""
         surnameTextField.text = ""
         titleTextField.text = ""
+        
+        usernameTextField.isHidden = true
+        nameTextField.isHidden = true
+        surnameTextField.isHidden = true
+        titleTextField.isHidden = true
+        
         changePasswordButton.isHidden = true
         changePasswordButton.isEnabled = false
         changePasswordView.isHidden = true

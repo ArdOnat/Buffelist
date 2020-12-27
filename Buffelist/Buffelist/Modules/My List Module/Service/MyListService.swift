@@ -55,7 +55,7 @@ class MyListService: MyListServiceProtocol {
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue(UserProvider.user().token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+    
         
         AF.request(request).validate().responseDecodable(of: CreateContentResult.self) { response in
             print(request)
@@ -99,44 +99,6 @@ class MyListService: MyListServiceProtocol {
         }
         
         AF.request(url, method: .get, headers: headers).validate().responseDecodable(of: [SearchUserResult].self) { response in
-            print(response.result)
-            completion(response.result)
-        }
-    }
-    
-    static func followUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ()) {
-        
-        let completeEndpoint = endPoint + "/api/users/follow/\(username)"
-        
-        let headers: HTTPHeaders = [
-            "Authorization": UserProvider.user().token,
-        ]
-        
-        guard let url = URL(string: completeEndpoint) else {
-            completion(.failure(.invalidURL(url: endPoint)))
-            return
-        }
-        
-        AF.request(url, method: .post, headers: headers).validate().response { response in
-            print(response.result)
-            completion(response.result)
-        }
-    }
-    
-    static func unfollowUser(username: String, completion: @escaping (Result<Data?, AFError>) -> ()) {
-        
-        let completeEndpoint = endPoint + "/api/users/unfollow/\(username)"
-        
-        let headers: HTTPHeaders = [
-            "Authorization": UserProvider.user().token,
-        ]
-        
-        guard let url = URL(string: completeEndpoint) else {
-            completion(.failure(.invalidURL(url: endPoint)))
-            return
-        }
-        
-        AF.request(url, method: .post, headers: headers).validate().response { response in
             print(response.result)
             completion(response.result)
         }

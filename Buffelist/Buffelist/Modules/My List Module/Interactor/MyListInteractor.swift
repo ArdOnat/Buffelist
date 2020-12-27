@@ -93,34 +93,6 @@ extension MyListInteractor: MyListPresenterToInteractorProtocol {
         presenter?.onGetFollowersOfUserFailure(error: error)
     }
     
-    // MARK: - Follow User Service
-    
-    func sendFollowUserRequest(username: String) {
-        APIDataManager?.followUserRequest(username: username)
-    }
-    
-    func onFollowUserSuccess() {
-        presenter?.onFollowUserSuccess()
-    }
-    
-    func onFollowUserFailure(error: Error) {
-        presenter?.onFollowUserFailure(error: error)
-    }
-    
-    // MARK: - Unfollow User Service
-    
-    func sendUnfollowUserRequest(username: String) {
-        APIDataManager?.unfollowUserRequest(username: username)
-    }
-    
-    func onUnfollowUserSuccess() {
-        presenter?.onUnfollowUserSuccess()
-    }
-    
-    func onUnfollowUserFailure(error: Error) {
-        presenter?.onUnfollowUserFailure(error: error)
-    }
-    
     // MARK: - Delete Content Service
     
     func sendDeleteContentRequest(contentId: Int) {

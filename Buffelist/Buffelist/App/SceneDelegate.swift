@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let tabBarController = UITabBarController()
         let topicListModuleBuilder = TopicListModuleBuilder()
+        let myListModuleBuilder = MyListModuleBuilder()
         let peopleListModuleBuilder = PeopleListModuleBuilder()
         let profileModuleBuilder = ProfileModuleBuilder()
         
@@ -27,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let homeModule = homeModuleBuilder.createModule()
             let vc1 = topicListModuleBuilder.createModule(username: "trends")
-            let vc2 = topicListModuleBuilder.createModule(username: "")
+            let vc2 = myListModuleBuilder.createModule(username: "")
             let vc3 = peopleListModuleBuilder.createModule(username: "")
             let vc4 = profileModuleBuilder.createModule()
             
@@ -45,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         else {
             let vc1 = topicListModuleBuilder.createModule(username: "trends")
-            let vc2 = topicListModuleBuilder.createModule(username: UserProvider.user().username)
+            let vc2 = myListModuleBuilder.createModule(username: UserProvider.user().username)
             let vc3 = peopleListModuleBuilder.createModule(username: UserProvider.user().username)
             let vc4 = profileModuleBuilder.createModule()
             

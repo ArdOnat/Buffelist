@@ -39,14 +39,6 @@ extension MyListPresenter: MyListViewToPresenterProtocol {
         interactor?.sendGetFollowersOfUserRequest(username: username)
     }
     
-    func followUser(username: String) {
-        interactor?.sendFollowUserRequest(username: username)
-    }
-    
-    func unfollowUser(username: String) {
-        interactor?.sendUnfollowUserRequest(username: username)
-    }
-    
     func deleteContent(contentId: Int) {
         interactor?.sendDeleteContentRequest(contentId: contentId)
     }
@@ -119,26 +111,6 @@ extension MyListPresenter: MyListInteractorToPresenterProtocol {
         }
         
         return isFollowing
-    }
-    
-    // MARK: - Follow User Service
-    
-    func onFollowUserSuccess() {
-        view?.onFollowUserSuccess()
-    }
-    
-    func onFollowUserFailure(error: Error) {
-        view?.onFollowUserFailure(error: error.localizedDescription)
-    }
-    
-    // MARK: - Unfollow User Service
-    
-    func onUnfollowUserSuccess() {
-        view?.onUnfollowUserSuccess()
-    }
-    
-    func onUnfollowUserFailure(error: Error) {
-        view?.onUnfollowUserFailure(error: error.localizedDescription)
     }
     
     // MARK: - Delete Content Service

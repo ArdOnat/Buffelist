@@ -20,16 +20,30 @@ class MyListView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        configure()
     }
     
     private func configure() {
-        //TODO: set localization ? found nil iboutlet
+        userImageView.downloaded(from: UserProvider.user().profilePhotoURL)
+    }
+    
+    private func configureNoUser() {
+        userImageView.image = UIImage(named: "astronaut")
+    }
+    
+    func configurePage() {
+        if UserProvider.users().count != 0 {
+            configure()
+        }
+        else {
+            configureNoUser()
+        }
+        
+        collectionView.reloadData()
+        tableView.reloadData()
     }
     
 }

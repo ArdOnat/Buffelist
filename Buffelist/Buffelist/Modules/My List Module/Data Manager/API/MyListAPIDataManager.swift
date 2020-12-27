@@ -59,35 +59,13 @@ class MyListAPIDataManager: MyListAPIDataManagerProtocol {
         }
     }
     
-    func followUserRequest(username: String) {
-        MyListService.followUser(username: username) { result in
-            switch result {
-            case .success(let result):
-                self.interactor?.onFollowUserSuccess()
-            case .failure(let error):
-                self.interactor?.onFollowUserFailure(error: error)
-            }
-        }
-    }
-    
-    func unfollowUserRequest(username: String) {
-        MyListService.unfollowUser(username: username) { result in
-            switch result {
-            case .success(let result):
-                self.interactor?.onUnfollowUserSuccess()
-            case .failure(let error):
-                self.interactor?.onUnfollowUserFailure(error: error)
-            }
-        }
-    }
-    
     func deleteContentRequest(contentId: Int) {
         MyListService.deleteContent(contentId: contentId) { result in
             switch result {
             case .success(let result):
                 self.interactor?.onDeleteContentSuccess()
             case .failure(let error):
-                self.interactor?.onUnfollowUserFailure(error: error)
+                self.interactor?.onDeleteContentFailure(error: error)
             }
         }
     }

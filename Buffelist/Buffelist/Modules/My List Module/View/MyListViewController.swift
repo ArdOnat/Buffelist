@@ -9,7 +9,7 @@ import Foundation
 
 import PopupDialog
 
-class MyListViewController: UIViewController, ContentCellActionHandler {
+class MyListViewController: UIViewController, MyListContentCellActionHandler {
     
     var presenter: MyListViewToPresenterProtocol?
     
@@ -28,20 +28,32 @@ class MyListViewController: UIViewController, ContentCellActionHandler {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if UserProvider.users().count > 0 {
+            self.username = UserProvider.user().username
+        }
+        
         getContentList(username: username)
+        setupUI()
+        setupUIFunctionality()
+        setupDelegation()
+        NotificationCenter.default.addObserver(self, selector: #selector(AuthenticationStatusChanged(_:)), name: .didAuthenticationStatusChanged, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupUI()
-        setupUIFunctionality()
-        setupDelegation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func AuthenticationStatusChanged(_ notification:Notification) {
+        subMyListView.configurePage()
     }
     
     private func setupUI() {
@@ -63,7 +75,12 @@ class MyListViewController: UIViewController, ContentCellActionHandler {
             
         subMyListView.usernameTitleLabel.text = String("Your Reading List").uppercased()
             
-        subMyListView.userImageView.downloaded(from: UserProvider.user().profilePhotoURL)
+        if UserProvider.users().count == 0 {
+            showLoginOrRegisterPopup()
+        }
+        else {
+            subMyListView.userImageView.downloaded(from: UserProvider.user().profilePhotoURL)
+        }
             
         subMyListView.addItemToListButton.isHidden = false
         subMyListView.addItemToListButton.isEnabled = true
@@ -71,18 +88,13 @@ class MyListViewController: UIViewController, ContentCellActionHandler {
         view.addSubview(activityIndicator)
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
+
     }
     
     private func setupUIFunctionality() {
         subMyListView.segmentedControl?.addTarget(self, action: #selector(self.segmentedControlChanged(_:)), for: .valueChanged)
         
         subMyListView.addItemToListButton.addTarget(self, action: #selector(self.addItemToListButtonPressed), for: .touchUpInside)
-        
-        if !isUserPage {
-            let refreshControl = UIRefreshControl()
-            refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
-            subMyListView.collectionView.refreshControl = refreshControl
-        }
     }
     
     private func setupDelegation() {
@@ -136,27 +148,23 @@ extension MyListViewController: MyListViewUserActionHandler {
     }
     
     @objc func addItemToListButtonPressed() {
-        let popupVC = PopupViewController()
-        popupVC.alertContent = AlertContentConfig( alertInformationText: "Enter Content URL", alertUpButtonTitle: "Check Content Availability", alertDownButtonTitle: "", popupType: PopupType.textFieldOneButton)
-        
-        popupVC.didTapUpButton = { text in
-            if let text = text {
-                self.popup?.dismiss()
-                self.activityIndicator.startAnimating()
-                self.presenter?.getInfoFromUrl(url: text)
-            }
-        }
-        
-        popup = PopupDialog(viewController: popupVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, tapGestureDismissal: true, panGestureDismissal: false)
-        self.present(popup!, animated: true, completion: nil)
-    }
-    
-    @objc func followButtonPressed() {
-        if isFollowing {
-            unfollowUser(username: username)
+        if UserProvider.users().count == 0 {
+            showLoginOrRegisterPopup()
         }
         else {
-            followUser(username: username)
+            let popupVC = PopupViewController()
+            popupVC.alertContent = AlertContentConfig( alertInformationText: "Enter Content URL", alertUpButtonTitle: "Check Content Availability", alertDownButtonTitle: "", popupType: PopupType.textFieldOneButton)
+            
+            popupVC.didTapUpButton = { text in
+                if let text = text {
+                    self.popup?.dismiss()
+                    self.activityIndicator.startAnimating()
+                    self.presenter?.getInfoFromUrl(url: text)
+                }
+            }
+            
+            popup = PopupDialog(viewController: popupVC, buttonAlignment: .vertical, transitionStyle: .bounceDown, tapGestureDismissal: true, panGestureDismissal: false)
+            self.present(popup!, animated: true, completion: nil)
         }
     }
     
@@ -276,40 +284,6 @@ extension MyListViewController: MyListPresenterToViewProtocol {
         print(error)
     }
     
-    // MARK: - Follow User Service
-    
-    func followUser(username: String) {
-        presenter?.followUser(username: username)
-    }
-    
-    func onFollowUserSuccess() {
-        activityIndicator.stopAnimating()
-        
-        isFollowing = true
-    }
-    
-    func onFollowUserFailure(error: String) {
-        activityIndicator.stopAnimating()
-        print(error)
-    }
-    
-    // MARK: - Unfollow User Service
-    
-    func unfollowUser(username: String) {
-        presenter?.unfollowUser(username: username)
-    }
-    
-    func onUnfollowUserSuccess() {
-        activityIndicator.stopAnimating()
-        
-        isFollowing = false
-    }
-    
-    func onUnfollowUserFailure(error: String) {
-        activityIndicator.stopAnimating()
-        print(error)
-    }
-    
     // MARK: - Delete Content Service
     
     func deleteContent(contentId: Int) {
@@ -344,13 +318,10 @@ extension MyListViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if isUserPage {
             cell.configureWithDelete(itemInformation: contentList[indexPath.row])
         }
-        else {
-            cell.configureWithoutDelete(itemInformation: contentList[indexPath.row])
-        }
         
         cell.deleteButton.tag = indexPath.row
         cell.linkDirectionButton.tag = indexPath.row
-        cell.contentCellActionHandler = self
+        cell.myListContentCellActionHandler = self
         
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.5
